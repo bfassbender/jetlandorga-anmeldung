@@ -1,6 +1,10 @@
 <?php
 error_reporting(E_ALL);
+<<<<<<< HEAD
 ini_set('display_errors',0);
+=======
+ini_set('display_errors',1);
+>>>>>>> 516ea230a49ba8b913561d67ae3b2f6e6194d513
 
 session_start();
 // STANDARD INDEX
