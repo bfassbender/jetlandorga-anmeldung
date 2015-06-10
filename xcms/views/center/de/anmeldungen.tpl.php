@@ -47,8 +47,6 @@ $nscBan = ($nscRest <= '0') ? true : false;
 				$('#boxsc').hide('fast');
 				if($('#nsc_1').is(':checked')) {
 					$('#bar_art').html(' NSC Huette');
-				} else {
-					$('#bar_art').html(' NSC Zelt');
 				}
 				$('#bar_art').css('font-weight', 'bold');
 			} else if($('#sc').is(':checked')){
@@ -144,7 +142,7 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div class="form-group">
 				<label class="col-sm-3 control-label" for="vorname">Vorname<span style='color: red'>*</span></label>
 				<div class="col-sm-9">
-					<input id='vorname' type='text' name='member[vorname]' value='' size='30' onkeypress="return noreturn(event);" />
+					<input id='vorname' type='text' name='member[vorname]' value='' maxlength='10' onkeypress="return noreturn(event);" />
 				</div>
 			</div>
 			<div class="form-group">
@@ -275,8 +273,7 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			</div>	
 			<div class='userinput'>
 				<input type='radio' name='member[rang]' value='sc' id="sc" checked="checked" class='radio' onclick="toggle()"> <b>Spieler</b> &nbsp;
-				<input type='radio' name='member[rang]' value='nsc|huette' id="nsc_1" class='radio' onclick="toggle()"> <b>NSC (H&uuml;tte)</b>
-				<input type='radio' name='member[rang]' value='nsc|zelt' id="nsc_2" class='radio' onclick="toggle()"> <b>NSC (<u>eigenes</u> Zelt)</b>				
+				<input type='radio' name='member[rang]' value='nsc|huette' id="nsc_1" class='radio' onclick="toggle()"> <b>NSC</b>
 			</div><br><br>
 		<div id="boxsc" style="display:block">
 			<div class='header'><b>Spieler</b></div>
@@ -322,10 +319,6 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div class='header' style='position: absolute'><b>Springer</b></div>
 			<div style='position: relative; padding-left: 140px'>
 				<input type='checkbox' name='nsc[springer]' value="1" size='30' onkeypress="return noreturn(event);">
-			</div><br>
-			<div class='header' style='position: absolute'><b>Dungeon</b></div>
-			<div style='position: relative; padding-left: 140px'>
-				<input type='checkbox' name='nsc[dungeon]' value="1" size='30' onkeypress="return noreturn(event);">
 			</div><br>
 			<div class='header' style='position: absolute'><b>Tr&auml;ume</b></div>
 			<div style='position: relative; padding-left: 140px'>
