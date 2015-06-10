@@ -1,0 +1,193 @@
+<?
+/*
+echo "<pre>";
+print_r($data['data']);
+echo "</pre>";
+*/
+?>
+<?php if ($_SESSION['xcms']['login']['admin'] == true): ?>
+<script type="text/javascript" src="libs/js/ui.core.js"></script>
+<script type="text/javascript" src="libs/js/imgpreview.min.0.22.jquery.js"></script>
+<script language="javascript">
+function check(key, value, c, id){
+	$.ajax({
+			type: "POST",
+			url: "?action=checkEdit",
+			data: {id: id, key: key, value: value},
+			success: function(msg){
+				$('#status_'+c).html(msg);
+
+		},
+			error: function(){
+				alert('Ein Fehler ist aufgetreten.');
+		}
+	});
+}
+
+$(document).ready(function() {		
+	$('.tooltip').imgPreview({
+		srcAttr: 'src',
+	    containerID: 'imgPreviewWithStyles',
+	    imgCSS: {
+	        height: 450
+	    },
+	    onShow: function(link){
+	        $('<span>' + link.alt + '</span>').appendTo(this);
+	    },
+	    onHide: function(link){
+	        $('span', this).remove();
+	    }
+	});
+
+});	
+
+function windowOpen(id) {
+  window = window.open('views/chroniken/print2.tpl.php?id='+id, "Zweitfenster", "width=800,height=600,scrollbars=yes,resizable=yes");
+  window.focus();
+}
+
+
+
+</script>
+
+<style>
+
+	.button {
+		border: 1px solid black;
+		font: 12px "Lucida Grande", Helvetica, Verdana, Arial;
+		background-color: white;
+	}
+
+
+
+</style>
+
+<?
+	if ($data['days'][0]['day']) {
+		if ($day['rang'] == '1') {
+			$fr_rc1 = 'checked';
+		} else {
+			$fr_rc2 = 'checked';
+		}
+	} else {
+		if ($day['rang'] == '1') {
+			$sa_rc1 = 'checked';
+		} else {
+			$sa_rc2 = 'checked';
+		}
+	}
+
+			
+	($data['data'][0]['vegetarier'] == '0') ? $vc0 = 'checked' : $vc1 = 'checked';
+	($data['data'][0]['bezahlt'] == '0') ? $bc0 = 'checked' : $bc1 = 'checked';
+	($data['data'][0]['sichtbar'] == '0') ? $hpc0 = 'checked' : $hpc1 = 'checked';
+	
+?>	
+	<div style='margin: 0 0 20px 20px;'><a style='color: black; font-weight: bold' href='?action=overview'>&laquo; Zurück</a></div>
+	<div class='anmeldung' style='width: 798px'>
+		<form action='<?echo $_SERVER['PHP_SELF'];?>?action=editUser' method='post' enctype='html/text'>
+		<div class='heading'>
+				<b>Teilnehmer bearbeiten (<? echo ucfirst($data['data'][0]['vorname'])." ".ucfirst($data['data'][0]['nachname']);?>)</b>
+		</div>	
+		<div style='float: right; margin-top: -30px'><a href='javascript:print();' title='Teilnehmer drucken'><img src='xcms/views/images/icons/print_big.png' border='0'></a></div>	
+			<br>
+			<div class='heading_small' style='margin-bottom: -10px'>
+				<b>Administration</b>
+			</div>
+			
+						
+							<div class='edit' style='position: absolute; margin-top: 20px'><b>ID</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 20px'>
+					<input type='text' name='member[id]' value='<? echo $data['data'][0]['id'];?>' size='3' readonly>
+				</div>			
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Spieltage</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 2px'>
+<?php
+	foreach ($data['days'] as $day) {
+		if ($day['day']) {
+			if ($day['rang'] == 1) { $rc1 = 'checked="checked"';} else { $rc2 = 'checked="checked"';}
+			echo "<b>".ucfirst($day['day'])."</b><br />";
+			echo "<input size='2' type='hidden' name='day[".$day['day']."][mid]' value='".$day['day_id']."'>";
+			echo "<span style='color: black; background-color: #C7D0D6; padding: 3px 10px 1px 0; border: 1px solid black'>";
+			echo "<input size='2' type='radio' name='day[".$day['day']."][rang]' value='1' ". $rc1 ."> <b>Spieler</b></span>";
+			echo "</span>";
+			echo "<span style='color: black; background-color: #C7D0D6; padding: 3px 10px 1px 0; border: 1px solid black'>";
+			echo "<input size='2' type='radio' name='day[".$day['day']."][rang]' value='2' ". $rc2 ." > <b>Nsc</b></span>";
+			echo "</span><br />";		
+		}
+	}
+
+?>				
+
+				</div>
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Angemeldet</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<input type='text' value='<? echo date('d.m.Y',$data['data'][0]['datum']);?>' size='3' style='width: 150px' readonly>
+				</div>
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Bezahlt</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 2px'>
+					<span style='color: black; background-color: #C7D0D6; padding: 3px 10px 1px 0; border: 1px solid black'>
+						<input size='2' type='radio' name='member[bezahlt]' value='1' <?echo $bc1;?>> <b>Ja</b></span>
+					<span style='color: black; background-color: #C7D0D6; padding: 3px 10px 1px 0; border: 1px solid black'>						
+						<input size='2' type='radio' name='member[bezahlt]' value='0' <?echo $bc0;?>> <b>Nein</b></span>
+				</div>
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>HP Sichtbar</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<span style='color: black; background-color: #C7D0D6; padding: 3px 10px 1px 0; border: 1px solid black'>
+						<input size='2' type='radio' name='member[sichtbar]' value='1' <?echo $hpc1;?>> <b>Ja</b></span>
+					<span style='color: black; background-color: #C7D0D6; padding: 3px 10px 1px 0; border: 1px solid black'>						
+						<input size='2' type='radio' name='member[sichtbar]' value='0' <?echo $hpc0;?>> <b>Nein</b></span>
+				</div>								
+			<div class='heading_small' style='margin-top: 15px'>
+				<b>Allgemeine Angaben</b>
+			</div>
+				<div class='edit' style='position: absolute; margin-top: 5px'><b>Name</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 5px'>
+					<input type='text' name='member[vorname]' value='<? echo $data['data'][0]['vorname'];?>' size='3' style='width: 150px'>
+					<input type='text' name='member[nachname]' value='<? echo $data['data'][0]['nachname'];?>' size='3' style='width: 150px'>
+				</div>		
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Strasse</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<input type='text' name='member[strasse]' value='<? echo $data['data'][0]['strasse'];?>' size='3' style='width: 305px'>
+				</div>	
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Plz/ Ort</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<input type='text' name='member[plz]' value='<? echo $data['data'][0]['plz'];?>' size='3' style='width: 50px'>
+					<input type='text' name='member[ort]' value='<? echo $data['data'][0]['ort'];?>' size='3' style='width: 250px'>
+				</div>	
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Telefon</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<input type='text' name='member[telefon]' value='<? echo $data['data'][0]['telefon'];?>' size='3' style='width: 150px'>
+				</div>		
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Email</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<input type='text' name='member[email]' value='<? echo $data['data'][0]['email'];?>' size='3' style='width: 150px'>
+				</div>		
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Geb. Datum</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<input type='text' name='member[geb_datum]' value='<? echo $data['data'][0]['geb_datum'];?>' size='3' style='width: 150px'>
+				</div>		
+				<div class='edit' style='position: absolute; margin-top: 3px'><b>Vegetarier</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<span style='color: black; background-color: #C7D0D6; padding: 3px 10px 1px 0; border: 1px solid black'>
+						<input size='2' type='radio' name='member[vegetarier]' value='1' <?echo $vc1;?>> <b>Ja</b></span>
+					<span style='color: black; background-color: #C7D0D6; padding: 3px 10px 1px 0; border: 1px solid black'>						
+						<input size='2' type='radio' name='member[vegetarier]' value='0' <?echo $vc0;?>> <b>Nein</b></span>
+				</div>
+
+				<div class='edit' style='position: absolute; margin-top: 3px; height: 88px'><b>Bemerkung</b></div>
+				<div style='position: relative; padding-left: 190px; margin-top: 3px'>
+					<textarea cols='36' rows='5' name='member[bemerkung]'><? echo stripslashes($data['data'][0]['bemerkung']);?></textarea>
+				</div>
+		
+				<br>
+				<div style='width: 500px; text-align:center'><input type='submit' value='Teilnehmer editieren' /></div>
+			</form>
+			</div>
+				
+	
+
+
+<? else: ?>
+	<script>self.location.href='<?php echo $_SERVER['PHP_SELF']; ?>?action=logmein'</script>
+<? endif;?>
