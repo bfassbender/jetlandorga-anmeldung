@@ -142,7 +142,7 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div class="form-group">
 				<label class="col-sm-3 control-label" for="vorname">Vorname<span style='color: red'>*</span></label>
 				<div class="col-sm-9">
-					<input id='vorname' type='text' name='member[vorname]' value='' maxlength='10' onkeypress="return noreturn(event);" />
+					<input id='vorname' type='text' name='member[vorname]' value='' size='30' onkeypress="return noreturn(event);" />
 				</div>
 			</div>
 			<div class="form-group">
