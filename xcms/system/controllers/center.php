@@ -1,5 +1,5 @@
 <?php
-include('/system/libs/zip.lib.php');
+include(__DIR__ . '/../libs/zip.lib.php');
 error_reporting(E_ALL);
 ini_set('display_errors',1);
 
