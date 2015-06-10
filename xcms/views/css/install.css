@@ -1,0 +1,1580 @@
+
+
+/* Allgemeine Festlegungen */
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 101%;
+    width: 100%;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    border: none;
+}
+
+h2 a {
+    text-decoration: none;
+    color: #004b83 !important;
+}
+
+h4 a {
+    text-decoration: none;
+    color: #004b83 !important;
+}
+
+a {
+    /*text-decoration: none;
+    color: #000;*/
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.nichtfett {
+    font-weight: normal;
+}
+
+
+/* Layout */
+div#main {
+    width: 984px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 100px;
+}
+
+
+/* Kopfbereich */
+div#header, header {
+    height: 308px;
+    padding: 0 5px;
+}
+
+div#header img, header img {
+    display: block;
+    float: left;
+}
+
+div#headerlinks {
+    text-align: right;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 15px 18px 0 0;
+    height: 15px;
+}
+
+div#headerlinks a {
+    color: #555;
+    text-decoration: none;
+}
+
+div#headerlinks a:hover {
+    text-decoration: underline;
+}
+
+div#headergrafik {
+    clear: left;
+    width: 974px;
+    height: 190px;
+    background: no-repeat center top;
+}
+
+div#schnellsuche-header {
+    padding: 3px 0 0 9px;
+    width: 211px;
+    height: 16px;
+    margin: 27px 0 0 437px;
+    background: #f99807 url(/img/static/bg_schnellsuche-header.gif) no-repeat right top;
+    color: #fff;
+    text-transform: uppercase;
+    float: left;
+    font-size: 13px;
+    /* IE 6 Bugfix */
+    display: inline;
+}
+
+div#schnellsuche {
+    padding: 7px 0 8px 9px;
+    width: 211px;
+    margin-left: 737px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+div#schnellsuche input {
+    display: block;
+    padding: 3px 0 3px 5px;
+    height: 15px;
+    border: 1px solid #004b8f;
+    color: #004b8f;
+    font-size: 12px;
+    float: left;
+}
+div#schnellsuche select {
+    padding: 3px 0 3px 5px;
+    height: 25px;
+    border: 1px solid #004b8f;
+    color: #004b8f;
+    font-size: 12px;
+    width: 202px;
+}
+
+
+div#schnellsuche input#schnellsuche-begriff {
+    width: 140px;
+    border-right: none !important;
+}
+
+div#schnellsuche input#schnellsuche-submit {
+    padding: 0 0 0 3px;
+    height: 23px;
+    width: 56px;
+    color: #fff;
+    background: #043b73 url(/img/static/bg_schnellsuche-submit.gif) repeat-x 0 top;
+}
+
+
+/* Menue */
+div#nav {
+
+}
+
+div#nav ul {
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+    padding-bottom: 4px;
+    background: url(/img/static/bg_nav.gif) repeat-x right top;
+}
+
+div#nav ul li {
+    display: inline;
+}
+
+div#nav ul li a {
+    display: block;
+    float: left;
+    background-color: #004b8f;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 13px;
+    height: 26px;
+    padding: 12px 14px 0 14px;
+    border-left: 1px solid #2c679f ;
+    border-right: 1px solid #003c72 ;
+}
+
+div#nav ul li.homebutton a{
+    padding-top: 10px;
+}
+
+/* Styles fuer den ersten Punkt */
+/*div#nav ul li.aktuell a {
+    border-left: 1px solid #004b8f ;
+}*/
+
+/* Styles fuer den letzten Punkt */
+/*div#nav ul li.wirtschaft a {
+    border-right: 1px solid #004b8f ;
+}*/
+
+/* Farbfestlegungen fuer die ULs */
+div#nav ul.aktuell {
+    background-color: #20aa9b;
+}
+
+div#nav ul.siegburg {
+    background-color: #1e6bb3;
+}
+
+div#nav ul.tourismus {
+    background-color: #28a235;
+}
+
+div#nav ul.planen-bauen {
+    background-color: #1e6bb3;
+}
+
+div#nav ul.kultur {
+    background-color: #b2cb55;
+}
+
+div#nav ul.familie {
+    background-color: #fac63f;
+}
+
+div#nav ul.wirtschaft {
+    background-color: #cf202f;
+}
+
+div#nav ul.rathaus {
+    background-color: #e96e33;
+}
+
+/* Farbfestlegungen fuer alle Punkte */
+div#nav ul li.aktuell a:hover, div#nav ul.aktuell li.aktuell a {
+    background-color: #20aa9b;
+    border-color: #20aa9b;
+}
+
+div#nav ul li.siegburg a:hover, div#nav ul.siegburg li.siegburg a {
+    background-color: #1e6bb3;
+    border-color: #1e6bb3;
+}
+
+div#nav ul li.tourismus a:hover, div#nav ul.tourismus li.tourismus a {
+    background-color: #28a235;
+    border-color: #28a235;
+}
+
+div#nav ul li.planen-bauen a:hover, div#nav ul.planen-bauen li.planen-bauen a {
+    background-color: #1e6bb3;
+    border-color: #1e6bb3;
+}
+
+div#nav ul li.kultur a:hover, div#nav ul.kultur li.kultur a {
+    background-color: #b2cb55;
+    border-color: #b2cb55;
+    color: #004b8f;
+}
+
+div#nav ul li.familie a:hover, div#nav ul.familie li.familie a {
+    background-color: #fac63f;
+    border-color: #fac63f;
+    color: #004b8f;
+}
+
+div#nav ul li.wirtschaft a:hover, div#nav ul.wirtschaft li.wirtschaft a {
+    background-color: #cf202f;
+    border-color: #cf202f;
+}
+
+div#nav ul li.rathaus a:hover, div#nav ul.rathaus li.rathaus a {
+    background-color: #e96e33;
+    border-color: #e96e33;
+}
+
+
+/* Inhaltsbereich */
+/* Layoutaufteilung */
+div#contentarea {
+    height: 1%;
+    overflow: hidden;
+    padding: 13px 5px 0 5px;
+    background: #aaa url(/img/static/bg_siegburg_content.gif) repeat-y center;
+}
+
+div#contentarea a {
+    color: #1d6fb7;
+}
+
+p#contenttoplinks {
+    height: 40px;
+    margin-left: 18px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+div#content {
+    width: 717px;
+    float: left;
+    /* IE6 Bugfix */
+    display: inline;
+    margin-left: 18px;
+    /*margin-bottom: 60px;*/
+}
+
+div.zeile {
+    overflow: hidden;
+    /*margin-bottom: 20px;*/
+    /*margin-top: 10px;	*/
+}
+#content div.text-zeile {
+    padding-right: 18px;
+}
+div#aside, aside {
+    width: 220px;
+    float: left;
+    /*margin-bottom: 60px;*/
+}
+
+div#footer, footer {
+    clear: both;
+    height: 75px;
+    overflow: hidden;
+    background: url(/img/static/bg_siegburg_footer.gif) no-repeat center bottom;
+}
+
+/* Detailfestlegungen */
+p#contenttoplinks a {
+    text-decoration: none;
+    color: #000;
+}
+
+p#contenttoplinks a:hover {
+    text-decoration: underline;
+}
+p#contenttoplinks a.active, p#contenttoplinks a.active:hover  {
+    font-weight:bold;
+}
+/* Definition der Teasermodule: teaser
+   Autoteaser, Hauptcontent
+ */
+div#content div.teaser img {
+    float:left;
+    margin: 0px 10px 10px 0px;
+    border: none;
+}
+
+/* Definition der Teasermodule */
+div#content div.teasermodul {
+    margin-right: 18px;
+    float: left;
+    height: 1%;
+    border-top: 3px solid #1e6bb1;
+}
+
+div#content-mitte div.teasermodul {
+    margin-right: 8px;
+}
+
+div#content div.teasermodul img {
+    margin: 0 18px 10px 0;
+    float: left;
+}
+
+div#content div.teasermodul h2 {
+    clear: right;
+    font-weight: normal;
+    color: #004b8e;
+    font-size: 18px;
+    /*margin-bottom: 20px;*/
+}
+
+div#content div.teasermodul p {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+div#content div.teasermodul p.kategorie {
+    font-size: 11px;
+    line-height: 1;
+    margin-bottom: 3px;
+    color: #004b8e;
+    background-color: #fff;
+    text-transform: uppercase;
+    padding-left: 6px;
+    float: right;
+    position: relative;
+    top: -4px;
+}
+
+div#content div.drittel {
+    width: 221px;
+}
+
+div#content div.zweidrittel {
+    width: 460px;
+}
+
+div#content div.haelfte {
+    margin-bottom: 15px;
+    width: 340px;
+}
+
+div#content div.ganz {
+    width: 699px;
+}
+
+/* Definitionen der Menuespalte links */
+/* iA: IS für CG */
+div#content h1 {
+    font-weight: normal;
+    color: #004b8e;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+div#content h2 {
+    font-weight: normal;
+    color: #004b8e;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+/* iA: IS für CG */
+div#content p {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 18px;
+}
+
+
+ul#menue-links {
+    list-style: none;
+    width: 220px;
+    float: left;
+    border-top: 3px solid;
+    /* IE6 Bugfix */
+    display: inline;
+}
+
+ul#menue-links li {
+    font-size: 13px;
+    /* IE6 Bugfix */
+    display: inline;
+}
+
+ul#menue-links li a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 9px 0 9px 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+ul#menue-links li a:hover, ul#menue-links li a.aktiv {
+    background: url(/img/static/bg_menue-links-pfeil.gif) no-repeat 2px 13px;
+}
+
+ul#menue-links li a:hover {
+    color: #1d6fb7;
+}
+
+ul#menue-links li ul {
+    list-style: none;
+    margin-left: 16px;
+}
+
+/* Definitionen des Contentbereichs mitte */
+div#content div.box, content div.box {
+    padding: 9px 9px 2px 9px;
+    background: #f2f2f2 url(/img/static/bg_aside_box.gif) repeat-x 0 top;
+    border: 1px solid #ddd;
+    border-top: #ddd 3px solid;
+    margin-right: 18px;
+}
+
+div#content-mitte {
+    width: 459px;
+    float: left;
+    margin-left: 19px;
+}
+
+
+div#content-mitte h1 {
+    font-weight: normal;
+    color: #004b8e;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+div#content-mitte h2 {
+    font-weight: normal;
+    color: #004b8e;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+div#content-mitte p {
+    font-size: 12px;
+    line-height: 18px;   
+    margin-bottom: 18px;
+}
+
+div.bildmittext {
+    background-color: #ccc;
+    margin-bottom: 22px;
+}
+
+div.bildmittext img {
+    display: block;
+}
+
+div.bildmittext p {
+    font-size: 11px !important;
+    margin: 2px 0 2px 8px;
+}
+
+div.bildmittext img.bild-lupe {
+    float: right;
+    margin: 5px 6px 0 0;
+}
+
+div#content-mitte hr {
+    border-color:#2A448F;
+    border-style:none none dotted;
+    border-width:1px;
+    margin: 0px 0 22px 0;
+    clear: both;
+}
+
+div.link-bild {
+    height: 1%;
+    overflow: hidden;   
+    margin-bottom: 30px;     
+}
+
+
+div.link-bild img {
+    margin: 0 18px 10px 0;
+    float: left;
+}
+
+div.link-bild h3 {
+    font-weight: normal;
+    color: #004b8e;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+div.link-bild p {
+    font-size: 11px;
+    line-height: 15px !important;
+    margin-bottom: 10px;
+}
+
+ul.linkliste-text {
+    list-style: none;
+}
+
+ul.linkliste-text li {
+    font-size: 12px;
+    padding-left: 14px;
+    margin-bottom: 8px;
+    background: url(/img/static/bg_linkliste-text.gif) no-repeat 1px 3px;
+}
+
+ul.linkliste-text li a {
+    text-decoration: none;
+}
+
+ul.linkliste-text li a:hover {
+    text-decoration: underline;
+}
+
+/* Definitionen der Suchbox */
+.suchbox {
+    border: 1px solid #ddd;
+    height: 1%;
+    overflow: hidden;
+    background: #fff url(/img/static/bg_suchbox.gif) repeat-x left top;
+    padding: 17px 0 0 17px;
+}
+
+.suchbox-spalte {
+    float: left;
+    overflow: hidden;
+    margin-right: 17px;
+}
+
+.suchbox input,
+.suchbox select {
+    border: 1px solid #004a8f;
+    font-family: Arial,Helvectica,"Sans Serif";
+    font-size: 13px;
+    padding-top: 1px;
+    width: 203px;
+    display: block;
+    margin-bottom: 17px;
+}
+
+.suchbox input {
+    padding: 2px 2px 1px 3px;
+    width: 195px;
+}
+
+.suchbox input.submit {
+    width: auto;
+    padding: 1px 10px;
+    float: right;
+}
+
+.suchbox table  {
+    font-size: 14px;
+    color: #004B8E;
+}
+
+/* Definitionen der Veranstaltungsliste */
+.grosstext {
+    font-size: 18px !important;
+    margin-top: 24px;
+    line-height: 1.3 !important;
+}
+
+.grosstext a {
+    text-decoration: none;
+}
+
+.grosstext a:hover {
+    text-decoration: underline;
+}
+
+p.veranstaltung-datum {
+    color: #555;
+    margin-bottom: 2px !important;
+}
+
+div#content div.paginierung {
+    float: right;
+    margin-bottom: 18px;
+    background: #f5f5f5 url(/img/static/bg_paginierung.gif) repeat-x left top;
+}
+
+div#content div.paginierung a {
+    font-size: 13px;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    float: left;
+    padding: 1px 6px 2px 6px;
+}
+
+div#content div.paginierung a:hover, div#content div.paginierung a.aktiv {
+    color: #FFF;
+    background: #023a72 url(/img/static/bg_multiteaser_numbers.gif) repeat-x 0 top;
+}
+
+p.melden {
+    clear: both;
+    text-align: right;
+}
+
+p.melden a {
+    text-decoration: none;
+}
+
+p.melden a:hover {
+    text-decoration: underline;
+}
+
+div.event-item {
+    margin-bottom: 10px;
+    position:relative;
+}
+
+.event-state{
+	display:inline-block;
+	font-size:12px;	
+	text-transform:uppercase;
+	padding:5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+}
+
+.event-state.runningout{
+	color: rgb(50,50,50);
+	background-color:rgb(240,240,0);;
+}
+
+.event-state.soldout{
+	color: white;
+	background-color:rgb(230,50,50);
+}
+
+.event-linkGroup{
+	font-size:12px;
+	display:inline-block;
+	position:absolute;	
+	right:0px;
+}
+
+.event-linkGroup a{
+	padding: 0 3px;
+}
+
+/* Definitionen der Kontextspalte rechts */
+div#aside h2 {
+    font-weight: normal;
+    color: #004b8e;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+/*div#aside div.section, aside section {
+    margin-bottom: 20px;
+
+div.topspace {
+    margin-top:10px;
+}*/
+
+
+div#aside h1, aside h1 {
+    font-weight: normal;
+    color: #004b8e;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+div#aside p, aside p {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 10px;
+    /**text-align: justify;**/
+}
+
+div#aside p.info {
+    font-style: italic;
+    color: #444444;
+    margin: 0px;
+    padding: 3px 0 2px 10px;
+    background-color: #BCC8D8;
+}
+
+div#aside p a, aside p a {
+
+}
+
+div#aside hr, aside hr {
+    height: 1px;
+    background: url(/img/static/bg_hr.gif) repeat-x left top;
+    border: none;
+    margin: 18px 0 18px 0;
+}
+
+div#aside div.box, aside div.box {
+    padding: 9px 9px 2px 9px;
+    background: #f2f2f2 url(/img/static/bg_aside_box.gif) repeat-x 0 top;
+    border: 1px solid #ddd;
+    border-top: #ddd 3px solid;
+}
+
+div#aside div.box img, aside div.box img {
+    margin: 0 5px 10px 0;
+    float: left;
+}
+
+div#aside div.box img.float-rechts, aside div.box img.float-rechts, img.float-rechts {
+    margin: 0 0 10px 12px;
+    float: right;
+}
+
+div#aside div.box img.float-links, aside div.box img.float-links, img.float-links {
+    margin: 0 12px 10px 0;
+    float: left;
+}
+
+/* Farbdefinitionen der oberen Boxenraender */
+div#content div.stadtbibliothek, div#content ul.stadtbibliothek, div#aside div.stadtbibliothek {
+    border-top-color: #b2cb55;
+}
+
+div#content div.feuerwehr, div#content ul.feuerwehr, div#aside div.feuerwehr {
+    border-top-color: #da251d;
+}
+
+div#content div.mittelmarkt, div#content ul.mittelmarkt, div#aside div.mittelmarkt {
+    border-top-color: #b11e3a;
+}
+
+div#content div.seniorenzentrum, div#content ul.seniorenzentrum, div#aside div.seniorenzentrum {
+    border-top-color: #b11e3a;
+}
+
+div#content div.aktuell, div#content ul.aktuell, div#aside div.aktuell {
+    border-top-color: #1e6bb3;
+}
+
+div#content div.siegburg, div#content ul.siegburg, div#aside div.siegburg {
+    border-top-color: #1e6bb3;
+}
+
+div#content div.tourismus, div#content ul.tourismus, div#aside div.tourismus {
+    border-top-color: #28a235;
+}
+
+div#content div.planen-bauen, div#content ul.planen-bauen, div#aside div.planen-bauen {
+    border-top-color: #1e6bb3;
+}
+
+div#content div.kultur, div#content ul.kultur, div#aside div.kultur {
+    border-top-color: #b2cb55;
+}
+
+div#content div.familie, div#content ul.familie, div#aside div.familie {
+    border-top-color: #fac63f;
+}
+
+div#content div.wirtschaft, div#content ul.wirtschaft, div#aside div.wirtschaft {
+    border-top-color: #cf202f;
+}
+
+div#content div.rathaus, div#content ul.rathaus, div#aside div.rathaus {
+    border-top-color: #e96e33;
+}
+
+p#footerlinks {
+    padding: 53px 0 0 18px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 11px;
+    float: left;
+}
+
+/* Definitionen des Footerinhalts */
+p#footerlinks a {
+    color: #fff;
+    text-decoration: none;
+}
+
+p#footerlinks a:hover {
+    text-decoration: underline;
+}
+
+a#footerhomelink {
+    display: block;
+    height: 75px;
+    width: 250px;
+    float: right;
+    margin-left: 500px;
+    text-decoration: none;
+}
+
+/* allgemein verwendbare styles */
+p.quote {
+    padding: 0px 20px;
+    color: #444444;
+    font-style: italic;
+}
+span.author {
+    font-weight: bold;
+}
+/** Fotostrecke
+  Definition am Anker: .imagestrip_container
+  Sonderfall rechte Marginalspalte: #aside
+  => nur in dieser CSS-Datei
+  **/
+div.imagestrip_container {
+    display: inline-block;
+    float:left;
+    margin-right: 16px;
+    margin-bottom:10px;
+}
+div.imagestrip_container_last {
+    margin-right: 0px;
+}
+
+#aside div.imagestrip_container_even {
+    margin-right: 0px;
+}
+
+div.imagestrip_container img {
+    float: none;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid silver;
+}
+/** /Fotostrecke **/
+
+/* Definitionen des Multiteaser */
+/* Definitionen des Multiteaser */
+div#content div.multiteaser h2 {
+    display: none;
+}
+
+div#content div.multiteaser div.teaser-bild-text {
+    clear: both;
+}
+
+div#content div.multiteaser img {
+    /* display: block; */
+    float: none;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 10;
+}
+
+div#content div.multiteaser p.multiteaser-text {
+    height: 40px;
+    background-color: #01498c;
+    margin-top: -60px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 100;
+    filter:alpha(opacity=80);
+    opacity: 0.8;
+    -moz-opacity:0.8;
+    overflow: hidden;
+    color: #FFF;
+    font-size: 15px;
+    line-height: 19px;
+    padding: 10px 120px 10px 10px;
+}
+
+div#content div.multiteaser p.multiteaser-text a {
+    color: #FFF;
+}
+
+div#content div.multiteaser-numbers {
+    background-color: #FFF;
+    float: right;
+    position: relative;
+    top: -20px;
+    margin-right: 18px;
+    z-index: 200;
+    border-bottom: 1px solid #FFF;
+}
+
+div#content div.multiteaser-numbers a {
+    font-size: 15px;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    float: left;
+    padding: 1px 6px 1px 6px;
+}
+
+div#content div.multiteaser-numbers a:hover, div#content div.multiteaser-numbers a.aktiv {
+    color: #FFF;
+    background: #023a72 url(/img/static/bg_multiteaser_numbers.gif) repeat-x 0 top;
+}
+
+/** Downloadbox content **/
+div#content img.line-icon {
+    padding: 0;
+	float:left;
+    margin: 3px 8px 16px 0;
+}
+div#content div.dl-item {
+    vertical-align: middle;
+    clear:left;
+}
+div#content div.dl-item a {
+    font-size: 1.3em;
+    margin-left: 0px;
+    line-height: 1.5em;
+
+}
+
+div#content div.dl_article {
+    margin-left: 16px;
+    padding: 10px;
+    width: 90%;
+}
+
+div#content div.dl-item-main a {
+    font-size: 1.5em;
+    margin-left: 16px;
+    line-height: 2em;
+}
+/** Downloadbox side **/
+
+div#aside img.line-icon {
+    padding: 2px 0;
+    margin: 0 5px 0 0;
+}
+div#aside div.dl-item {
+    margin-bottom: 8px;
+    vertical-align: middle;
+}
+div#aside div.dl-item a {
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+/* IWE Listenerweiterung */
+
+div.show_iwe ul,
+div.article ul.amtsblattarchiv,
+div.article ul.bekanntmachungenarchiv {
+    margin: 0 0 20px 40px;
+    font-size: 12px;
+}
+
+div.show_iwe ul li,
+div.article ul.amtsblattarchiv li,
+div.article ul.bekanntmachungenarchiv li {
+	padding-left: 4px;
+	line-height: 18px;
+}
+
+
+
+
+div.article ul li p{
+	margin:0 !important;
+}
+
+div.show_iwe ol {
+    margin: 0 0 10px 44px;
+    font-size: 12px;
+}
+
+div.show_iwe ol li {
+   padding-left: 1px;
+
+}
+
+div.show_iwe {
+    margin-right: 15px;
+}
+
+/* Definitionen des Kalendermoduls */
+div#content h3.event {
+    font-size: 12px;
+    color: #555555;
+    margin-bottom: 12px;
+}
+
+div#aside div.kalender {
+    background: #fff url(/img/static/bg_kalender.gif) repeat-x center top;
+    border-top: 0px;
+    padding: 0;
+}
+
+div#aside div.kalender h2,
+div#aside div.kalender .highslide-maincontent {
+    display: none;
+}
+
+div#aside div.kalender table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+div#aside div.kalender td {
+    width: 31px;
+    text-align: center;
+    font-size: 12px;
+    border: none;
+    padding: 4px 0;
+}
+
+div#aside div.kalender td.monthnavigation,
+div#aside div.kalender td.monthname {
+    background: url("/img/static/bg_box-header_seitenfunktionen.gif") no-repeat scroll left top #004688;
+    color: #FFFFFF;
+    height: 16px !important;
+    line-height:1;
+    padding: 4px 0 4px 0;
+}
+
+div#aside div.kalender td.monthname {
+    width: 96px;
+}
+
+div#aside div.kalender td.monthnavigation {
+    width: 62px;
+}
+
+div#aside div.kalender td.monthnavigation a {
+    color:#FFFFFF;
+    text-decoration: none;
+}
+
+div#aside div.kalender td.event,
+div#aside div.kalender td.todayevent, div#aside div.kalender td.eventMultiple {
+    color: #fff;
+    background: #93a8bd url(/img/static/bg_kalender_event.gif) repeat-x left top;
+}
+
+div#aside div.kalender td.event a,
+div#aside div.kalender td.todayevent a, div#aside div.kalender td.eventMultiple a {
+    color: #fff;
+    text-decoration: none;
+}
+div#aside div.kalender td.today, div#aside div.kalender td.todayevent {
+    border: 1px solid #004A8F;
+}
+
+h3.cdate {
+    font-size: 12px;
+    color: #555555;
+}
+p.centry {
+    font-size: 14px;
+    margin-bottom:10px;
+}
+p.centry a {
+    /** check **/
+}
+p.centry a:hover {
+    /** check **/
+}
+
+
+/* SUCHE */
+.suchbox2{
+   background:url("/img/static/bg_suchbox.gif") repeat-x scroll left top #FFFFFF;
+   padding: 15px 5px 15px 5px;
+   border: 1px solid #EDEDED;
+}
+.searchfield{
+  border: 1px solid #034B8F;
+  margin-left: 5px;
+}
+.inputp{
+  padding: 3px 5px 4px 5px;
+}
+.selectp {
+  padding: 2px 5px 3px 5px;
+}
+.submit {
+    -moz-border-radius:4px 4px 4px 4px;
+    background:url("../img/static/bg_submit.gif") repeat-x scroll left center #004B8F;
+    border:1px solid #024B90;
+    color:#FFFFFF;
+    font-family:Arial,Helvectica,"Sans Serif";
+    font-size:12px;
+    padding:2px 15px;
+    text-transform:uppercase;
+    margin-left: 5px;
+}
+
+ul.vnav li.cats {
+    background-color: #004B8F;
+    border-bottom: 2px solid #FFFFFF;
+    margin-left: 0px;
+    padding:  5px 0 5px 7px;
+    text-transform: uppercase;
+    list-style-type: none;
+    text-align: left;
+
+}
+ul.vnav li.active {
+       background-color: #28A235;
+}
+
+div#contentarea ul.vnav li a{
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight:bold;
+}
+
+
+.result {
+  width: 95%;
+  font-size: 12px;
+}
+
+.highlight {
+     color: #01498E;
+     background-color: white;
+     text-decoration: underline;
+     font-weight: bold;
+}
+
+.searchpage-navigation {
+/*aktive Suchseite*/
+    font-size: 13px;
+    font-weight: bold;
+    color: #1d6fb7;
+}
+
+.searchpage-navigation a {
+    text-decoration: none;
+    font-size: 11px;
+}
+
+
+/*  Downloadbox */
+
+.headline_dl {
+    color:white;
+    display:block;
+    font-size:14px;
+    background-color: #01498E;
+    padding: 3px 5px 3px 5px;
+}
+
+.noborder div.box {
+    border-color:none;
+    border-style:none !important;
+    padding:0px !important;
+}
+
+div#content .headline_dl {
+	margin-right: 18px;
+}
+div#aside .headline_dl {
+}
+
+/*  Besodnere Formatiereungen für
+    Nachrichten */
+h4.news_date, span.news_date {
+    color: grey;
+}
+
+div#content div.news_item {
+
+}
+
+div#content div.news_item img {
+    margin: 0pt 10px 10px 0pt;
+    float: left;
+    border: 1px solid black;
+    width: 75px;
+    height: 75px;
+}
+div#content div.news_item h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: rgb(2, 75, 144);
+    font-weight: bold;
+}
+
+/* Sublinks Layout */
+div.sublink {
+	font-size: 12px;
+	margin-bottom: 50px;
+}
+
+div.sublink div.left {
+	float:left;
+	width:33%;
+}
+div.sublink div.center {
+	text-align:center;
+	float:left;
+	width:34%;
+}
+div.sublink div.right {
+	text-align:right;
+	float:left;
+	width:33%;
+}
+
+
+/* Livebilder - Webcam CSS */
+
+div.livebilder_main {
+  width: 460px;
+}
+
+div.livebilder_element {
+  width: 210px;
+  padding: 5px;
+  margin: 2px;
+  border: 1px solid grey;
+  background-color: #e8e9f5;
+  text-align: center;
+  font-weight: strong;
+  font-size: 100%;
+  float: left;
+}
+
+div#wetter {
+  border-bottom: #ddd 1px solid;
+  border-left: #ddd 1px solid;
+  border-right: #ddd 1px solid;
+  border-top: #ddd 3px solid;
+  border-top-color: #1e6bb3;
+  padding: 9px 9px 2px;
+  background: #f5f5f5;
+}
+
+/* Sitemap */
+
+div.sitemap ul li{
+  list-style-type: none;
+  margin: 20px 25px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+div.sitemap ul ul li{
+  margin: 5px 35px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+div.sitemap a{
+  text-decoration: none;
+}
+
+div.newsletter-archive ul li{
+  list-style-type: none;
+  margin: 5px 10px;
+  font-size: 12px;
+}
+
+div.newsletter-archive a{
+  text-decoration: none;
+}
+
+/* Perspektive Jugend */
+
+.akCenter{text-align:center;}
+.akRssFeedReader{clear:left;font-family:Arial,sans-serif;padding:.5em;}
+.akRssFeedReader a,.akRssFeedReader a:active,.akRssFeedReader a:focus,.akRssFeedReader a:hover,.akRssFeedReader a:link,.akRssFeedReader a:visited{float:left;padding-right:.5em;text-decoration:none;}
+.akRssFeedReader div a,.akRssFeedReader div a:active,.akRssFeedReader div a:focus,.akRssFeedReader div a:hover,.akRssFeedReader div a:link,.akRssFeedReader div a:visited{clear:both;float:none;padding:0;}
+.akRssFeedDescription a,.akRssFeedDescription a:active,.akRssFeedDescription a:focus,.akRssFeedDescription a:hover,.akRssFeedDescription a:link,.akRssFeedDescription a:visited{text-decoration:none;}
+#akJobFeedTop{clear:left;font-family:Arial,sans-serif;padding:.5em .5em 0 .5em;}
+#akJobFeedTop h1{background-image:url(img/siegel-perspektive-jugend-2.jpg);background-attachment:scroll;background-attachment:inherit;background-position:top right;background-repeat:no-repeat;padding-right:220px;padding-top:129px;}
+#akJobFeedResult h1{background-image:url(img/siegel-perspektive-jugend-2.jpg);background-attachment:scroll;background-attachment:inherit;background-position:top right;background-repeat:no-repeat;padding-right:220px;padding-top:129px;}
+#akJobFeedResult h2 a,#akJobFeedResult h2 a:active,#akJobFeedResult h2 a:focus,#akJobFeedResult h2 a:hover,#akJobFeedResult h2 a:link,#akJobFeedResult h2 a:visited{float:none;}
+.akRssFeedReader form,.akRssFeedReader fieldset{border:none;clear:left;font-size: 1.3em;font-weight:bold;padding-top:.5em;padding-bottom: .5em;}
+#akJobFeedResult h3{clear:left;margin:.3em 0;}
+.akRssFeedReader input{
+    -moz-border-radius:4px 4px 4px 4px;
+    background:url("../img/static/bg_submit.gif") repeat-x scroll left center #004B8F;
+    border:1px solid #024B90;
+    color:#FFFFFF;
+    font-family:Arial,Helvectica,"Sans Serif";
+    font-size:12px;
+    padding:2px 15px;
+    text-transform:uppercase;
+    margin-left: 5px;
+}
+.akRssFeedReader li{display:inline;float:left;font-weight:bold;line-height:1.4em;margin:0;}
+.akRssFeedReader li a,.akRssFeedReader li a:active,.akRssFeedReader li a:focus,.akRssFeedReader li a:hover,.akRssFeedReader li a:link,.akRssFeedReader li a:visited{float:none;}
+.akRssFeedReader ul{display:table;float:none;list-style-type:none;list-style-position:inside;margin:.8em 0;padding-left:0;}
+.akRssFeedReader table{border:none;border-top:.1em solid #C00;border-collapse:collapse;border-spacing:0;clear:left;margin-top:1em;width:100%;}
+.akRssFeedReader td{padding:.3em 0 .3em .7em;line-height:1.4em;}
+.akRssFeedReader td a,.akRssFeedReader td a:active,.akRssFeedReader td a:focus,.akRssFeedReader td a:hover,.akRssFeedReader td a:link,.akRssFeedReader td a:visited{color:#000;text-decoration:underline;}
+.akRssFeedReader td a:hover{text-decoration:none;}
+.akRssFeedReader th{border:none;background-color:#DBDBDB;line-height:2em;text-align:left;background-image:url(http://img.meinestadt.de/pix/linker.gif);background-repeat:no-repeat;color:#000;padding:0 0 0 .6em;text-decoration:underline;}
+.akRssFeedReader th.akCenter{text-align:center;}
+.akRssFeedReader th.sorttable_nosort{background-image:none;text-decoration:none;}
+.akRssFeedReader tr.even{background-color:#EFF4E0;}
+a.akRssFeedReaderDetail,a.akRssFeedReaderDetail:active,a.akRssFeedReaderDetail:focus,a.akRssFeedReaderDetail:hover,a.akRssFeedReaderDetail:link,a.akRssFeedReaderDetail:visited{float:none;clear:left;}
+.akRssFeedReader div.akRssFeedReaderSimpleNavigation{margin-top:2.2em;font-size:1em;}
+.akRssFeedReaderSimpleNavigation ul{float:right;}
+.akRssFeedReaderSearchResultsQuantity{float:left;}
+.akRssFeedReader th.akHeader{background-image:url(http://tablesorter.com/themes/blue/bg.gif);cursor:pointer;background-repeat:no-repeat;background-position:left center;padding-left:20px;}
+.akRssFeedReader th.akHeaderSortUp{background-image:url(http://tablesorter.com/themes/blue/asc.gif);}
+.akRssFeedReader th.akHeaderSortDown{background-image:url(http://tablesorter.com/themes/blue/desc.gif);}
+#cluetip-close img{border:0;}
+#cluetip-title{overflow:hidden;}
+#cluetip-title #cluetip-close{float:right;position:relative;}
+#cluetip-waitimage{width:43px;height:11px;position:absolute;background-image:url(../js/classes/cluetip-0.9.8/images/wait.gif);}
+.cluetip-arrows{display:none;position:absolute;top:0;left:-11px;height:22px;width:11px;background-repeat:no-repeat;background-position:0 0;}
+#cluetip-extra{display:none;}
+.cluetip-akCluetip{background-color:#dbdbdb;font-size:62.5%;font-family:Arial,sans-serif;}
+.cluetip-akCluetip #cluetip-outer{position:relative;margin:0;background-color:#EFF4E0;}
+.cluetip-akCluetip h3#cluetip-title{border-top:.1em solid #C00;margin:0 0 .5em;padding:.5em 1em .4em;font-size:1em;font-weight:bold;background-color:#dbdbdb;color:#000;}
+.cluetip-akCluetip #cluetip-title a{color:#dbdbdb;font-size:.95em;}
+.cluetip-akCluetip #cluetip-inner{padding:1em;}
+.cluetip-akCluetip div#cluetip-close{text-align:right;margin:0 .5em .5em;color:#900;}
+
+/* Annonce Kleinanzeigen */
+
+#annonce {
+  font-size: 12px;
+}
+
+#annonce li{
+	line-height: 18px;
+}
+
+#annonce ul{
+	padding-left: 25px;
+}
+
+
+/* Linkliste "Akkordeon" */
+p.linkantrag {
+	float: right;
+}
+
+p.linkantrag a {
+	text-decoration: none;
+}
+
+p.linkantrag a:hover {
+	text-decoration: underline;
+}
+
+#linklist {
+	border-top: 1px solid #ddd;
+}
+
+#linklist .acl1_toggle {
+	display: block;
+	height: 24px;
+	width: 417px;
+	background: #e3e3e3 url(/img/static/linklist_toggle.gif) no-repeat right;
+	padding: 7px 30px 0 10px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ccc;
+	line-height: 1;
+	text-decoration: none;
+	outline: none;
+	font-size: 18px;
+	color: #055555;
+	cursor: pointer;
+	margin: 0 0 0 0 !important;
+}
+
+#linklist .acl1_toggle_active {
+	background: url(/img/static/linklist_toggle_active.gif) no-repeat top right  #e3e3e3;
+	color: #004a8f;
+}
+
+#linklist .acl1_toggle div, #linklist .acl2_toggle div, #linklist .acl2_content div {
+	padding-left: 20px;
+	background: no-repeat left center;
+}
+
+#linklist div.icon-folder {
+	background-image: url(/img/static/icon-folder.gif);
+	background-repeat: no-repeat;
+}
+
+#linklist div.icon-intern {
+	background-image: url(/img/static/icon-intern.gif);
+	background-repeat: no-repeat;
+}
+
+#linklist .acl1_link div.icon-intern{
+	background-position:0px 3px;
+}
+
+#linklist div.icon-extern {
+	background-image: url(/img/static/icon-extern.gif);
+	background-repeat: no-repeat;
+}
+
+#linklist .acl1_content {
+	border: none;
+	padding: 0;
+	overflow: hidden;
+}
+
+#linklist .acl2_toggle {
+	display: block;
+	/*height: 21px;*/
+	width: 426px;
+	background: #fff url(/img/static/linklist_vertical-toggle.gif) no-repeat right top;
+	padding: 10px 10px 10px 23px;
+	line-height: 1;
+	color: #000000;
+	font-weight: normal;
+	text-decoration: none;
+	outline: none;
+	font-size: 13px;
+	color: #000000;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	margin: 0 0 0 0;
+}
+
+#linklist .acl2_toggle_active {
+	background: #fff url(/img/static/linklist_vertical-toggle_active.gif) no-repeat right top;
+	color: #1d6fb7;
+}
+
+.acl2_content {
+	background-color: #fbfbfb;
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+}
+
+.acl2_content a {
+	display: block;
+	padding: 8px 10px 9px 44px;
+	font-size: 13px;
+	text-decoration: none;
+	color: #000 !important;
+}
+
+
+#linklist .acl2_content div.icon-extern {
+	background-position: 2px center;
+}
+
+.acl2_content a.bildlink, .acl1_content a.bildlink {
+	display: block;
+/*	padding: 1px 38px 1px 44px; */
+	font-size: 13px;
+	text-decoration: none;
+	color: #000 !important;
+	background-color: #f7f7f7;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	overflow: hidden;
+}
+
+.acl2_content a:hover {
+	color: #004a8f !important;
+}
+
+.acl2_content a.bildlink div, .acl1_content a.bildlink div {
+	width: 280px;
+	float: left;
+	margin-top: 16px;
+}
+
+.acl2_content a.bildlink img, .acl1_content a.bildlink img {
+	display: block;
+	float: right;
+}
+
+.acl2_content a.bildlink .icon-intern img, .acl1_content a.bildlink .icon-intern img {
+	display: inline;
+	float: none;
+}
+
+#linklist .acl1_link {
+	display: block;
+	padding: 6px 10px 9px 22px;
+	font-size: 13px;
+	text-decoration: none;
+	color: #000 !important;
+}
+#linklist .acl1_link div {
+	padding-left: 20px;
+	padding-top: 0px;
+}
+
+#social_toolbar {
+  float: right;
+  font-size: 11px;
+}
+
+.social_clear {
+  height: 0px;
+  clear: both;
+}
+
+div#content ul.amtsblattarchiv img.line-icon,
+div#content ul.bekanntmachungenarchiv img.line-icon{
+	margin:4px 10px 0px 0px;
+}
+
+div#content ul.amtsblattarchiv .date,
+div#content ul.bekanntmachungenarchiv .date{
+	float:left;
+}
+
+/* Socialmedia - Kommentar */
+
+#socialmedia-comments {
+  background-color: #E9EAEE;
+  width: 98%;
+  padding: 5px;
+}
+
+.sm-comment-icon {
+  float: left;  
+}
+
+.sm-comment-text {
+  padding: 8px 8px 0px;
+  margin-left: 37px;
+  background-color: #fff;
+  border: 1px solid #DAD9DE;
+  border-radius: 8px;
+  text-align: justify;
+}
+
+.sm-comment-date {
+  color: grey;
+}
