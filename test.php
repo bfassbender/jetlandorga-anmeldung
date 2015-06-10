@@ -1,15 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html lang="de">
 	<head>
-		<title>
-			Jetland 11 - Der Namenlose Con | Jetland Orga
-		</title>
 		<meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Jetland 11 - Die eherne Feste - präsentiert von der Jetland Orga. Ein Fantasy Live Action Roleplay Con vom 13.05. - 16.05.2016">
+		<meta name="author" content="Jetland Orga">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<title>Onlineanmeldung | Jetland 11 - Die eherne Feste | Jetland Orga</title>
+				
 		<!-- Stylesheets -->
 		<link href="xcms/views/css/jetland/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="xcms/views/css/jetland/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href="xcms/views/css/jetland/font-lato.css" rel="stylesheet" type="text/css">
 		<link href="xcms/views/css/test/app.css" rel="stylesheet" type="text/css">
+		
+		<!-- Favicon -->	
+		<link rel="icon" href="/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/favicon_57.png">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/favicon/favicon_57.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/favicon_72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/favicon_114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/favicon_120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/favicon_144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/favicon_152.png">
+		<meta name="application-name" content="Jetland 11">
+		<meta name="msapplication-TileImage" content="/img/favicon/favicon_favicon-144.png">
+		<meta name="msapplication-TileColor" content="#666666">
+		
 		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="xcms/views/js/jquery.min.js" type="text/javascript"></script>
@@ -19,7 +41,7 @@
 		<script src="xcms/views/js/app.js" type="text/javascript"></script>
 	</head>
 	<body>
-					<div class="container-fluid">
+					<div class="container">
 						<h1>Onlineanmeldung</h1>		
 <?php if($scBan == true): ?>
 						<div class='anmeldestatus'>Es stehen derzeit keine Spielerpl&auml;tze mehr zur Verf&uuml;gung, jegliche Spieleranmeldung landet erstmal auf einer <b>Warteliste</b>!</div>
@@ -38,20 +60,44 @@
 									<h2>Angaben zur Person</h2>
 								</div>
 								<label for="vorname" class="col-md-2 control-label">Vorname<span style='color: red'>*</span></label>
-								<div class="col-md-10">
-									<input  id="vorname" type="text" class="form-control" placeholder="Vorname" name='member[vorname]' value='' size='30' onkeypress="return noreturn(event);" required>
+								<div class="col-md-4">
+									<input  id="vorname" type="text" class="form-control" placeholder="Vorname" name='member[vorname]' value='' maxlength='50' onkeypress="return noreturn(event);" required />
 								</div>
-							</div>
-							<div class="form-group">
 								<label for="nachname" class="col-md-2 control-label">Nachname<span style='color: red'>*</span></label>
-								<div class="col-md-10">
-									<input type="text" class="form-control" id="nachname" placeholder="Nachname" name='member[nachname]' value='' size='30' onkeypress="return noreturn(event);">
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="nachname" placeholder="Nachname" name='member[nachname]' value='' maxlength='50' onkeypress="return noreturn(event);">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="strasse" class="col-md-2 control-label">Strasse<span style='color: red'>*</span></label>
-								<div class="col-md-10">
-									<input type="text" class="form-control" id="strasse" placeholder="Strasse" name='member[strasse]' value='' size='30' onkeypress="return noreturn(event);">
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="strasse" placeholder="Strasse" name='member[strasse]' value='' maxlength='50' onkeypress="return noreturn(event);">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="plz" class="col-md-2 control-label">Postleitzahl<span style='color: red'>*</span></label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="plz" placeholder="PLZ" name='member[plz]' value='' maxlength='5' onkeypress="return noreturn(event);">
+								</div>
+								<label for="ort" class="col-md-2 control-label">Ort<span style='color: red'>*</span></label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="ort" placeholder="Ort" name='member[ort]' value='' maxlength='50' onkeypress="return noreturn(event);">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="geb_datum" class="col-md-2 control-label">Geburtsdatum<span style='color: red'>*</span></label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="geb_datum" placeholder="Geburtsdatum" name='member[geb_datum]' value='' maxlength='10' onkeypress="return noreturn(event);">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="telefon" class="col-md-2 control-label">Telefon<span style='color: red'>*</span></label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="telefon" placeholder="Telefon" name='member[telefon]' value='' maxlength='50' onkeypress="return noreturn(event);">
+								</div>
+								<label for="email" class="col-md-2 control-label">E-Mail<span style='color: red'>*</span></label>
+								<div class="col-md-4">
+									<input type="text" class="form-control" id="email" placeholder="E-Mail" name='member[email]' value='' maxlength='50' onkeypress="return noreturn(event);">
 								</div>
 							</div>
 							<div class="form-group">
@@ -75,7 +121,7 @@
 								</div>
 								<label for="bemerkung" class="col-md-2 control-label">Bemerkungen</label>
 								<div class="col-md-10">
-									<div><textarea id="bemerkung" class="form-control" rows='5' name='member[bemerkung]'><? echo $_SESSION['c5']['member']['bemerkung']?></textarea></div>
+									<div><textarea id="bemerkung" maxlength="500" class="form-control" rows='5' name='member[bemerkung]'><? echo $_SESSION['c5']['member']['bemerkung']?></textarea></div>
 								</div>
 							</div>				
 						</form>
