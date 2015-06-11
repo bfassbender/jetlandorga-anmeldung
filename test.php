@@ -106,7 +106,6 @@
 								</div>
 								<label class="col-md-2 control-label">Ich helfe beim:</label>
 								<div class="col-md-10">
-									
 									<div class="checkbox">
 										<label><input type="checkbox">Aufbau</label>
 									</div>
@@ -114,7 +113,92 @@
 										<label><input type="checkbox">Aubbau</label>
 									</div>
 								</div>
+							</div>							
+							<div class="form-group">
+								<label class="col-md-2 control-label">Larperfahrung</label>
+								<div class="col-md-10">
+									<div class="radio">
+								    	<label><input type='radio' name='member[erfahrung]' checked="checked" value='0'>Nein</label>
+									</div>
+									<div class="radio">
+								    	<label><input type='radio' name='member[erfahrung]' value='1'>Ja</label>
+									</div>
+									<input id='erfahrung_tage' class="form-control" type='text' name='member[erfahrung_tage]' placeholder="Con-Tage gesamt" maxlength="4" value='' />
+								</div>
 							</div>
+							<div class="form-group">			
+								<label class="col-md-2 control-label">Sanitäter</label>
+								<div class="col-md-10">
+									<div class="radio">
+										<label><input type='radio' name='member[sanitaeter]' checked="checked" value='0'>Nein</label>
+									</div>
+									<div class="radio">
+										<label><input type='radio' name='member[sanitaeter]' value='1'>Ja</label>
+									</div>										
+								</div>
+							</div>
+							<div class="form-group">			
+								<label class="col-md-2 control-label">Vegetarier</label>
+								<div class="col-md-10">
+									<div class="radio">
+										<label><input type='radio' name='member[vegetarier]' checked="checked" value='0'>Nein</label>
+									</div>
+									<div class="radio">
+										<label><input type='radio' name='member[vegetarier]' value='1'>Ja</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">			
+								<label class="col-md-2 control-label">Krankheiten / Allergien</label>
+								<div class="col-md-10">
+									<div class="radio">
+										<label><input type='radio' name='member[krankheiten]' checked="checked" value='0'>Nein</label>
+									</div>
+									<div class="radio">
+										<label><input type='radio' name='member[krankheiten]' value='1'>Ja, und zwar</label><br />
+									</div>
+									<input class="form-control" type='text' name='member[krankheiten_welche]' value='' placeholder='Krankheiten / Allergien' maxlength='100'>
+								</div>
+							</div>
+							<div class="form-group">			
+								<label class="col-md-2 control-label">Ich muss durchschlafen</label>
+								<div class="col-md-10">
+									<div class="radio">
+										<label><input type='radio' name='member[durchschlafen]' checked="checked" value='0'>Nein</label>
+									</div>
+									<div class="radio">
+										<label><input type='radio' name='member[durchschlafen]' value='1'>Ja</label>
+										<span class="small">(Bitte nur w&auml;hlen, wenn medizinische Gr&uuml;nde vorliegen)</span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="zimmer" class="col-md-2 control-label">Ich m&ouml;chte mit folgenden Leuten in ein Zimmer:</label>
+								<div class="col-md-10">
+									<input class="form-control" type='text' id='zimmer' name='member[zimmer]' placeholder="Zimmergenossen" maxlength='100' value=''> 		
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-md-12">
+									<h2>Teilnehmerart</h2>
+								</div>
+								<label class="col-md-2 control-label">Ich komme als:</b><span style='color: red'> *</label>
+								<!-- Hier gehts weiter -->
+								<div class='userinput'>
+									<input type='radio' name='member[rang]' value='sc' id="sc" checked="checked" class='radio' onclick="toggle()"> <b>Spieler</b> &nbsp;
+									<input type='radio' name='member[rang]' value='nsc|huette' id="nsc_1" class='radio' onclick="toggle()"> <b>NSC</b>
+								</div><br><br>
+								<div id="boxsc" style="display:block">
+									<div class='header'><b>Spieler</b></div>
+									<br />
+								</div>
+								
+							</div>
+							
+							
+							
+							
 							<div class="form-group">
 								<div class="col-md-12">
 									<h2>Sonstiges</h2>
