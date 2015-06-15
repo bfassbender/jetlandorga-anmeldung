@@ -269,12 +269,6 @@
 							<input id="herkunft" name='sc[herkunft]' placeholder="Herkunft (Land)" value='' maxlength='50' type='text' class='form-control' />
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="charname" class="col-md-2 control-label">Charaktername</label>
-						<div class="col-md-10">
-							<input id="charname" name='sc[charname]' placeholder="Charaktername" value='' maxlength='50' type='text' class='form-control' />
-						</div>
-					</div>
 					<div class="form-group">			
 						<label class="col-md-2 control-label">Zauberkundig</label>
 						<div class="col-md-10">
