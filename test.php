@@ -3,7 +3,7 @@
 <html lang="de">
 	<head>
 		<meta charset="utf-8">
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Jetland 11 - Die eherne Feste - präsentiert von der Jetland Orga. Ein Fantasy Live Action Roleplay Con vom 13.05. - 16.05.2016">
