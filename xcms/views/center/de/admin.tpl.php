@@ -1,15 +1,3 @@
-<?
-/*
-echo "<pre>";
-print_r($c);
-echo "</pre>";
-*/
-?>
-
-<style>
-
-</style>
-
 <script>
 	function textIn(txt){
 		$('#text').html('<b>'+txt+'</b>');

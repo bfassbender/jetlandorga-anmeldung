@@ -53,7 +53,7 @@ class Center extends Controller {
 	}
 	
 	function logmein () {
-		$this->setLayout('stand_alone');
+		$this->setLayout('admin');
 		$data = array();
 		return $data;
 	}
@@ -271,7 +271,6 @@ class Center extends Controller {
 	}		
 		
 	function teilnehmer(){
-		$this->setLayout('stand_alone');
 		$data['data'] = $this->db->dbCatchAll('member', '*', "sichtbar = '1' AND deleted != '1'");
 		$data['config'] = $this->conf;
 		return($data);		
@@ -381,7 +380,7 @@ class Center extends Controller {
 
 				$this->adminmail($post, $sc, $nsc);
 				$this->usermail($post, $sc, $nsc);
-				echo"<script>alert('Du hast dich erfolgreich fuer das Con angemeldet.');self.location.href='".$_SERVER['PHP_SELF']."?action=teilnehmer'</script>";
+				echo"<script>alert('Du hast dich erfolgreich fuer das Con angemeldet. Bitte überweise nun deinen Teilnahmebeitrag auf das unter jetland.dreywassern.de angegebene Konto. Bitte beachte, dass wir deine Anmeldung erst dann weiter bearbeiten, wenn dein Beitrag bei uns eingegangen ist.');self.location.href='".$_SERVER['PHP_SELF']."?action=teilnehmer'</script>";
 			} else {
 				$this->setLayout('error');
 				$_SESSION['msg'] = "Ein Fehler ist aufgetreten: ".mysql_error();

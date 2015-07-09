@@ -28,12 +28,10 @@
 		<meta name="msapplication-TileColor" content="#666666">		
 		
 		<!-- Stylesheets -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/font-awesome.min.css" rel="stylesheet">
-		<link href="css/font-lato.css" rel="stylesheet">		
-		<link href="css/bootstrapValidator.min.css" rel="stylesheet">
-		<link href="css/owl.theme.css" rel="stylesheet">
-		<link href="css/app.css" rel="stylesheet">
+		<link href="xcms/views/css/jetland/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="xcms/views/css/jetland/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="xcms/views/css/jetland/font-lato.css" rel="stylesheet" type="text/css">
+		<link href="xcms/views/css/jetland/app.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<section class="main text-center" id="home">
@@ -48,10 +46,12 @@
 			</div>
 		</section>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="js/jquery.min.js"></script>
+		<script src="xcms/views/js/jquery.min.js" type="text/javascript"></script>
+   	<script src="xcms/views/js/jquery.backstretch.min.js" type="text/javascript"></script>
+		<script src="xcms/system/libs/js/jquery.tablesorter.js" type="text/javascript"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.backstretch.min.js"></script>
-		<script src="js/app.js"></script>
+		<script src="xcms/views/js/bootstrap.min.js" type="text/javascript"></script>
+		<!-- <script src="xcms/views/js/validator.min.js" type="text/javascript"></script> -->
+		<script src="xcms/views/js/app.js" type="text/javascript"></script>
 	</body>
 </html>

@@ -35,9 +35,11 @@
 
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 			<script src="xcms/views/js/jquery.min.js" type="text/javascript"></script>
+			<script src="xcms/views/js/jquery.backstretch.min.js" type="text/javascript"></script>
+			<script src="xcms/system/libs/js/jquery.tablesorter.js" type="text/javascript"></script>
+			<!-- <script src="xcms/views/js/validator.min.js" type="text/javascript"></script> -->
 			<!-- Include all compiled plugins (below), or include individual files as needed -->
 			<script src="xcms/views/js/bootstrap.min.js" type="text/javascript"></script>
-			<!-- <script src="xcms/views/js/validator.min.js" type="text/javascript"></script> -->
 			<script src="xcms/views/js/app.js" type="text/javascript"></script>
 		</head>	
 	<body>

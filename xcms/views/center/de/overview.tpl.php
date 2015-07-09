@@ -9,13 +9,7 @@
 
 
 <?php if ($_SESSION['xcms']['login']['admin'] == true): ?>
-<script type="text/javascript" src="xcms/system/libs/js/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="xcms/views/css/jquery-ui.min.css" type="text/css" media="screen, projection">
 <script type="text/javascript">
-	$(function() {
-		$( "#tabs" ).tabs();
-	});
-
 			
 	 function changeStatus(id) {
 	 	$.ajax({
@@ -139,7 +133,6 @@ $(document).ready(function(){
 		margin: 110px 0 0 200px; 
 		display: none; 
 		background-color: #F3FEF2;
-		//width: 800px; 
 		 
 		z-index: 1000; 
 		position: relative;
