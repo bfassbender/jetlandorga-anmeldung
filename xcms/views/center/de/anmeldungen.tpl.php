@@ -5,7 +5,31 @@
 	$nscBan = ($nscRest <= '0') ? true : false;
 ?>
 				
-<script type="text/javascript">					
+<script type="text/javascript">		
+   $(document).ready(function() {
+	   toggle_input('#erfahrung_tage', $("input[name='member[erfahrung]']").val());
+	   toggle_input('#krankheiten_welche', $("input[name='member[krankheiten]']").val());
+	
+		$("input[name='member[erfahrung]']").click(function(){
+			toggle_input('#erfahrung_tage', $(this).val());
+		});
+		
+		$("input[name='member[krankheiten]']").click(function(){
+			toggle_input('#krankheiten_welche', $(this).val());
+		});
+		
+   });
+
+   function toggle_input (fieldname, enable) {
+			if(enable=='1') {
+				$(fieldname).attr("disabled", false);
+			} else {
+				$(fieldname).attr("disabled", true);
+				$(fieldname).val('');
+			}
+   }
+
+			
 	function toggle() {
 
 		if($('#nsc_1').is(':checked')){
@@ -85,7 +109,7 @@
 	}
 </script>
 
-<div class="container">
+<div class="container" id="inline_content">
 	<h1>Onlineanmeldung</h1>		
 <?php if($scBan == true): ?>
 	<div class='anmeldestatus'>Es stehen derzeit keine Spielerpl&auml;tze mehr zur Verf&uuml;gung, jegliche Spieleranmeldung landet erstmal auf einer <b>Warteliste</b>!</div>
@@ -163,10 +187,10 @@
 			<label class="col-md-2 control-label">Larperfahrung</label>
 			<div class="col-md-10">
 				<div class="radio">
-			    	<label><input type='radio' name='member[erfahrung]' checked="checked" value='0'>Nein</label>
+			    	<label><input id='erfahrung_nein' type='radio' name='member[erfahrung]' checked="checked" value='0'>Nein</label>
 				</div>
 				<div class="radio">
-			    	<label><input type='radio' name='member[erfahrung]' value='1'>Ja</label>
+			    	<label><input id='erfahrung_ja' type='radio' name='member[erfahrung]' value='1'>Ja</label>
 				</div>
 				<input id='erfahrung_tage' class="form-control" type='text' name='member[erfahrung_tage]' placeholder="Con-Tage gesamt" maxlength="4" value='' />
 			</div>
@@ -202,7 +226,7 @@
 				<div class="radio">
 					<label><input type='radio' name='member[krankheiten]' value='1'>Ja, und zwar</label><br />
 				</div>
-				<input class="form-control" type='text' name='member[krankheiten_welche]' value='' placeholder='Krankheiten / Allergien' maxlength='100'>
+				<input id='krankheiten_welche' class="form-control" type='text' name='member[krankheiten_welche]' value='' placeholder='Krankheiten / Allergien' maxlength='100'>
 			</div>
 		</div>
 		<div class="form-group">			

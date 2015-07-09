@@ -126,7 +126,7 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div style='position: relative; padding-left: 130px'>
 				<input type='radio' name='member[erfahrung]' value='0' class='radio' <?php if($data['data'][0]['erfahrung'] == '0'):?> checked="checked" <?php endif; ?>> Nein &nbsp;
 				<input type='radio' name='member[erfahrung]' value='1' class='radio'  <?php if($data['data'][0]['erfahrung'] != '0'):?> checked="checked" <?php endif; ?>> Ja &nbsp; (Con-Tage insgesamt) &nbsp;
-				<input type='text' name='member[erfahrung_tage]' value='<?=$data['data'][0]['erfahrung']?>' class='radio'> 
+				<input type='text' name='member[erfahrung_tage]' value='<?=$data['data'][0]['erfahrung_tage']?>' class='radio'> 
 			</div><br>
 			<div class='header' style='position: absolute'><b>Sanit&auml;ter</b></div>
 			<div style='position: relative; padding-left: 130px'>

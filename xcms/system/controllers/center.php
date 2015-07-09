@@ -1,7 +1,5 @@
 <?php
 include(__DIR__ . '/../libs/zip.lib.php');
-error_reporting(E_ERROR|E_WARNING|E_PARSE);
-ini_set('display_errors',1);
 
 class Center extends Controller {
 
@@ -23,7 +21,7 @@ class Center extends Controller {
 		$this->db->dbOn();
 
 		$this->admin = ADMIN;
-		$this->adminpw = md5(ADMINPW);
+		$this->adminpw = md5(ADMINPW);	
 		
 // Development only	
 		#$_SESSION['xcms']['login']['admin'] = false;
@@ -66,7 +64,6 @@ class Center extends Controller {
 	}
 	
 	function anmeldungen(){
-	    #$this->setLayout('stand_alone');
 		$data = array();
 		$data['config'] = $this->conf;
 		$data['c']['sc'] = $this->db->dbCount('member', "rang = 'sc'");
@@ -380,7 +377,8 @@ class Center extends Controller {
 
 				$this->adminmail($post, $sc, $nsc);
 				$this->usermail($post, $sc, $nsc);
-				echo"<script>alert('Du hast dich erfolgreich fuer das Con angemeldet. Bitte überweise nun deinen Teilnahmebeitrag auf das unter jetland.dreywassern.de angegebene Konto. Bitte beachte, dass wir deine Anmeldung erst dann weiter bearbeiten, wenn dein Beitrag bei uns eingegangen ist.');self.location.href='".$_SERVER['PHP_SELF']."?action=teilnehmer'</script>";
+				// echo"<script>alert('Du hast dich erfolgreich fuer das Con angemeldet. Bitte überweise nun deinen Teilnahmebeitrag auf das unter jetland.dreywassern.de angegebene Konto. Bitte beachte, dass wir deine Anmeldung erst dann weiter bearbeiten, wenn dein Beitrag bei uns eingegangen ist.');self.location.href='".$_SERVER['PHP_SELF']."?action=teilnehmer'</script>";
+				echo "<script>self.location.href='".$_SERVER['PHP_SELF']."?action=confirmation'</script>";
 			} else {
 				$this->setLayout('error');
 				$_SESSION['msg'] = "Ein Fehler ist aufgetreten: ".mysql_error();
@@ -393,6 +391,11 @@ class Center extends Controller {
 			return($data);		
 		}
 		die();
+	}
+
+	function confirmation () {
+		$data = array();
+		return($data);
 	}
 
 	function agb(){
@@ -544,34 +547,12 @@ class Center extends Controller {
 		}
 
 		$receiver = $this->conf[0]['email'];
-		$headers = "From: ".$this->conf[0]['email']."\nReturn-Path: alex@falkenberg-ev.de\r\n";
+		$headers = "From: ".$this->conf[0]['email']."\nReturn-Path: dreywassern@gmail.com\r\n";
         $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
         $extra_headers = $universal_extra . $headers;
 
         mail($receiver, ucfirst($data['rang']).' Anmeldung zum '.$this->conf[0]['conname'].': '.$data['vorname']." ".$data['nachname'], $text.$postdata, $extra_headers); 
         
-	}
-	
-	function sendMail(){
-		$data = array();
-		$sender = 'blache@vipex.de';
-		#$sender = 'mahadevie@gmx.de';
-		
-			
-		
-		$mail = $this->db->dbCatchAll('sommerfest', 'email', "id = '".$_POST['id']."'");
-		$betreff = $_POST['title'];
-		$type = $_POST['type'];
-		$receiver = $mail[0]['email'];
-
-		$text = "<html><head><style type='text/css'>body{font-family:Georgia,Verdana,arial,helvetica,sans-serif;font-size:11px;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
-		$text .= utf8_decode(nl2br($_POST['text'.$type]));
-		
-		$headers = "From: ".$sender."\nReturn-Path: ".$sender."\r\n";
-        $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=ISO-8859-1\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
-        $extra_headers = $universal_extra . $headers;
-
-        mail($receiver, $betreff, $text, $extra_headers); 
 	}
 	
 	function mailing(){
