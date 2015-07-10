@@ -9,6 +9,7 @@
    $(document).ready(function() {
 	   toggle_input('#erfahrung_tage', $("input[name='member[erfahrung]']").val());
 	   toggle_input('#krankheiten_welche', $("input[name='member[krankheiten]']").val());
+	   toggle();
 	
 		$("input[name='member[erfahrung]']").click(function(){
 			toggle_input('#erfahrung_tage', $(this).val());
@@ -54,12 +55,14 @@
 				'font-weight' : 'bold',
 				'color' : 'white'
 			});
+			$('#submit').val(' Ich melde mich verbindlich und kostenpflichtig an. ');
 		} else {
 			$('#submit').attr('disabled', true);
 			$('#submit').css({
 				'background-color' : 'red',
 				'border' : '1px solid white'				
 			});
+			$('#submit').val(' Bitte akzeptiere zuerst die AGB. ');
 		}
 	}
 	
@@ -187,10 +190,10 @@
 			<label class="col-md-2 control-label">Larperfahrung</label>
 			<div class="col-md-10">
 				<div class="radio">
-			    	<label><input id='erfahrung_nein' type='radio' name='member[erfahrung]' checked="checked" value='0'>Nein</label>
+			    	<label><input type='radio' name='member[erfahrung]' checked="checked" value='0'>Nein</label>
 				</div>
 				<div class="radio">
-			    	<label><input id='erfahrung_ja' type='radio' name='member[erfahrung]' value='1'>Ja</label>
+			    	<label><input type='radio' name='member[erfahrung]' value='1'>Ja</label>
 				</div>
 				<input id='erfahrung_tage' class="form-control" type='text' name='member[erfahrung_tage]' placeholder="Con-Tage gesamt" maxlength="4" value='' />
 			</div>
@@ -404,6 +407,7 @@
 		<div class="form-group">
 			<div class="col-md-2"></div>
 			<div class="col-md-10">
+				<label>Hiermit melde ich mich verbindlich und kostenpflichtig für Jetland 11 an.</label><br/>
 				<input type='submit' value=' Anmelden ' disabled="disabled" id='submit'>
 			</div>
 		</div>
