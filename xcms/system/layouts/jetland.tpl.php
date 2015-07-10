@@ -58,7 +58,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li <?php if (ACTION == 'anmeldungen'):?>class="active"<?php endif;?>><a href="<? echo $_SERVER['PHP_SELF']?>?action=anmeldungen">Anmeldung <span class="sr-only">(current)</span></a></li>
+		        <li <?php if (ACTION == 'anmeldungen' || ACTION == 'confirmation'):?>class="active"<?php endif;?>><a href="<? echo $_SERVER['PHP_SELF']?>?action=anmeldungen">Anmeldung <span class="sr-only">(current)</span></a></li>
 		        <li <?php if (ACTION == 'teilnehmer'):?>class="active"<?php endif;?>><a href="<? echo $_SERVER['PHP_SELF']?>?action=teilnehmer">Anmeldestatus</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
