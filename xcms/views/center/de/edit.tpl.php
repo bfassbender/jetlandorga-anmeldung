@@ -143,7 +143,7 @@ $nscBan = ($nscRest <= '0') ? true : false;
 				<input type='radio' name='member[krankheiten]' value='0' class='radio' <?php if($data['data'][0]['krankheiten'] == '0'):?> checked="checked" <?php endif; ?>> Nein &nbsp;
 				<input type='radio' name='member[krankheiten]' value='1' class='radio' <?php if($data['data'][0]['krankheiten'] != '0'):?> checked="checked" <?php endif; ?>> Ja, &nbsp;
 			<?php if($data['data'][0]['krankheiten'] != '0'):?>
-				<input type='text' name='member[krankheiten_welche]' value='<?=$data['data'][0]['krankheiten'];?>' class='radio'> 				
+				<input type='text' name='member[krankheiten_welche]' value='<?=$data['data'][0]['krankheiten_welche'];?>' class='radio'> 				
 			<?php else: ?>
 				<input type='text' name='member[krankheiten_welche]' value='' class='radio'> 				
 			<?php endif; ?>

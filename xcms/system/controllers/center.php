@@ -95,7 +95,7 @@ class Center extends Controller {
 			$c++;
 		}
 
-		#$this->util->_debug($sql); die();
+		$this->util->_debug($sql);
 		$count = $this->db->dbCount('config');
 		if ($count == '0') {
 			$this->db->dbInsert('config', $sql);
@@ -262,8 +262,6 @@ class Center extends Controller {
 		} else {
 			$data['data']['nsc'] = $this->db->dbCatchAll('nsc', '*', "uid='".$id."'");
 		}
-
-		#$this->util->_debug($data['data']);
 		return($data);
 	}		
 		
@@ -350,19 +348,13 @@ class Center extends Controller {
 			$nsc['unterkunft'] = $tmp[1];
 		}
 
-	#$this->util->_debug($post); 
-	#$this->util->_debug($sc); 
+		if ($post['krankheiten'] == '0') {
+			unset($post['krankheiten_welche']);
+		} 
+		if ($post['erfahrung'] == '0') {
+			unset($post['erfahrung_tage']);
+		}	
 
-
-		if (!empty($post['krankheiten_welche'])) {
-			$post['krankheiten'] = $post['krankheiten_welche'];		
-		}
-		unset($post['krankheiten_welche']);					
-		if (!empty($post['erfahrung_tage'])) {
-			$post['erfahrung'] = $post['erfahrung_tage'];
-		}
-		unset($post['erfahrung_tage']);			
-	
 		$preCheck = $this->db->dbCatchAll('member', "id", "vorname = '".$post['vorname']."' AND nachname = '".$post['nachname']."'");	
 		if (count($preCheck) == '0'){		
 
@@ -432,16 +424,13 @@ class Center extends Controller {
 
 	/* add functions pure member*/
 		if ($member['krankheiten'] == '0') {
-			unset($member['krankheiten_welche']);
-		} else {
-			$member['krankheiten'] = $member['krankheiten_welche'];
-		}
-		if ($member['erfahrung'] != '0') {
-			$member['erfahrung'] = $member['erfahrung_tage'];
-			unset($member['erfahrung_tage']);
+			$member['krankheiten_welche'] = '';
+		} 
+		if ($member['erfahrung'] == '0') {
+			$member['erfahrung_tage'] = '';
 		}	
 		$member['aufbau'] = ($member['aufbau'] == '1') ? '1' : '0';
-		$member['abbau'] = ($member['abbau'] != '1') ? '1' : '0';
+		$member['abbau'] = ($member['abbau'] == '1') ? '1' : '0';
 
 /*
 		$this->util->_debug($member);
