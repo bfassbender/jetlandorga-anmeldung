@@ -182,7 +182,7 @@
 					<label><input type="checkbox">Aufbau</label>
 				</div>
 				<div class="checkbox">
-					<label><input type="checkbox">Aubbau</label>
+					<label><input type="checkbox">Abbau</label>
 				</div>
 			</div>
 		</div>							
