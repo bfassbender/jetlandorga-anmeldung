@@ -66,7 +66,7 @@
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
-		<?php echo $content;?>
+		<?php echo $content;?>a
 	</body>
 </html>
 
