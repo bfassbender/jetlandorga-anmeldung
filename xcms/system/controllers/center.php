@@ -477,7 +477,7 @@ class Center extends Controller {
 		
 		
 		
-		$headers = "From: nina@falkenberg-ev.de\nReturn-Path: nina@falkenberg-ev.de\r\n";
+		$headers = "From: anmeldung@dreywassern.de\nReturn-Path: anmeldung@dreywassern.de\r\n";
         $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
         $extra_headers = $universal_extra . $headers;
 		#mail($data['email'], 'Deine '.$data['rang'].' Anmeldung zum '.$this->conf[0]['conname'], $text, $extra_headers); 		
@@ -536,7 +536,7 @@ class Center extends Controller {
 		}
 
 		$receiver = $this->conf[0]['email'];
-		$headers = "From: ".$this->conf[0]['email']."\nReturn-Path: dreywassern@gmail.com\r\n";
+		$headers = "From: ".$this->conf[0]['email']."\nReturn-Path: anmeldung@dreywassern.de\r\n";
         $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
         $extra_headers = $universal_extra . $headers;
 
@@ -560,7 +560,7 @@ class Center extends Controller {
 $this->util->_debug($_POST);
 
 		if (count($_POST['mail']) != '0'){
-			$sender = 'alexander.blache@imperia-ag.de';	
+			$sender = 'anmeldung@dreywassern.de';	
 			$c=0;
 			foreach ($_POST['mail'] as $key => $value) {
 				$vsql .= ($c != '0') ? ' OR ' : '';
