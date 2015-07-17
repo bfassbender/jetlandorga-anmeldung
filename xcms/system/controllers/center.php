@@ -485,7 +485,7 @@ class Center extends Controller {
 		$headers = "From: anmeldung@dreywassern.de\nReturn-Path: anmeldung@dreywassern.de\r\n";
       $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
       $extra_headers = $universal_extra . $headers;
-		mail($data['email'], 'Deine '..strtoupper($data['rang']).' Anmeldung zum '.$this->conf[0]['conname'], $text, $extra_headers); 		
+		mail($data['email'], 'Deine '.strtoupper($data['rang']).' Anmeldung zum '.$this->conf[0]['conname'], $text, $extra_headers); 		
 	}
 	
 	function adminmail($data, $sc, $nsc){
