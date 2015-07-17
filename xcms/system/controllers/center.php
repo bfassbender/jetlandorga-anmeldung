@@ -471,16 +471,11 @@ class Center extends Controller {
 	
 	function userMail($data){
 		$text = "<html><head><style type='text/css'>body{font-family:Georgia,Verdana,arial,helvetica,sans-serif;font-size:11px;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
-		$text .= "<br />\n<br />\nVielen Dank f&uuml;r deine Anmeldung zum ".$this->conf[0]['conname'].".<br />\n<br />\n";
-		
-		
-		
-		
-		
+		$text .= "<br />\n<br />\nVielen Dank f&uuml;r deine Anmeldung zum ".$this->conf[0]['conname'].".<br />\n<br />\n";		
 		$headers = "From: anmeldung@dreywassern.de\nReturn-Path: anmeldung@dreywassern.de\r\n";
-        $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
-        $extra_headers = $universal_extra . $headers;
-		#mail($data['email'], 'Deine '.$data['rang'].' Anmeldung zum '.$this->conf[0]['conname'], $text, $extra_headers); 		
+      $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
+      $extra_headers = $universal_extra . $headers;
+		mail($data['email'], 'Deine '.$data['rang'].' Anmeldung zum '.$this->conf[0]['conname'], $text, $extra_headers); 		
 	}
 	
 	function adminmail($data, $sc, $nsc){
@@ -537,11 +532,9 @@ class Center extends Controller {
 
 		$receiver = $this->conf[0]['email'];
 		$headers = "From: ".$this->conf[0]['email']."\nReturn-Path: anmeldung@dreywassern.de\r\n";
-        $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
-        $extra_headers = $universal_extra . $headers;
-
-        mail($receiver, ucfirst($data['rang']).' Anmeldung zum '.$this->conf[0]['conname'].': '.$data['vorname']." ".$data['nachname'], $text.$postdata, $extra_headers); 
-        
+      $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
+      $extra_headers = $universal_extra . $headers;
+      mail($receiver, ucfirst($data['rang']).' Anmeldung zum '.$this->conf[0]['conname'].': '.$data['vorname']." ".$data['nachname'], $text.$postdata, $extra_headers);         
 	}
 	
 	function mailing(){
