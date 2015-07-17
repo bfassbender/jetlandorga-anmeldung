@@ -471,7 +471,16 @@ class Center extends Controller {
 	
 	function userMail($data){
 		$text = "<html><head><style type='text/css'>body{font-family:Georgia,Verdana,arial,helvetica,sans-serif;font-size:11px;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
-		$text .= "<br />\n<br />\nVielen Dank f&uuml;r deine Anmeldung zum ".$this->conf[0]['conname'].".<br />\n<br />\n";		
+		$text .= "<br />\n<br />\nVielen Dank f&uuml;r deine Anmeldung zum ".strtoupper($this->conf[0]['conname']).". Wir freuen uns auf Dich! <br />\n<br />";
+		$text .= "<br />\n<br />Bitte überweise nun Deinen Teilnahmebeitrag auf das folgende Konto.<br />\n<br />";
+		$text .= "<b>Inhaber:</b> Christoph Platt\n<br />";
+		$text .= "<b>Institut:</b> Sparkasse München\n<br />";
+		$text .= "<b>IBAN:</b> DE26 7015 0000 1000 5296 75\n<br />";
+		$text .= "<b>BIC:</b> SSKMDEMMXXX\n<br />";
+		$text .= "<b>Verwendungszweck:</b> <SC oder NSC>, J11, <Realname>\n<br />";
+		$text .= "<br />\n<br />Beachte bitte außerdem, dass wir Deine Anmeldung erst dann weiter bearbeiten, wenn Dein Beitrag bei uns eingegangen ist.<br />\n<br />";
+		$text .= "</body></html>\n";
+		
 		$headers = "From: anmeldung@dreywassern.de\nReturn-Path: anmeldung@dreywassern.de\r\n";
       $universal_extra = "MIME-Version: 1.0\nContent-type: text/html; charset=UTF-8\nContent-transfer-encoding: 8bit\nDate: " . gmdate('D, d M Y H:i:s', time()) . " UT\n";
       $extra_headers = $universal_extra . $headers;
