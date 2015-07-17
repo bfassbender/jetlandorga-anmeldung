@@ -1,70 +1,25 @@
-<?
-$query = mysql_query("SELECT * FROM c5_texte_cat");
-while($res = mysql_fetch_assoc($query)){
-	$data[] = $res;
-}
-#		echo "<pre>";
-#		print_r($data);
-#		echo "</pre>";
-?>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	    </div>
 
-<link rel="stylesheet" type="text/css" href="views/css/superfish.css" media="screen">
-<script type="text/javascript" src="libs/js/superfish/hoverIntent.js"></script>
-<script type="text/javascript" src="libs/js/superfish/superfish.js"></script>
-<script type="text/javascript">
-
-// initialise plugins
-jQuery(function(){
-	jQuery('ul.sf-menu').superfish();
-});
-
-</script>
-		<ul class="sf-menu">
-			<li><a href=<? echo $_SERVER['PHP_SELF']?>>Home</a></li>
-			<li>
-				<a href='javascript:void()'>Chroniken 6</a>
-				
-				<ul>
-					<li><a href="?action=anmeldungen">Anmeldung</a></li>
-					<li>
-						<a href="javascript:void()">Flyer</a>
-						<ul>
-							<li class="current">
-								<a href="?action=intime">In-Time</a></li>
-							<li><a href="?action=outtime">Out-Time</a></li>
-						</ul>
-					</li>
-					<li><a href="?action=agb">AGBs</a></li>
-				</ul>
-
-			</li>
-			<li>
-				<a href="?action=teilnehmer">Teilnehmerliste</a>
-			</li>
-			<? if ($_SESSION['xcms']['login']['admin'] == true): ?>
-				<li><a href="?action=infos">Gazette</a></li>	
-			<?php else: ?>
-				<li>
-					<a href="javascript:void()">Gazette</a>
-					<ul>
-					<?php foreach($data as $datas): ?>
-						<li><a href='?action=infos&cat=<?php echo $datas['id'];?>'><?php echo $datas['name'];?></a></li>
-					<?php endforeach; ?>
-					</ul>
-				</li>
-			<? endif;?>			
-<!--			<li>-->
-<!--				<a href="http://www.falkenberg-ev.de/forum/" target=_blank>Forum</a>-->
-<!--				<ul>-->
-<!--					<li><a href="http://www.falkenberg-ev.de/forum/viewforum.php?f=4" target=_blank>Allgemein</a></li>-->
-<!--					<li><a href="http://www.falkenberg-ev.de/forum/viewforum.php?f=5" target=_blank>Spieler</a></li>-->
-<!--					<li><a href="http://www.falkenberg-ev.de/forum/viewforum.php?f=6" target=_blank>NSCs</a></li>					-->
-<!--				</ul>-->
-<!--			</li>-->
-			<li><a href="?action=galerie">Galerie</a></li>
-			<li><a href="?action=team">Team</a></li>
-			<li><a href="?action=kontakt">Kontakt</a></li>
-		<? if ($_SESSION['xcms']['login']['admin'] == true): ?>
-			<li><a href="?action=admin">Admin</a></li>	
-		<? endif;?>	
-		</ul>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li <?php if (ACTION == 'anmeldungen' || ACTION == 'confirmation'):?>class="active"<?php endif;?>><a href="<? echo $_SERVER['PHP_SELF']?>?action=anmeldungen">Anmeldung <span class="sr-only">(current)</span></a></li>
+	        <li <?php if (ACTION == 'teilnehmer'):?>class="active"<?php endif;?>><a href="<? echo $_SERVER['PHP_SELF']?>?action=teilnehmer">Anmeldestatus</a></li>
+	<?php if ($_SESSION['xcms']['login']['admin'] == true): ?>
+			  <li><a href="<?php echo $_SERVER['PHP_SELF']?>?action=admin">Admin</a></li>
+	        <li><a href="<?php echo $_SERVER['PHP_SELF']?>?action=logout">Abmelden</a></li>
+	<?php endif;?>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
