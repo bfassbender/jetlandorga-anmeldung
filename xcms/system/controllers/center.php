@@ -477,7 +477,7 @@ class Center extends Controller {
 		$text .= "<b>Institut:</b> Sparkasse München\n<br />";
 		$text .= "<b>IBAN:</b> DE26 7015 0000 1000 5296 75\n<br />";
 		$text .= "<b>BIC:</b> SSKMDEMMXXX\n<br />";
-		$text .= "<b>Verwendungszweck:</b> <SC oder NSC>, J11, <Realname>\n<br />";
+		$text .= "<b>Verwendungszweck:</b> &lt;SC oder NSC&gt;, J11, &lt;Realname&gt;\n<br />";
 		$text .= "<br />\n<br />Beachte bitte außerdem, dass wir Deine Anmeldung erst dann weiter bearbeiten, wenn Dein Beitrag bei uns eingegangen ist.<br />\n<br />";
 		$text .= "</body></html>\n";
 		
