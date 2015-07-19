@@ -69,7 +69,7 @@
 					</div>
 					<p>Beachte bitte außerdem, dass wir Deine Anmeldung erst dann weiter bearbeiten, wenn Dein Beitrag bei uns eingegangen ist.</p>
 					<form class="form-horizontal" role="form">
-						<button type='button' class="btn btn-success" onClick="self.location.href = '<? echo $_SERVER['PHP_SELF']?>?action=teilnehmer'">OK</input>
+						<button type='button' class="btn btn-success" onClick="self.location.href = '<? echo $_SERVER['PHP_SELF']?>?action=teilnehmer'">OK</button>
 					</form>
 				</div>
 			</div>

@@ -662,7 +662,7 @@ $this->util->_debug($_POST);
 			
 			$this->setLayout('success');
 			$_SESSION['loc'] = 'admin';
-			$_SESSION['msg'] = "login successfull.";
+			$_SESSION['msg'] = "Dein Login war erfolgreich.";
 			$_SESSION['back'] = false;
 			return($data);	
 		} else if ($_POST['login']['user'] == $this->superadmin && md5($_POST['login']['pw']) == $this->sapwd){
@@ -675,12 +675,12 @@ $this->util->_debug($_POST);
 	
 			$this->setLayout('success');
 			$_SESSION['loc'] = 'admin';
-			$_SESSION['msg'] = "login successfull.";
+			$_SESSION['msg'] = "Dein Login war erfolgreich.";
 			$_SESSION['back'] = false;
 			return($data);						
 		} else {
 			$this->setLayout('error');
-			$_SESSION['msg'] = "login failed.";
+			$_SESSION['msg'] = "Dein Login ist leider fehlgeschlagen.";
 			return ($data);				
 		}
 	}
@@ -691,7 +691,7 @@ $this->util->_debug($_POST);
 		unset($_SESSION['xcms']);
 		
 		$this->setLayout('success');
-		$_SESSION['msg'] = "Logout ...";
+		$_SESSION['msg'] = "Logout erfolgreich.";
 		$_SESSION['back'] = false;
 		return($data);	
 	}

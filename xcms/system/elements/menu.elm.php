@@ -15,8 +15,10 @@
 	      <ul class="nav navbar-nav">
 	        <li <?php if (ACTION == 'anmeldungen' || ACTION == 'confirmation'):?>class="active"<?php endif;?>><a href="<? echo $_SERVER['PHP_SELF']?>?action=anmeldungen">Anmeldung <span class="sr-only">(current)</span></a></li>
 	        <li <?php if (ACTION == 'teilnehmer'):?>class="active"<?php endif;?>><a href="<? echo $_SERVER['PHP_SELF']?>?action=teilnehmer">Anmeldestatus</a></li>
+	<?php if (($_SESSION['xcms']['login']['admin'] == true) || ACTION == 'logmein'): ?>
+			<li><a href="<?php echo $_SERVER['PHP_SELF']?>?action=admin">Admin</a></li>
+	<?php endif;?>
 	<?php if ($_SESSION['xcms']['login']['admin'] == true): ?>
-			  <li><a href="<?php echo $_SERVER['PHP_SELF']?>?action=admin">Admin</a></li>
 	        <li><a href="<?php echo $_SERVER['PHP_SELF']?>?action=logout">Abmelden</a></li>
 	<?php endif;?>
 	      </ul>
