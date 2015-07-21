@@ -21,7 +21,7 @@ $(document).ready(function(){
 <div class='container'>
 	<div class="text-background">
 		<h1>Anmeldestatus</h1>
-	<?php if($config[0]['stats'] == '0'): ?>
+	<?php if($config[0]['stats'] == '1'): ?>
 		<ul>
 		<? if ($scBan == false): ?>
 			<li style='margin-left: 20px'>Es haben sich bisher <b><? echo $c['sc']; ?></b> von <b><?echo $config[0]['sc_anz']; ?></b> m&ouml;glichen <b>Spieler</b> angemeldet, es sind noch <b><?php echo ($config[0]['sc_anz']-$c['sc']);?></b> Pl&auml;tze verf&uuml;gbar.</li>
