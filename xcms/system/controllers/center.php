@@ -127,7 +127,7 @@ class Center extends Controller {
 			$data['search'] = true;
 			
 			if ($_POST['string'] != ''){
-				$search = $this->db->dbCatchAll('member', 'id, vorname, nachname, rang, bezahlt', "nachname LIKE '%".$_POST['string']."%'");
+				$search = $this->db->dbCatchAll('member', 'id, vorname, nachname, rang, bezahlt', "nachname LIKE '%".$_POST['string']."%'", "nachname");
 			}
 			if(count($search) == '0'){
 				$data['nohit'] = true;
