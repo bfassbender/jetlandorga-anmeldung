@@ -12,12 +12,6 @@
 
 			<title>Onlineanmeldung | Jetland 11 - Die eherne Feste | Jetland Orga</title>
 
-			<!-- Stylesheets -->
-			<link href="xcms/views/css/jetland/bootstrap.min.css" rel="stylesheet" type="text/css">
-			<link href="xcms/views/css/jetland/font-awesome.min.css" rel="stylesheet" type="text/css">
-			<link href="xcms/views/css/jetland/font-lato.css" rel="stylesheet" type="text/css">
-			<link href="xcms/views/css/jetland/app.css" rel="stylesheet" type="text/css">
-
 			<!-- Favicon -->	
 			<link rel="icon" href="/img/favicon/favicon.ico" type="image/x-icon">
 			<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/img/favicon/favicon.ico" type="image/x-icon">
@@ -32,18 +26,26 @@
 			<meta name="msapplication-TileImage" content="/img/favicon/favicon_favicon-144.png">
 			<meta name="msapplication-TileColor" content="#666666">
 
+			<!-- Stylesheets -->
+			<link href="xcms/views/css/jetland/bootstrap.min.css" rel="stylesheet" type="text/css">
+			<link href="xcms/views/css/jetland/font-awesome.min.css" rel="stylesheet" type="text/css">
+			<link href="xcms/views/css/jetland/font-lato.css" rel="stylesheet" type="text/css">
+			<link href="xcms/views/css/jetland/theme.bootstrap.css" rel="stylesheet" type="text/css">	
+			<link href="xcms/views/css/jetland/app.css" rel="stylesheet" type="text/css">
 
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-			<script src="xcms/views/js/jquery.min.js" type="text/javascript"></script>
+			<script src="xcms/views/js/jquery-2.1.4.min.js" type="text/javascript"></script>
 			<script src="xcms/views/js/jquery.backstretch.min.js" type="text/javascript"></script>
-			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script src="xcms/views/js/jquery.tablesorter.min.js" type="text/javascript"></script>
+			<script src="xcms/views/js/jquery.tablesorter.widgets.js" type="text/javascript"></script>
 			<script src="xcms/views/js/bootstrap.min.js" type="text/javascript"></script>
-			<!-- <script src="xcms/views/js/validator.min.js" type="text/javascript"></script> -->
 			<script src="xcms/views/js/app.js" type="text/javascript"></script>
 		</head>	
   	<body>
 		<?php $this->element(ELEMENTS.DS.'menu.elm.php')?>
-		<?php echo $content;?>
+		<div class="container">
+			<?php echo $content;?>
+		</div>
 	</body>
 </html>
 

@@ -35,7 +35,7 @@
 }
 </style>
 
-<div class="container">
+
      <form class="form-signin" action='<?php echo $_SERVER['PHP_SELF']?>?action=login' method='post'>
        <h2 class="form-signin-heading">Bitte melde Dich an</h2>
        <label for="inputEmail" class="sr-only">Benutzername</label>
@@ -45,4 +45,4 @@
        <input type='hidden' name='loc' value='<? echo $_REQUEST['action']?>' />
        <button id="logmein" class="btn btn-lg btn-primary btn-block" type="submit">Anmelden</button>
 	</form>
-</div> <!-- /container —>
+

@@ -64,9 +64,7 @@ $nscBan = ($nscRest <= '0') ? true : false;
 	}
 </style>
 
-<?=print_r($data);?>
-
-<div id="container" >
+<div>
 		<form action='<? echo $_SERVER['PHP_SELF']?>?action=editUser' method='POST' enctype='multipart/form-data' name="anmeldung" >
 			<input type="hidden" name="member[id]" value="<?=$data['data'][0]['id']?>" />
 		<br>
@@ -267,4 +265,4 @@ $nscBan = ($nscRest <= '0') ? true : false;
 		</form>
 	</div>	
 	<div style='text-size: 10px; color: red; padding: 10px; margin-left: 200px'>(Mit <b>*</b> gekennzeichnete Felder sind Pflichtfelder)</span>
-</div>
+

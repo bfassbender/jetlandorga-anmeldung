@@ -53,20 +53,18 @@ $(document).ready(function(){
 	
 	// Tablelayout
 	$("#large1").tablesorter({
-		widgets: ['zebra']
+		widgets: ['zebra'],
+		sortList : [[0,0], [1,0]]
 	});
+	
 	$("#large2").tablesorter({
-		widgets: ['zebra']
+		widgets: ['zebra'],
+		sortList : [[0,0], [1,0]]
 	});	
 	$("#large3").tablesorter({
-		widgets: ['zebra']
+		widgets: ['zebra'],
+		sortList : [[0,0], [1,0]]
 	});	
-
-
-    
-
-   	
-
 });
 
 </script>
@@ -174,7 +172,7 @@ $(document).ready(function(){
 							$liste = ($datas['warteliste'] == '0') ? 'power_off' : 'power_on'; 
 							$type = ($datas['rang'] == '1') ? 'SC' : 'NSC'; 
 						?>
-						<tr onmouseover="this.style.backgroundColor='#D7DF01'";>
+						<tr>
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['nachname'])?></div></a></td>							
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['vorname'])?></div></a></td>
 							<td class='cell' style='text-align: center'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=date('d.m.Y', $datas['datum'])?></div></a></td>
