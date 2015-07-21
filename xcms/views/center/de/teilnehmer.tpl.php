@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 <div class='container'>
 	<div class="text-background">
-		<h1>Anmeldestatus</h1>
+	<h1>Anmeldestatus</h1>
 	<?php if($config[0]['stats'] == '1'): ?>
 		<ul>
 		<? if ($scBan == false): ?>
@@ -37,7 +37,7 @@ $(document).ready(function(){
 		</ul>
 	</div>
 	<?php endif; ?>
-	<div class="table-background">
+	<div class="table-background table-responsive">
 		<table id="teilnehmer" class="table table-striped">
 			<thead>
 				<tr>
