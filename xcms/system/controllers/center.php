@@ -502,14 +502,18 @@ class Center extends Controller {
 				$value = ($value == '1') ? 'Ja' : 'Nein';
 
 			if ($key == 'krankheiten') {
-				$value = ($value == '0') ? 'Nein' : $value;
+				$value = ($value == '1') ? 'Ja' : 'Nein';
 			}
 
 			if ($key == 'datum') {
 				$value = date('d.m.Y H:i', $value); 
 			}
-
+			
 			if ($key == 'erfahrung') {
+				$value = ($value == '1') ? 'Ja' : 'Nein';
+			}
+
+			if ($key == 'erfahrung_tage') {
 				$value = $value." Tage";
 			}
 			
@@ -534,6 +538,9 @@ class Center extends Controller {
 			foreach ($nsc as $key => $value) {
 				if ($key != 'unterkunft') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
+				}
+				if ($key != 'unterkunft') {
+					continue;
 				}
 				$postdata .= ucfirst($key).": ".$value."<br>\n";				
 
