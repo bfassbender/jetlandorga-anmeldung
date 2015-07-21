@@ -12,14 +12,20 @@ $(document).ready(function(){
 			theme : "bootstrap",
 			headerTemplate : '{content} {icon}', // new in v2.7. Needed to add the bootstrap icon!
 			sortList : [[0,0], [1,0]],
-			widgets : [ "uitheme","zebra" ]
+			widgets : ["uitheme"],
+			cancelSelection: true,
+			widthFixed: true,
+			headers: { 
+			            3: { sorter: false }, 
+			            4: { sorter: false } 
+			        } 
+			
 		});
 	});
 });
 </script>
 
 <div class='container'>
-	<div class="text-background">
 	<h1>Anmeldestatus</h1>
 	<?php if($config[0]['stats'] == '1'): ?>
 		<ul>
@@ -38,7 +44,7 @@ $(document).ready(function(){
 	</div>
 	<?php endif; ?>
 	<div class="table-background table-responsive">
-		<table id="teilnehmer" class="table table-striped">
+		<table id="teilnehmer" class="table table-striped table-hover">
 			<thead>
 				<tr>
 					<?php if($config[0]['liste_nachname'] == '1'): ?>
@@ -95,7 +101,6 @@ $(document).ready(function(){
 			?>
 			</tbody>
 		</table>
-	</div>
 </div>
 
 

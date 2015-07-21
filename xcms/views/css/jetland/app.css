@@ -34,8 +34,12 @@ table {
 	color: #333;	
 }
 
+thead {
+	background: rgba(255, 255, 255, 0.9);
+}
+
 .table-background {
-	background: rgba(220,220,220,0.8);
+	background: rgba(200,200,200, 0.9);
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
