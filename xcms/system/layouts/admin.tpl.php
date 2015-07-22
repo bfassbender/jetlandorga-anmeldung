@@ -30,7 +30,7 @@
 			<link href="xcms/views/css/jetland/bootstrap.min.css" rel="stylesheet" type="text/css">
 			<link href="xcms/views/css/jetland/font-awesome.min.css" rel="stylesheet" type="text/css">
 			<link href="xcms/views/css/jetland/font-lato.css" rel="stylesheet" type="text/css">
-			<link href="xcms/views/css/jetland/theme.bootstrap.css" rel="stylesheet" type="text/css">	
+			<link href="xcms/views/css/theme.bootstrap.css" rel="stylesheet" type="text/css">	
 			<link href="xcms/views/css/jetland/app.css" rel="stylesheet" type="text/css">
 
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
