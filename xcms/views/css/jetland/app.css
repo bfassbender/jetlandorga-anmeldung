@@ -54,3 +54,11 @@ thead {
      vertical-align: middle;
 }
 
+.tooltip-inner {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.tooltip-arrow {
+	color: rgb(200,200,200);
+}
