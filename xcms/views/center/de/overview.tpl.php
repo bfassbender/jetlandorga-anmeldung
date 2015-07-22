@@ -51,17 +51,34 @@
 
 $(document).ready(function(){
 	
+	$.tablesorter.addParser({
+		id: 'germandate',
+		is: function(s) {
+			return false;
+		},
+		format: function(s) {
+			var a = s.split('.');
+			a[1] = a[1].replace(/^[0]+/g,"");
+			return new Date(a.reverse().join("/")).getTime();
+		},
+		type: 'numeric'
+	});
+	
 	// Tablelayout
 	$("#large1").tablesorter({
+		headers: { 2: { sorter:'germandate' }},
 		widgets: ['zebra'],
 		sortList : [[0,0], [1,0]]
 	});
 	
 	$("#large2").tablesorter({
+		headers: { 2: { sorter:'germandate' }},
 		widgets: ['zebra'],
 		sortList : [[0,0], [1,0]]
 	});	
+
 	$("#large3").tablesorter({
+		headers: { 3: { sorter:'germandate' }, 4: { sorter:'germandate' }},
 		widgets: ['zebra'],
 		sortList : [[0,0], [1,0]]
 	});	
@@ -239,7 +256,7 @@ $(document).ready(function(){
 	 </div>	 
 <div id="tabs-3">
 		<div style='border: 1px solid #ddd; padding: 10px 10px 10px 10px; width: 898px;background-color: #5C6D73;'>
-		<table id="large2" cellspacing="0" width="798">
+		<table id="large3" cellspacing="0" width="798">
 			<thead>
 				<tr>
 					<th class='tbl_head' style='width: 150px'>Nachname</th>			
