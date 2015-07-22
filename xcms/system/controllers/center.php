@@ -402,7 +402,13 @@ class Center extends Controller {
 		$id = $member['id'];
 		unset($member['id']);
 		unset($member['old_rang']);
-		$member['rang'] = $tmp[0];
+
+		if($member['deleted'] == '0') {
+			$member['deleted_date'] = '';
+		}
+		else {
+			$member['deleted_date'] = time();
+		}
 
 	/* add functions nsc*/	
 		if ($member['rang'] == 'nsc') {
