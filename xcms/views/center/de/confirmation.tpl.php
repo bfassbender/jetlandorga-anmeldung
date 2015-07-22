@@ -49,7 +49,7 @@
 	<div class="container">
 		<div class="confirmation-box-container">
 			<div class="row">
-				<h3 class="confirmation-title">Du hast dich erfolgreich für das Con angemeldet.</h3>
+				<h1 class="confirmation-title text-success">Du hast dich erfolgreich für das Con angemeldet.</h3>
 			</div>
 			<div class="row">
 				<div class="description">
@@ -67,6 +67,7 @@
 						</div>
 						<div class="col-xs-1 col-md-4"></div>
 					</div>
+					<p class="text-success">Diese Daten erhälst Du auch nochmal per Mail.</p>
 					<p>Beachte bitte außerdem, dass wir Deine Anmeldung erst dann weiter bearbeiten, wenn Dein Beitrag bei uns eingegangen ist.</p>
 					<form class="form-horizontal" role="form">
 						<button type='button' class="btn btn-success" onClick="self.location.href = '<? echo $_SERVER['PHP_SELF']?>?action=teilnehmer'">OK</button>
