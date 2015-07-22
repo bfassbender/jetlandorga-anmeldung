@@ -218,7 +218,7 @@ $(document).ready(function(){
 						?>
 
 
-						<tr onmouseover="this.style.backgroundColor='#D7DF01'"; >
+						<tr>
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['nachname'])?></div></a></td>							
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['vorname'])?></div></a></td>
 							<td class='cell' style='text-align: center'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=date('d.m.Y', $datas['datum'])?></div></a></td>
@@ -255,7 +255,7 @@ $(document).ready(function(){
 				<?php if(is_array($data['deleted'][0])): ?>
 					<?php foreach ($data['deleted'] as $datas): ?>
 
-						<tr onmouseover="this.style.backgroundColor='#D7DF01'"; >
+						<tr>
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['nachname'])?></div></a></td>							
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['vorname'])?></div></a></td>
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['rang'])?></div></a></td>							
