@@ -136,10 +136,6 @@ class Center extends Controller {
 				$data['count'] = count($search);
 				$data['string'] = $_POST['string'];
 				foreach ($search as $key => $value) {
-					if ($key == 'rang'){
-						echo $key;
-
-					}
 					$data['result'][$key] = $value;
 				}
 			}
