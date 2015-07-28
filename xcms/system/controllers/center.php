@@ -158,7 +158,7 @@ class Center extends Controller {
 			if ($handle = opendir('exports/')) {
 				$data['archiv'] = true;
 			    while (false !== ($file = readdir($handle))) {
-			    	if ($file != '.' && $file != '..' && $file != '.htaccess')
+			    	if ($file != '.' && $file != '..' && $file != '.htaccess' && $file != '.gitkeep')
 				    	$files[] = $file;   	
 			    }
 			    sort($files);
@@ -171,7 +171,7 @@ class Center extends Controller {
 					IF (deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(deleted_date), '%e.%m.%Y'), '') as deleted_date
 					FROM j11_member order by nachname ASC";
 				$res = $this->db->query($sc_sql);
-				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message\n\r";
+				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message\n";
 				$filename = "jetland_11_export_all_".date('d-m-Y_His', time()).".csv";
 			} else if ($_REQUEST['cat'] == 'sc'){
 				$sc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%e.%m.%Y') as datum, 
@@ -179,13 +179,13 @@ class Center extends Controller {
 					sc.* FROM j11_member member left join j11_sc sc on (sc.uid = member.id) WHERE member.rang = 'sc' order by member.nachname ASC";
 				$res = $this->db->query($sc_sql);
 				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".csv";
-				$file ="Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Charname|Rasse|Klasse|Herkunft|Zauber|Contage\n\r";				
+				$file ="Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Charname|Rasse|Klasse|Herkunft|Zauber|Contage\n";				
 			} else if ($_REQUEST['cat'] == 'nsc'){
 				$nsc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%e.%m.%Y') as datum, 
 							IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%e.%m.%Y'), '') as deleted_date, 
 							nsc.* FROM j11_member member left join j11_nsc nsc on (nsc.uid = member.id) WHERE member.rang = 'nsc' order by member.nachname ASC";
 				$res = $this->db->query($nsc_sql);
-				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Dungeon|Traeume|Schminken|Kaempfen|Zaubern|Unterkunft\n\r";
+				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Dungeon|Traeume|Schminken|Kaempfen|Zaubern|Unterkunft\n";
 				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".csv";				
 			}
 		}
@@ -204,14 +204,13 @@ class Center extends Controller {
 						
 					}					
 					$txt = ucfirst($value);
-					$txt = preg_replace("#(\r|\n)#", '', $txt);  				 
+					$txt = preg_replace("#(\r|\n)#", ' ', $txt);  				 
 					$txt = $this->util->_revertExchange($txt);
 					$txt = $this->convertToWindowsCharset($txt);
 					$file .= $txt."|";
 				}
-				$file .= "\n\r";
+				$file .= "\n";
 			} 
-			#echo $file;
 		if($this->writeDownload($filename, $file)) {
 			$data['show_export'] = true;
 			$data['status'] = '1';
@@ -222,7 +221,6 @@ class Center extends Controller {
 			$data['status'] = '0';
 			$data['msg'] = 'Beim Export ist ein Fehler aufgetreten.<br />';
 		} 
-
 		return($data);
 	}
 
@@ -238,7 +236,7 @@ class Center extends Controller {
 	}	
 
 	function writeDownload ($filename, $file) {
-		if($myfile = fopen('/is/htdocs/wp1115355_CM1M4JSHYG/www/anmeldung/exports/'.$filename, "w")) {
+		if($myfile = fopen('exports/'.$filename, "w")) {
 			fwrite($myfile, $file);
 			fclose($myfile);
 			return true;
