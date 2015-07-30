@@ -167,9 +167,12 @@
 			<label for="land" class="col-md-2 control-label">Land<span style='color: red'>*</span></label>
 			<div class="col-md-4">
 				<select id="land" name='member[land]' class="form-control">
-				  <option value="Deutschland">Deutschland</option>
-				  <option value="Österreich">Österreich</option>
-				  <option value="Schweiz">Schweiz</option>
+					<option value="Deutschland">Deutschland</option>
+					<option value="Irland">Irland</option>
+					<option value="Österreich">Österreich</option>
+					<option value="Schweiz">Schweiz</option>				
+					<option value="Vereinigte Staaten von Amerika">Vereinigte Staaten von Amerika</option>
+					<option value="Anderes Land, siehe Bemerkungen">Anderes Land, siehe Bemerkungen</option>
 				</select>
 			</div>
 		</div>
