@@ -67,7 +67,7 @@
 						</div>
 						<div class="col-xs-1 col-md-4"></div>
 					</div>
-					<p class="text-success">Diese Daten erhälst Du auch nochmal per Mail.</p>
+					<p>Diese Daten erhältst Du auch noch mal per Mail.</p>
 					<p>Beachte bitte außerdem, dass wir Deine Anmeldung erst dann weiter bearbeiten, wenn Dein Beitrag bei uns eingegangen ist.</p>
 					<form class="form-horizontal" role="form">
 						<button type='button' class="btn btn-success" onClick="self.location.href = '<? echo $_SERVER['PHP_SELF']?>?action=teilnehmer'">OK</button>
