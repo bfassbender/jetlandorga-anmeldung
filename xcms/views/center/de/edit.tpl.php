@@ -108,6 +108,11 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div style='position: relative; padding-left: 130px'>
 				<input id='geb_datum' type='text' name='member[geb_datum]' value='<?=$data['data'][0]['geb_datum']?>' size='10' maxlength='10' onkeypress="return noreturn(event);">
 			</div><br>
+			<div class='header' style='position: absolute'><b>Land</b></div>
+			<div style='position: relative; padding-left: 130px'>
+				<input type='text' name='member[land]' value='<?=$data['data'][0]['land']?>' size='30' onkeypress="return noreturn(event);">
+			</div>
+			<br>
 			<div class='header' style='position: absolute'><b>E-Mail</b><span style='color: red'> *</span></div>
 			<div style='position: relative; padding-left: 130px'>
 				<input id='email' type='text' name='member[email]' value='<?=$data['data'][0]['email']?>' size='30' onkeypress="return noreturn(event);">

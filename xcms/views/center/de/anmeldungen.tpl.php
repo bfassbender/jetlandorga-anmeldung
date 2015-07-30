@@ -164,6 +164,14 @@
 			<div class="col-md-4">
 				<input type="text" class="form-control" id="geb_datum" placeholder="Geburtsdatum" name='member[geb_datum]' value='' maxlength='10' onkeypress="return noreturn(event);">
 			</div>
+			<label for="land" class="col-md-2 control-label">Land<span style='color: red'>*</span></label>
+			<div class="col-md-4">
+				<select id="land" name='member[land]' class="form-control">
+				  <option value="Deutschland">Deutschland</option>
+				  <option value="Österreich">Österreich</option>
+				  <option value="Schweiz">Schweiz</option>
+				</select>
+			</div>
 		</div>
 		<div class="form-group">
 			<label for="email" class="col-md-2 control-label">E-Mail<span style='color: red'>*</span></label>
