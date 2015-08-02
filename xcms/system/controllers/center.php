@@ -195,63 +195,63 @@ class Center extends Controller {
 				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Dungeon|Traeume|Schminken|Kaempfen|Zaubern|Unterkunft";
 				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".xlsx";				
 			}
-		}
-		
-		PHPExcel_Settings::setLocale('de_de');
-		PHPExcel_Cell::setValueBinder( new PHPExcel_Cell_AdvancedValueBinder() );
-		$objPHPExcel = new PHPExcel();
-		$objPHPExcel->getProperties()->setCreator("Jetland Anmeldetool")
-									 ->setTitle("Jetland 11 Teilnehmerliste");
-									
-		$objPHPExcel->setActiveSheetIndex(0);
-									
-		
-		
-		$headers = explode("|",$file);
-		
-		$cellindex = 0;
-		$rowindex = 1;
-		foreach($headers as $header) {
-			$column = $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($cellindex, $rowindex, ucfirst($header), true)->getColumn();
-			$objPHPExcel->getActiveSheet()->getColumnDimension($column)->setAutoSize(true);
-			$cellindex++;
-		}
-		
-		foreach ($res as $t) {
-			$rowindex++;
+			
+			PHPExcel_Settings::setLocale('de_de');
+			PHPExcel_Cell::setValueBinder( new PHPExcel_Cell_AdvancedValueBinder() );
+			$objPHPExcel = new PHPExcel();
+			$objPHPExcel->getProperties()->setCreator("Jetland Anmeldetool")
+										 ->setTitle("Jetland 11 Teilnehmerliste");
+
+			$objPHPExcel->setActiveSheetIndex(0);
+
+
+
+			$headers = explode("|",$file);
+
 			$cellindex = 0;
-			foreach($t as $key => $value) {				
-				if ($key == 'uid') { continue;}
-				$value = ($value == '01.01.1970') ? ' ' : $value;
-				$value = (!empty($value)) ? $value : ' ';					
-				if ($key != 'contage' || $key != 'erfahrung') {									
-					if ($value == '0') {
-						$value = 'Nein';
-					} else if ($value == '1') {
-						$value = 'Ja';
-					}
-				}					
-				$txt = $value;
-				$txt = preg_replace("#(\r|\n)#", ' ', $txt);
-				$txt = html_entity_decode($txt);
-				$objPHPExcel->setActiveSheetIndex(0)->setCellValueExplicitByColumnAndRow($cellindex, $rowindex, $txt, PHPExcel_Cell_DataType::TYPE_STRING);
-				#$objPHPExcel->setActiveSheetIndex(0)->setCellValueByColumnAndRow($cellindex, $rowindex, $txt);
+			$rowindex = 1;
+			foreach($headers as $header) {
+				$column = $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($cellindex, $rowindex, ucfirst($header), true)->getColumn();
+				$objPHPExcel->getActiveSheet()->getColumnDimension($column)->setAutoSize(true);
 				$cellindex++;
 			}
-		}
-									
-		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-		$objWriter->save(__DIR__.'/../../../exports/'.$filename);
-	
-		if(true) {
-			$data['show_export'] = true;
-			$data['status'] = '1';
-	 		$data['msg'] = 'Der Export war erfolgreich.<br /><br />';
-	 		$data['filename'] = $filename;
-	 	} else {
-	 		$data['show_export'] = true;			
-	 		$data['status'] = '0';
-	 		$data['msg'] = 'Beim Export ist ein Fehler aufgetreten.<br />';
+
+			foreach ($res as $t) {
+				$rowindex++;
+				$cellindex = 0;
+				foreach($t as $key => $value) {				
+					if ($key == 'uid') { continue;}
+					$value = ($value == '01.01.1970') ? ' ' : $value;
+					$value = (!empty($value)) ? $value : ' ';					
+					if ($key != 'contage' || $key != 'erfahrung') {									
+						if ($value == '0') {
+							$value = 'Nein';
+						} else if ($value == '1') {
+							$value = 'Ja';
+						}
+					}					
+					$txt = $value;
+					$txt = preg_replace("#(\r|\n)#", ' ', $txt);
+					$txt = html_entity_decode($txt);
+					$objPHPExcel->setActiveSheetIndex(0)->setCellValueExplicitByColumnAndRow($cellindex, $rowindex, $txt, PHPExcel_Cell_DataType::TYPE_STRING);
+					#$objPHPExcel->setActiveSheetIndex(0)->setCellValueByColumnAndRow($cellindex, $rowindex, $txt);
+					$cellindex++;
+				}
+			}
+
+			$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+			$objWriter->save(__DIR__.'/../../../exports/'.$filename);
+
+			if(true) {
+				$data['show_export'] = true;
+				$data['status'] = '1';
+		 		$data['msg'] = 'Der Export war erfolgreich.<br /><br />';
+		 		$data['filename'] = $filename;
+		 	} else {
+		 		$data['show_export'] = true;			
+		 		$data['status'] = '0';
+		 		$data['msg'] = 'Beim Export ist ein Fehler aufgetreten.<br />';
+			}
 		}
 		
 		return($data);
