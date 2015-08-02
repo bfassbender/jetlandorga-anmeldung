@@ -48,21 +48,6 @@
 		}
 		$('#disp').show('fast');
 	}
-
-$(document).ready(function(){
-	
-	$.tablesorter.addParser({
-		id: 'germandate',
-		is: function(s) {
-			return false;
-		},
-		format: function(s) {
-			var a = s.split('.');
-			a[1] = a[1].replace(/^[0]+/g,"");
-			return new Date(a.reverse().join("/")).getTime();
-		},
-		type: 'numeric'
-	});
 	
 	function getTextExtractor()
 	{
@@ -96,24 +81,40 @@ $(document).ready(function(){
 	    }
 	  })();
 	}
+
+$(document).ready(function(){
+	
+	$.tablesorter.addParser({
+		id: 'germandate',
+		is: function(s) {
+			return false;
+		},
+		format: function(s) {
+			alert(s);
+			var a = s.split('.');
+			a[1] = a[1].replace(/^[0]+/g,"");
+			return new Date(a.reverse().join("/")).getTime();
+		},
+		type: 'numeric'
+	});
 	
 	// Tablelayout
 	$("#large1").tablesorter({
-		headers: { 2: { sorter:'germandate' }},
+		//headers: { 2: { sorter:'germandate' }},
 		widgets: ['zebra'],
 		sortList : [[0,0], [1,0]],
 		textExtraction: getTextExtractor(),
 	});
 	
 	$("#large2").tablesorter({
-		headers: { 2: { sorter:'germandate' }},
+		//headers: { 2: { sorter:'germandate' }},
 		widgets: ['zebra'],
 		sortList : [[0,0], [1,0]],
 		textExtraction: getTextExtractor(),
 	});	
 
 	$("#large3").tablesorter({
-		headers: { 3: { sorter:'germandate' }, 4: { sorter:'germandate' }},
+		//headers: { 3: { sorter:'germandate' }, 4: { sorter:'germandate' }},
 		widgets: ['zebra'],
 		sortList : [[0,0], [1,0]],
 		textExtraction: getTextExtractor(),
