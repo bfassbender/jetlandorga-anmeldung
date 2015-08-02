@@ -15,8 +15,9 @@ class Dbfunctions {
   		if (!$link) {
     		die("Could not connect: " . mysql_error() . "<br />\n");
   		}
-		mysql_query("SET NAMES utf8"); 
   		if(mysql_select_db($database)) {
+			mysql_query("SET NAMES 'utf8'", $link);
+			mysql_set_charset('utf8',$link);
 			return true;
 		} else {
 			return false;
@@ -50,13 +51,13 @@ class Dbfunctions {
 			$sql .= " LIMIT ".$limit."";
 		}	
 		$sql .= ";";
-		
 		if($query = mysql_query($sql) or die(mysql_error())){
 			while($res = mysql_fetch_array($query, MYSQL_ASSOC)){
 				$result[] = $res;
 			}	
 		}
-		else { return false;
+		else { 
+			return false;
 		}
 		return $result;
 	}
@@ -116,7 +117,7 @@ class Dbfunctions {
 		if (is_array($data)){
 			foreach($data as $key => $value){			
 				if ($i != 0) {$sql .= ", ";}
-				$sql .=  $this->_secure($key) ."='".$this->_exchange($value)."'";
+				$sql .=  $key ."='".$value."'";
 				$i++;
 			}
 		} else {
@@ -134,10 +135,13 @@ class Dbfunctions {
 	function dbInsert($from, $data){
 		$sql = "INSERT INTO ".PREFIX."".$from." SET ";
 		$i=0;
+		
 		if (is_array($data)){
 			foreach($data as $key => $value){			
-				if ($i != 0) {$sql .= ", ";}
-				$sql .=  $this->_secure($key) ."='".$this->_exchange($value)."'";
+				if ($i != 0) {
+					$sql .= ", ";
+				}
+				$sql .=  $key ."='".$value."'";
 				$i++;
 			}
 		} else {
@@ -151,50 +155,6 @@ class Dbfunctions {
 			else 
 				return true;
 		} else { return false; }	
-	}
-	
-	function _secure($data)
-	{
-		return(addslashes($data));
-	}
-	
-	function _exchange ($data){
-
-		if (is_array($data)){
-			foreach ($data as $datas) {
-				$datas = ereg_replace('ä', '&auml;', $datas);
-				$datas = ereg_replace('ö', '&ouml;', $datas);
-				$datas = ereg_replace('ü', '&uuml;', $datas);
-				$datas = ereg_replace('Ä', '&Auml;', $datas);
-				$datas = ereg_replace('Ö', '&Ouml;', $datas);
-				$datas = ereg_replace('Ü', '&Uuml;', $datas);
-				$datas = ereg_replace('/<p/', "<span", $datas);
-				$datas = ereg_replace('</p>', '</span>', $datas);
-				$datas = ereg_replace('ß', '&szlig;', $datas);
-				$datas = ereg_replace('<br>', '<br />', $datas);
-				$datas = ereg_replace('\'', '', $datas);
-				$datas = ereg_replace('<<', '&lt;<', $datas);
-				$datas = ereg_replace('>>', '>&gt;', $datas);
-				$datas = ereg_replace('<hr>', '<hr />', $datas);
-			}
-		} else {
-			$data = ereg_replace('ä', '&auml;', $data);
-			$data = ereg_replace('ö', '&ouml;', $data);
-			$data = ereg_replace('ü', '&uuml;', $data);
-			$data = ereg_replace('Ä', '&Auml;', $data);
-			$data = ereg_replace('Ö', '&Ouml;', $data);
-			$data = ereg_replace('Ü', '&Uuml;', $data);
-			$data = ereg_replace('/<p/', "<span", $data);
-			$data = ereg_replace('</p>', '</span>', $data);
-			$data = ereg_replace('ß', '&szlig;', $data);
-			$data = ereg_replace('<br>', '<br />', $data);
-			$data = ereg_replace('\'', '', $data);
-			$data = ereg_replace('<<', '&lt;<', $data);
-			$data = ereg_replace('>>', '>&gt;', $data);			
-			$data = ereg_replace('<hr>', '<hr />', $data);
-						
-		}
-		return($data);
 	}
 }
 ?>

@@ -323,14 +323,9 @@ class Center extends Controller {
 		$sc = $this->util->_toData($_POST['sc']);
 		$nsc = $this->util->_toData($_POST['nsc']);
 		$post['datum'] = time();
-
+		
 		$data = array();
-		if ($post['rang'] != 'sc') {
-			$tmp = explode('|', $post['rang']);	
-			$post['rang'] = 'nsc';
-			$nsc['unterkunft'] = $tmp[1];
-		}
-
+	
 		if ($post['krankheiten'] == '0') {
 			unset($post['krankheiten_welche']);
 		} 
@@ -339,9 +334,9 @@ class Center extends Controller {
 		}	
 
 		$preCheck = $this->db->dbCatchAll('member', "id", "vorname = '".$post['vorname']."' AND nachname = '".$post['nachname']."'");	
-		if (count($preCheck) == '0'){		
 
-			if($lastid = $this->db->dbInsert('member', $post)){				
+		if (count($preCheck) == '0'){
+			if($lastid = $this->db->dbInsert('member', $post)){
 				if ($post['rang'] == 'sc') {
 					$sc['uid'] = $lastid;
 					$this->db->dbInsert('sc', $sc);
@@ -379,7 +374,6 @@ class Center extends Controller {
 	}
 
 	function editUser(){
-		
 		$check=0;	
 		$data = array();
 		$member = $this->util->_toData($_POST['member']);
@@ -426,10 +420,9 @@ class Center extends Controller {
 		$this->util->_debug($sc);
 		$this->util->_debug($nsc);		
 		#die();
-*/		
-		if($this->db->dbUpdate('member', $member, "id = '".$id."'")){	
-
-			
+*/			
+				
+		if($this->db->dbUpdate('member', $member, "id = '".$id."'")){
 			$this->db->dbDelete('sc', "uid = '".$id."'") ;
 			$this->db->dbDelete('nsc', "uid = '".$id."'");			
 			if ($member['rang'] == 'sc') {
