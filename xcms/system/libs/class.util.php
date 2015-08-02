@@ -122,7 +122,6 @@ function createLink($link, $target='_blank'){
 	
 	function _secure($data){
     	$data = addslashes($data);
-		echo "Secured: ".$data."<br>";
     	return($data);
   	}
 	
