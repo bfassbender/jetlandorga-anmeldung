@@ -1,9 +1,9 @@
 <?php
 /** Error reporting */
-error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
-ini_set('display_startup_errors', TRUE);
-date_default_timezone_set('Europe/Berlin');
+#error_reporting(E_ALL);
+#ini_set('display_errors', TRUE);
+#ini_set('display_startup_errors', TRUE);
+#date_default_timezone_set('Europe/Berlin');
 
 include(__DIR__ . '/../libs/zip.lib.php');
 require_once __DIR__ . '/../libs/PHPExcel.php';
@@ -179,13 +179,13 @@ class Center extends Controller {
 					FROM j11_member order by nachname ASC";
 				$res = $this->db->query($sc_sql);
 				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message";
-				$filename = "jetland_11_export_all_".date('d-m-Y_His', time()).".csv";
+				$filename = "jetland_11_export_all_".date('d-m-Y_His', time()).".xlsx";
 			} else if ($_REQUEST['cat'] == 'sc'){
 				$sc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%d.%m.%Y') as datum, 
 					IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%d.%m.%Y'), '') as deleted_date, 
 					sc.* FROM j11_member member left join j11_sc sc on (sc.uid = member.id) WHERE member.rang = 'sc' order by member.nachname ASC";
 				$res = $this->db->query($sc_sql);
-				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".csv";
+				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".xlsx";
 				$file ="Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Charname|Rasse|Klasse|Herkunft|Zauber|Contage";				
 			} else if ($_REQUEST['cat'] == 'nsc'){
 				$nsc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%d.%m.%Y') as datum, 
@@ -193,11 +193,9 @@ class Center extends Controller {
 							nsc.* FROM j11_member member left join j11_nsc nsc on (nsc.uid = member.id) WHERE member.rang = 'nsc' order by member.nachname ASC";
 				$res = $this->db->query($nsc_sql);
 				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Dungeon|Traeume|Schminken|Kaempfen|Zaubern|Unterkunft";
-				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".csv";				
+				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".xlsx";				
 			}
 		}
-		
-		echo $res;
 		
 		PHPExcel_Settings::setLocale('de_de');
 		PHPExcel_Cell::setValueBinder( new PHPExcel_Cell_AdvancedValueBinder() );
@@ -243,8 +241,19 @@ class Center extends Controller {
 		}
 									
 		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-		$objWriter->save(__DIR__.'/../../../exports/'.str_replace('.csv', '.xlsx', $filename));
-
+		$objWriter->save(__DIR__.'/../../../exports/'.$filename);
+	
+		if(true) {
+			$data['show_export'] = true;
+			$data['status'] = '1';
+	 		$data['msg'] = 'Der Export war erfolgreich.<br /><br />';
+	 		$data['filename'] = $filename;
+	 	} else {
+	 		$data['show_export'] = true;			
+	 		$data['status'] = '0';
+	 		$data['msg'] = 'Beim Export ist ein Fehler aufgetreten.<br />';
+		}
+		
 		return($data);
 	}
 
