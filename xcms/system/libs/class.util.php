@@ -80,6 +80,7 @@ function createLink($link, $target='_blank'){
 			return ($data);	
 		}
 	}
+
 	
 	function _toData($data){
 		if (is_array($data)){
@@ -121,9 +122,9 @@ function createLink($link, $target='_blank'){
 	}
 	
 	function _secure($data){
-    $data = addslashes($data);
-    return($data);
-  }
+    	$data = addslashes($data);
+    	return($data);
+  	}
 	
 	function _unsecure($data){
     $data = stripslashes($data);

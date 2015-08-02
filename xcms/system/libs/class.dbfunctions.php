@@ -16,6 +16,8 @@ class Dbfunctions {
     		die("Could not connect: " . mysql_error() . "<br />\n");
   		}
   		if(mysql_select_db($database)) {
+			mysql_query("SET NAMES 'utf8'", $link);
+			mysql_set_charset('utf8',$link);
 			return true;
 		} else {
 			return false;
@@ -49,13 +51,13 @@ class Dbfunctions {
 			$sql .= " LIMIT ".$limit."";
 		}	
 		$sql .= ";";
-		
 		if($query = mysql_query($sql) or die(mysql_error())){
 			while($res = mysql_fetch_array($query, MYSQL_ASSOC)){
 				$result[] = $res;
 			}	
 		}
-		else { return false;
+		else { 
+			return false;
 		}
 		return $result;
 	}
@@ -115,7 +117,7 @@ class Dbfunctions {
 		if (is_array($data)){
 			foreach($data as $key => $value){			
 				if ($i != 0) {$sql .= ", ";}
-				$sql .=  $this->_secure($key) ."='".$value."'";
+				$sql .=  $key ."='".$value."'";
 				$i++;
 			}
 		} else {
@@ -133,17 +135,20 @@ class Dbfunctions {
 	function dbInsert($from, $data){
 		$sql = "INSERT INTO ".PREFIX."".$from." SET ";
 		$i=0;
+		
 		if (is_array($data)){
 			foreach($data as $key => $value){			
-				if ($i != 0) {$sql .= ", ";}
-				$sql .=  $this->_secure($key) ."='".$value."'";
+				if ($i != 0) {
+					$sql .= ", ";
+				}
+				$sql .=  $key ."='".$value."'";
+
 				$i++;
 			}
 		} else {
 			$sql .= " ".$data;
 		}
 		$sql .= ";";
-		
 		if (mysql_query($sql) or die(mysql_error())){
 			$id =  mysql_insert_id();
 			if ($id != '0')	
@@ -151,11 +156,6 @@ class Dbfunctions {
 			else 
 				return true;
 		} else { return false; }	
-	}
-	
-	function _secure($data)
-	{
-		return(addslashes($data));
 	}
 }
 ?>

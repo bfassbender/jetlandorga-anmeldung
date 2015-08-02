@@ -7,13 +7,13 @@ $nscBan = ($nscRest <= '0') ? true : false;
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		toggleStartup("<?=$data['data'][0]['rang']?>", "<?=$data['nsc'][0]['unterkunft']?>");
+		toggleStartup("<?=$data['data'][0]['rang']?>");
 	});
   	function noreturn(e) {
   		return e.keyCode==13? false:true;
 	}
 
-	function toggleStartup (type, unterkunft) {
+	function toggleStartup (type) {
 		if (type == 'sc') {
 			$('#boxsc').show('fast');
 			$('#boxnsc').hide('fast');
@@ -27,32 +27,20 @@ $nscBan = ($nscRest <= '0') ? true : false;
 		} else {
 			$('#boxnsc').show('fast');
 			$('#boxsc').hide('fast');
-			if(unterkunft == 'huette') {
-				$('#nsc_1').prop('checked', true);				
-				$('#bar_art').html(' NSC Huette');
-			} else {
-				$('#nsc_2').prop('checked', true);				
-				$('#bar_art').html(' NSC Zelt');
-			}	
 			$('#bar_art').css('font-weight', 'bold');
 		}
 	}
 
 	function toggleEdit() {
-		
-		if($('#nsc_1').is(':checked') || $('#nsc_2').is(':checked')){
+		if($('#nsc').is(':checked')){
 			$('#boxnsc').show('fast');
 			$('#boxsc').hide('fast');
-			if($('#nsc_1').is(':checked')) {
-				$('#bar_art').html(' NSC Huette');
-			} else {
-				$('#bar_art').html(' NSC Zelt');
-			}
+			$('#bar_art').html(' NSC ');
 			$('#bar_art').css('font-weight', 'bold');
 		} else if($('#sc').is(':checked')){
 			$('#boxsc').show('fast');
 			$('#boxnsc').hide('fast');
-			$('#bar_art').html(' Spieler');
+			$('#bar_art').html(' Spieler ');
 			$('#bar_art').css('font-weight', 'bold');			
 		}
 	}	
@@ -169,10 +157,8 @@ $nscBan = ($nscRest <= '0') ? true : false;
 				<b>Ich komme als:</b><span style='color: red'> *</span>
 			</div>	
 			<div style='position: relative; padding-left: 150px;'>
-				<input type='radio' name='member[rang]' value='sc' id="sc" checked="checked" class='radio' onclick="toggleEdit()"> <b>Spieler</b> &nbsp;
-				<input type='radio' name='member[rang]' value='nsc|huette' id="nsc_1" class='radio' onclick="toggleEdit()"> <b>NSC (H&uuml;tte)</b>
-				<input type='radio' name='member[rang]' value='nsc|zelt' id="nsc_2" class='radio' onclick="toggleEdit()"> <b>NSC (<u>eigenes</u> Zelt)</b>				
-				<input type="hidden" name="member[old_rang]" value="<?=$data['data'][0]['rang']?>" />
+				<input type='radio' name='member[rang]' value='sc' id="sc"   class='radio' onclick="toggleEdit()" <?php if($data['data'][0]['rang'] == 'sc'):?> checked="checked" <?php endif; ?>> <b>Spieler</b> &nbsp;
+				<input type='radio' name='member[rang]' value='nsc' id="nsc" class='radio' onclick="toggleEdit()" <?php if($data['data'][0]['rang'] == 'nsc'):?> checked="checked" <?php endif; ?>> <b>NSC</b>				
 			</div><br><br>
 		<div id="boxsc" style="display:block">
 			<div class='header' style='position: absolute'><b>Spieler</b></div>

@@ -37,17 +37,17 @@
 			
 	function toggle() {
 
-		if($('#nsc_1').is(':checked')){
+		if($('#nsc').is(':checked')){
 			$('#boxnsc').show('fast');
 			$('#boxsc').hide('fast');
-			$('#bar_art').html(' NSC');
+			$('#bar_art').html(' NSC ');
 		} else if($('#sc').is(':checked')){
 			$('#boxsc').show('fast');
 			$('#boxnsc').hide('fast');
 	<?php if($scBan == true): ?>
-			$('#bar_art').html(' Spieler auf Warteliste');
+			$('#bar_art').html(' Spieler auf Warteliste ');
 	<?php else: ?>
-			$('#bar_art').html(' Spieler');
+			$('#bar_art').html(' Spieler ');
 	<?php endif; ?>
 		}
 		
@@ -278,7 +278,7 @@
 					<?php if($scBan == true): ?>Spieler auf Warteliste<?php else: ?>Spieler<?php endif; ?></label>
 				</div>
 				<div class="radio">
-					<label><input type='radio' name='member[rang]' value='nsc|huette' id="nsc_1" onclick="toggle()">NSC</label>
+					<label><input type='radio' name='member[rang]' value='nsc' id="nsc" onclick="toggle()">NSC</label>
 				</div>
 			</div>
 		</div>

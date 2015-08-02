@@ -1,3 +1,4 @@
+<?php header('Content-Type: text/html; charset=utf-8');?>
 <!DOCTYPE html>
 <html lang="de">
 	<head>
@@ -91,7 +92,7 @@
 			<div class="container">
 				<div class="confirmation-box-container">
 					<div class="row">
-						<h3 class="text-danger"><?php echo $_SESSION['msg'];?><?php echo $_SESSION['pacifare']['msg'];?></h3>
+						<h3 class="text-danger"><?php echo $_SESSION['msg'];?></h3>
 					</div>
 					<div class="row">
 						<form class="form-horizontal" role="form">

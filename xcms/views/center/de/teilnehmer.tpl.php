@@ -6,6 +6,41 @@ $nscBan = ($nscRest <= '0') ? true : false;
 ?>
 
 <script>
+
+function getTextExtractor()
+{
+  return (function() {
+    var patternLetters = /[öäüÖÄÜáàâéèêúùûóòôÁÀÂÉÈÊÚÙÛÓÒÔß]/g;
+    var patternDateDmy = /^(?:\D+)?(\d{1,2})\.(\d{1,2})\.(\d{2,4})$/;
+    var lookupLetters = {
+      "ä": "a0", "ö": "o0", "ü": "u0",
+      "Ä": "A0", "Ö": "O0", "Ü": "U0",
+      "á": "a0", "à": "a0", "â": "a0",
+      "é": "e0", "è": "e0", "ê": "e0",
+      "ú": "u0", "ù": "u0", "û": "u0",
+      "ó": "o0", "ò": "o0", "ô": "o0",
+      "Á": "A0", "À": "A0", "Â": "A0",
+      "É": "E0", "È": "E0", "Ê": "E0",
+      "Ú": "U0", "Ù": "U0", "Û": "U0",
+      "Ó": "O0", "Ò": "O0", "Ô": "O0",
+      "ß": "s0"
+    };
+    var letterTranslator = function(match) { 
+      return lookupLetters[match] || match;
+    }
+
+    return function(node) {
+      var text = $.trim($(node).text());
+      var date = text.match(patternDateDmy);
+      if (date)
+        return [date[3], date[2], date[1]].join("-");
+      else
+        return text.replace(patternLetters, letterTranslator);
+    }
+  })();
+}
+
+
 $(document).ready(function(){
 	$(function(){
 		$("#teilnehmer").tablesorter({
@@ -18,7 +53,8 @@ $(document).ready(function(){
 			headers: { 
 			            3: { sorter: false }, 
 			            4: { sorter: false } 
-			        } 
+			        },
+		    textExtraction: getTextExtractor(),
 			
 		});
 	});
