@@ -144,7 +144,6 @@ class Dbfunctions {
 			$sql .= " ".$data;
 		}
 		$sql .= ";";
-		
 		if (mysql_query($sql) or die(mysql_error())){
 			$id =  mysql_insert_id();
 			if ($id != '0')	
