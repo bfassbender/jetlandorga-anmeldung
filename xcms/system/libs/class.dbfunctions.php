@@ -115,7 +115,7 @@ class Dbfunctions {
 		if (is_array($data)){
 			foreach($data as $key => $value){			
 				if ($i != 0) {$sql .= ", ";}
-				$sql .=  $this->_secure($key) ."='".$this->_exchange($value)."'";
+				$sql .=  $this->_secure($key) ."='".$value."'";
 				$i++;
 			}
 		} else {
@@ -136,7 +136,7 @@ class Dbfunctions {
 		if (is_array($data)){
 			foreach($data as $key => $value){			
 				if ($i != 0) {$sql .= ", ";}
-				$sql .=  $this->_secure($key) ."='".$this->_exchange($value)."'";
+				$sql .=  $this->_secure($key) ."='".$value."'";
 				$i++;
 			}
 		} else {
@@ -156,45 +156,6 @@ class Dbfunctions {
 	function _secure($data)
 	{
 		return(addslashes($data));
-	}
-	
-	function _exchange ($data){
-
-		if (is_array($data)){
-			foreach ($data as $datas) {
-				$datas = ereg_replace('ä', '&auml;', $datas);
-				$datas = ereg_replace('ö', '&ouml;', $datas);
-				$datas = ereg_replace('ü', '&uuml;', $datas);
-				$datas = ereg_replace('Ä', '&Auml;', $datas);
-				$datas = ereg_replace('Ö', '&Ouml;', $datas);
-				$datas = ereg_replace('Ü', '&Uuml;', $datas);
-				$datas = ereg_replace('/<p/', "<span", $datas);
-				$datas = ereg_replace('</p>', '</span>', $datas);
-				$datas = ereg_replace('ß', '&szlig;', $datas);
-				$datas = ereg_replace('<br>', '<br />', $datas);
-				$datas = ereg_replace('\'', '', $datas);
-				$datas = ereg_replace('<<', '&lt;<', $datas);
-				$datas = ereg_replace('>>', '>&gt;', $datas);
-				$datas = ereg_replace('<hr>', '<hr />', $datas);
-			}
-		} else {
-			$data = ereg_replace('ä', '&auml;', $data);
-			$data = ereg_replace('ö', '&ouml;', $data);
-			$data = ereg_replace('ü', '&uuml;', $data);
-			$data = ereg_replace('Ä', '&Auml;', $data);
-			$data = ereg_replace('Ö', '&Ouml;', $data);
-			$data = ereg_replace('Ü', '&Uuml;', $data);
-			$data = ereg_replace('/<p/', "<span", $data);
-			$data = ereg_replace('</p>', '</span>', $data);
-			$data = ereg_replace('ß', '&szlig;', $data);
-			$data = ereg_replace('<br>', '<br />', $data);
-			$data = ereg_replace('\'', '', $data);
-			$data = ereg_replace('<<', '&lt;<', $data);
-			$data = ereg_replace('>>', '>&gt;', $data);			
-			$data = ereg_replace('<hr>', '<hr />', $data);
-						
-		}
-		return($data);
 	}
 }
 ?>

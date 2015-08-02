@@ -81,56 +81,6 @@ function createLink($link, $target='_blank'){
 		}
 	}
 	
-	function _exchange ($data){
-		if (is_array($data)){
-			foreach ($data as $datas) {
-				$datas = ereg_replace('ä', '&auml;', $datas);
-				$datas = ereg_replace('ö', '&ouml;', $datas);
-				$datas = ereg_replace('ü', '&uuml;', $datas);
-				$datas = ereg_replace('Ä', '&Auml;', $datas);
-				$datas = ereg_replace('Ö', '&Ouml;', $datas);
-				$datas = ereg_replace('Ü', '&Uuml;', $datas);
-				$datas = ereg_replace('ß', '&szlig;', $datas);
-				$datas = ereg_replace('<br>', '<br />', $datas);			
-			}
-		} else {
-			$data = ereg_replace('ä', '&auml;', $data);
-			$data = ereg_replace('ö', '&ouml;', $data);
-			$data = ereg_replace('ü', '&uuml;', $data);
-			$data = ereg_replace('Ä', '&Auml;', $data);
-			$data = ereg_replace('Ö', '&Ouml;', $data);
-			$data = ereg_replace('Ü', '&Uuml;', $data);
-			$data = ereg_replace('ß', '&szlig;', $data);
-			$data = ereg_replace('<br>', '<br />', $data);			
-		}
-		return($data);
-	}
-
-	function _revertExchange ($data){
-		if (is_array($data)){
-			foreach ($data as $datas) {
-				$datas = ereg_replace('&auml;', 'ä', $datas);
-				$datas = ereg_replace('&ouml;', 'ö', $datas);
-				$datas = ereg_replace('&uuml;', 'ü;', $datas);
-				$datas = ereg_replace('&Auml;', 'Ä;', $datas);
-				$datas = ereg_replace('&Ouml;', 'Ö', $datas);
-				$datas = ereg_replace('&Uuml;', 'Ü', $datas);
-				$datas = ereg_replace('&szlig;', 'ß', $datas);
-				$datas = ereg_replace('<br>', '<br />', $datas);			
-			}
-		} else {
-				$data = ereg_replace('&auml;', 'ä', $data);
-				$data = ereg_replace('&ouml;', 'ö', $data);
-				$data = ereg_replace('&uuml;', 'ü;', $data);
-				$data = ereg_replace('&Auml;', 'Ä;', $data);
-				$data = ereg_replace('&Ouml;', 'Ö', $data);
-				$data = ereg_replace('&Uuml;', 'Ü', $data);
-				$data = ereg_replace('&szlig;', 'ß', $data);
-				$data = ereg_replace('<br>', '<br />', $data);			
-		}
-		return($data);
-	}	
-	
 	function _toData($data){
 		if (is_array($data)){
 			foreach($data as $key => $value){

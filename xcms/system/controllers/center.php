@@ -1,5 +1,13 @@
 <?php
+/** Error reporting */
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+date_default_timezone_set('Europe/Berlin');
+
 include(__DIR__ . '/../libs/zip.lib.php');
+require_once __DIR__ . '/../libs/PHPExcel.php';
+require_once __DIR__ . '/../libs/PHPExcel/Cell/AdvancedValueBinder.php';
 
 class Center extends Controller {
 
@@ -13,7 +21,6 @@ class Center extends Controller {
 	var $conf;
 	
 	function Center(){
-
 		session_start();
 		$this->db = new dbfunctions();
 		$this->fc = new frontcontroller();
@@ -167,60 +174,77 @@ class Center extends Controller {
 			}
 		} else {	
 			if ($_REQUEST['cat'] == 'all'){
-				$sc_sql = "SELECT *, DATE_FORMAT(FROM_UNIXTIME(datum), '%e.%m.%Y') as datum, 
-					IF (deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(deleted_date), '%e.%m.%Y'), '') as deleted_date
+				$sc_sql = "SELECT *, DATE_FORMAT(FROM_UNIXTIME(datum), '%d.%m.%Y') as datum, 
+					IF (deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(deleted_date), '%d.%m.%Y'), '') as deleted_date
 					FROM j11_member order by nachname ASC";
 				$res = $this->db->query($sc_sql);
-				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message\n";
+				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message";
 				$filename = "jetland_11_export_all_".date('d-m-Y_His', time()).".csv";
 			} else if ($_REQUEST['cat'] == 'sc'){
-				$sc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%e.%m.%Y') as datum, 
-					IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%e.%m.%Y'), '') as deleted_date, 
+				$sc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%d.%m.%Y') as datum, 
+					IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%d.%m.%Y'), '') as deleted_date, 
 					sc.* FROM j11_member member left join j11_sc sc on (sc.uid = member.id) WHERE member.rang = 'sc' order by member.nachname ASC";
 				$res = $this->db->query($sc_sql);
 				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".csv";
-				$file ="Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Charname|Rasse|Klasse|Herkunft|Zauber|Contage\n";				
+				$file ="Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Charname|Rasse|Klasse|Herkunft|Zauber|Contage";				
 			} else if ($_REQUEST['cat'] == 'nsc'){
-				$nsc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%e.%m.%Y') as datum, 
-							IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%e.%m.%Y'), '') as deleted_date, 
+				$nsc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%d.%m.%Y') as datum, 
+							IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%d.%m.%Y'), '') as deleted_date, 
 							nsc.* FROM j11_member member left join j11_nsc nsc on (nsc.uid = member.id) WHERE member.rang = 'nsc' order by member.nachname ASC";
 				$res = $this->db->query($nsc_sql);
-				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Sanitaeter|Krankheiten|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Dungeon|Traeume|Schminken|Kaempfen|Zaubern|Unterkunft\n";
+				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Dungeon|Traeume|Schminken|Kaempfen|Zaubern|Unterkunft";
 				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".csv";				
 			}
 		}
+		
+		echo $res;
+		
+		PHPExcel_Settings::setLocale('de_de');
+		PHPExcel_Cell::setValueBinder( new PHPExcel_Cell_AdvancedValueBinder() );
+		$objPHPExcel = new PHPExcel();
+		$objPHPExcel->getProperties()->setCreator("Jetland Anmeldetool")
+									 ->setTitle("Jetland 11 Teilnehmerliste");
+									
+		$objPHPExcel->setActiveSheetIndex(0);
+									
+		
+		
+		$headers = explode("|",$file);
+		
+		$cellindex = 0;
+		$rowindex = 1;
+		foreach($headers as $header) {
+			$column = $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($cellindex, $rowindex, ucfirst($header), true)->getColumn();
+			$objPHPExcel->getActiveSheet()->getColumnDimension($column)->setAutoSize(true);
+			$cellindex++;
+		}
+		
+		foreach ($res as $t) {
+			$rowindex++;
+			$cellindex = 0;
+			foreach($t as $key => $value) {				
+				if ($key == 'uid') { continue;}
+				$value = ($value == '01.01.1970') ? ' ' : $value;
+				$value = (!empty($value)) ? $value : ' ';					
+				if ($key != 'contage' || $key != 'erfahrung') {									
+					if ($value == '0') {
+						$value = 'Nein';
+					} else if ($value == '1') {
+						$value = 'Ja';
+					}
+				}					
+				$txt = $value;
+				$txt = preg_replace("#(\r|\n)#", ' ', $txt);
+				$txt = html_entity_decode($txt);
+				$objPHPExcel->setActiveSheetIndex(0)->setCellValueExplicitByColumnAndRow($cellindex, $rowindex, $txt, PHPExcel_Cell_DataType::TYPE_STRING);
+				#$objPHPExcel->setActiveSheetIndex(0)->setCellValueByColumnAndRow($cellindex, $rowindex, $txt);
+				$cellindex++;
+			}
+		}
+									
+		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+		$objWriter->save(__DIR__.'/../../../exports/'.str_replace('.csv', '.xlsx', $filename));
 
-			foreach ($res as $t) {
-				foreach($t as $key => $value) {
-					if ($key == 'uid') { continue;}
-					$value = ($value == '01.01.1970') ? ' ' : $value;
-					$value = (!empty($value)) ? $value : ' ';					
-					if ($key != 'contage' || $key != 'erfahrung') {									
-						if ($value == '0') {
-							$value = 'Nein';
-						} else if ($value == '1') {
-							$value = 'Ja';
-						}
-						
-					}					
-					$txt = ucfirst($value);
-					$txt = preg_replace("#(\r|\n)#", ' ', $txt);  				 
-					$txt = $this->util->_revertExchange($txt);
-					$txt = $this->convertToWindowsCharset($txt);
-					$file .= $txt."|";
-				}
-				$file .= "\n";
-			} 
-		if($this->writeDownload($filename, $file)) {
-			$data['show_export'] = true;
-			$data['status'] = '1';
-			$data['msg'] = 'Der Export war erfolgreich.<br /><br />';
-			$data['filename'] = $filename;
-		} else {
-			$data['show_export'] = true;			
-			$data['status'] = '0';
-			$data['msg'] = 'Beim Export ist ein Fehler aufgetreten.<br />';
-		} 
 		return($data);
 	}
 
@@ -610,53 +634,6 @@ $this->util->_debug($_POST);
 	}
 
 
-	function createXls($data){
-	
-		require_once 'PHPExcel/RichText.php';
-		$objPHPExcel = new PHPExcel();
-		
-		$c=0;
-		for ($x=0; $x < 3; $x++) { 
-			if (@count($data[$x]) != '0'){
-				$objPHPExcel->setActiveSheetIndex($c);
-		
-				$char = '65';
-				$add = '';
-				foreach ($data[$x][0] as $key => $value) {
-					$cell = $add.chr($char)."1";	
-					$objPHPExcel->getActiveSheet()->setCellValue($cell, ucfirst($key));
-					if ($char <= '89'){
-						$char++;}
-					else {$char = '65'; $add = 'A';}
-				}
-				for ($i=0; $i < count($data[$x]); $i++) {
-					$char = '65';
-					$add = '';
-					foreach ($data[$x][$i] as $key => $value) {
-						$cell = $add.chr($char).($i+3);
-						$objPHPExcel->getActiveSheet()->setCellValue($cell, $value);
-						if ($char <= '89'){
-							$char++;}
-						else {$char = '65'; $add = 'A';}
-					}
-				}
-				switch($data[$x][0]['day']){
-					case '0': $title = 'Crew'; break;
-					case '1': $title = 'Spieler'; break;
-					case '2': $title = 'Nichtpieler'; break;
-					
-				}
-				$objPHPExcel->getActiveSheet()->setTitle($data[$x][0]['rang']);
-				$objPHPExcel->createSheet();
-				$c++;
-			}
-			
-		}
-		
-		return($objPHPExcel);
-	}
-	
-	
 	function login(){		
 		$data = array();
 		if ($_POST['login']['user'] == $this->admin && md5($_POST['login']['pw']) == $this->adminpw){
