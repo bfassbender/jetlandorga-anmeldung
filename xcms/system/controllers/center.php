@@ -232,7 +232,6 @@ class Center extends Controller {
 					}					
 					$txt = $value;
 					$txt = preg_replace("#(\r|\n)#", ' ', $txt);
-					$txt = html_entity_decode($txt);
 					$objPHPExcel->setActiveSheetIndex(0)->setCellValueExplicitByColumnAndRow($cellindex, $rowindex, $txt, PHPExcel_Cell_DataType::TYPE_STRING);
 					$cellindex++;
 				}
@@ -255,18 +254,6 @@ class Center extends Controller {
 		
 		return($data);
 	}
-
-	function writeDownload ($filename, $file) {
-		if($myfile = fopen('exports/'.$filename, "w")) {
-			# Now UTF-8 - Add byte order mark 
-			fwrite($myfile, pack("CCC",0xef,0xbb,0xbf)); 
-			fwrite($myfile, $file);
-			fclose($myfile);
-			return true;
-		} else {
-			return false;
-		}
-	}	
 
 	function edit(){
 		$this->setLayout('admin');				
