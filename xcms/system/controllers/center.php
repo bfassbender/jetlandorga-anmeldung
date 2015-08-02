@@ -192,8 +192,8 @@ class Center extends Controller {
 							IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%d.%m.%Y'), '') as deleted_date, 
 							nsc.* FROM j11_member member left join j11_nsc nsc on (nsc.uid = member.id) WHERE member.rang = 'nsc' order by member.nachname ASC";
 				$res = $this->db->query($nsc_sql);
-				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Dungeon|Traeume|Schminken|Kaempfen|Zaubern|Unterkunft";
-				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".xlsx";				
+				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Traeume|Schminken|Kaempfen|Zaubern";
+				$filename = "jetland_11_export_nsc_".date('d-m-Y_His', time()).".xlsx";				
 			}
 			
 			PHPExcel_Settings::setLocale('de_de');
@@ -223,7 +223,7 @@ class Center extends Controller {
 					if ($key == 'uid') { continue;}
 					$value = ($value == '01.01.1970') ? ' ' : $value;
 					$value = (!empty($value)) ? $value : ' ';					
-					if ($key != 'contage' || $key != 'erfahrung') {									
+					if ($key != 'contage' || $key != 'erfahrung_tage') {									
 						if ($value == '0') {
 							$value = 'Nein';
 						} else if ($value == '1') {
@@ -234,7 +234,6 @@ class Center extends Controller {
 					$txt = preg_replace("#(\r|\n)#", ' ', $txt);
 					$txt = html_entity_decode($txt);
 					$objPHPExcel->setActiveSheetIndex(0)->setCellValueExplicitByColumnAndRow($cellindex, $rowindex, $txt, PHPExcel_Cell_DataType::TYPE_STRING);
-					#$objPHPExcel->setActiveSheetIndex(0)->setCellValueByColumnAndRow($cellindex, $rowindex, $txt);
 					$cellindex++;
 				}
 			}
@@ -433,7 +432,6 @@ class Center extends Controller {
 			$nsc['festrolle_plot'] = ($nsc['festrolle_plot'] == '1') ? '1' : '0';
 			$nsc['festrolle_ambiente'] = ($nsc['festrolle_ambiente'] == '1') ? '1' : '0';
 			$nsc['springer'] = ($nsc['springer'] == '1') ? '1' : '0';
-			$nsc['dungeon'] = ($nsc['dungeon'] == '1') ? '1' : '0';
 			$nsc['traeume'] = ($nsc['traeume'] == '1') ? '1' : '0';
 		} else {
 	/* add functions sc*/
