@@ -15,6 +15,7 @@ class Dbfunctions {
   		if (!$link) {
     		die("Could not connect: " . mysql_error() . "<br />\n");
   		}
+		mysql_query("SET NAMES utf8"); 
   		if(mysql_select_db($database)) {
 			return true;
 		} else {

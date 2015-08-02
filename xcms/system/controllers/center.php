@@ -205,8 +205,6 @@ class Center extends Controller {
 					}					
 					$txt = ucfirst($value);
 					$txt = preg_replace("#(\r|\n)#", ' ', $txt);  				 
-					$txt = $this->util->_revertExchange($txt);
-					$txt = $this->convertToWindowsCharset($txt);
 					$file .= $txt."|";
 				}
 				$file .= "\n";
@@ -224,19 +222,10 @@ class Center extends Controller {
 		return($data);
 	}
 
-	function convertToWindowsCharset($string) {
-	  $charset =  mb_detect_encoding(
-	    $string,
-	    "UTF-8, ISO-8859-1, ISO-8859-15",
-	    true
-	  );
-	 
-	  $string =  mb_convert_encoding($string, "Windows-1252", $charset);
-	  return $string;
-	}	
-
 	function writeDownload ($filename, $file) {
 		if($myfile = fopen('exports/'.$filename, "w")) {
+			# Now UTF-8 - Add byte order mark 
+			fwrite($myfile, pack("CCC",0xef,0xbb,0xbf)); 
 			fwrite($myfile, $file);
 			fclose($myfile);
 			return true;
