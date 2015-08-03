@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="de">
 	<head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
-		
-		<meta charset="utf-8">
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Jetland 11 - Die eherne Feste - präsentiert von der Jetland Orga. Ein Fantasy Live Action Roleplay Con vom 13.05. - 16.05.2016">
 		<meta name="author" content="Jetland Orga">
 		<meta content="yes" name="apple-mobile-web-app-capable">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Jetland 11 - Die eherne Feste - präsentiert von der Jetland Orga</title>
+		
+		<!-- Open Graph -->
+		<meta property="og:title" content="Jetland 11 - Die Eherne Feste"/>
+		<meta property="og:image" content="http://jetland.dreywassern.de/img/opengraph/jetland11.jpg" />
+		<meta property="og:site_name" content="Jetland Orga" />
+		<meta property="og:url"	content="http://jetland.dreywassern.de/index.html" />
+		<meta property="og:description"	content="Jetland 11 - Die eherne Feste - präsentiert von der Jetland Orga. Ein Fantasy Live Action Roleplay Con vom 13.05. - 16.05.2016" />
+		<meta property="og:locale" content="de_DE" />
+		<meta property="og:type" content="website" />
 
-		<title>Onlineanmeldung | Jetland 11 - Die eherne Feste | Jetland Orga</title>
+		<!-- Stylesheets -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/font-lato.css" rel="stylesheet">		
+		<link href="css/bootstrapValidator.min.css" rel="stylesheet">
+		<link href="css/ladda-themeless.min.css" rel="stylesheet">
+		<link href="css/animate.min.css" rel="stylesheet">
+		<link href="css/owl.carousel.css" rel="stylesheet">
+		<link href="css/owl.theme.css" rel="stylesheet">
+		<link href="css/app.css" rel="stylesheet">
 		
 		<!-- Favicon -->	
 		<link rel="icon" href="/img/favicon/favicon.ico" type="image/x-icon">
@@ -25,15 +41,29 @@
 		<link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/favicon_152.png">
 		<meta name="application-name" content="Jetland 11">
 		<meta name="msapplication-TileImage" content="/img/favicon/favicon_favicon-144.png">
-		<meta name="msapplication-TileColor" content="#666666">		
+		<meta name="msapplication-TileColor" content="#666666">
 		
-		<!-- Stylesheets -->
-		<link href="xcms/views/css/jetland/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<link href="xcms/views/css/jetland/font-awesome.min.css" rel="stylesheet" type="text/css">
-		<link href="xcms/views/css/jetland/font-lato.css" rel="stylesheet" type="text/css">
-		<link href="xcms/views/css/jetland/app.css" rel="stylesheet" type="text/css">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
 	</head>
 	<body>
+		<!-- Preloader -->
+		<div id="preloader">
+			<div id="status" class="text-center">
+				<div class="spinner">
+				  <div class="rect1"></div>
+				  <div class="rect2"></div>
+				  <div class="rect3"></div>
+				  <div class="rect4"></div>
+				  <div class="rect5"></div>
+				</div>
+			</div>
+		</div>
+		
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,25 +74,248 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
+				<a class="navbar-brand" href="/index.php">Jetland 11</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
 		        <li><a href="container.php?action=anmeldungen">Anmeldung</a></li>
-		        <li><a href="container.php?action=teilnehmer">Anmeldestatus</a></li>
-		        <li><a href="container.php?action=admin">Admin</a></li>			
+		        <li><a href="container.php?action=teilnehmer">Anmeldestatus</a></li>			
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
+		
+		<!-- Main -->
+		<section class="main text-center" id="home">
+			<div class="page">
+				<div class="wrapper">
+					<div class="container">
+						<!-- img src="img/logo/logo.png" alt="Logo"-->
+						<p>Die Jetland Orga präsentiert<p>
+						<h1 class="heading">Jetland 11 - Die eherne Feste</h1>
+						<p>Ein Fantasy LARP vom 13.05. - 16.05.2016<p>
+						<div class="row">
+							<div id="countdown"></div>
+						</div>
+						<div class="row">
+							<a class="btn btn-default ladda-button" data-style="expand-left" href="/container.php?action=anmeldungen" role="button">Jetzt anmelden!</a>
+							<a class="btn btn-theme ladda-button" data-style="expand-left" href="/container.php?action=teilnehmer" role="button">Anmeldestatus einsehen</a>
+							<a class="btn btn-theme ladda-button" data-style="expand-left" target="_blank" href="/files/Jetland_11_Flyer.pdf" role="button">Flyer laden</a>
+						</div>
+						<footer class="text-center">
+							Ihr wollt Euch mit anderen Interessenten austauschen? Dann besucht das <a href="http://forum.dreywassern.de"><strong>Dreywassern Forum</strong></a>.
+						</footer>
+					</div>
+					<div class="arrow-down">
+						<a class="scroll" href="#about" id="scroll"><i class="fa fa-angle-double-down"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- About -->
+		<section id="about" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h3 class="section-title">Unser Con-zept</h3>
+						<div class="section-title-border"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<p class="lead">
+							<strong>Unsere Cons</strong> spielen im Jetland mit seiner Hauptstadt Dreywassern, aus der auch unsere Intime-Charaktere stammen. Das Jetland gehört nicht zu einem der vielen Landstriche in den Mittellanden, sondern stellt mit seinen angrenzenden Gefilden eine eigenständige Region mit verschiedensten Kulturen und einer eigenen Götterwelt dar. Ein paar erste Eindrücke erhältst du auf unserer Vereins-Homepage <a href="http://www.dreywassern.de">http://www.dreywassern.de</a>.
+						</p>
+						<div class="row">
+							<div class="col-sm-4 feature-box-container">
+								<div class="feature-box wow fadeInDown">
+									<div class="icon">
+										<i class="fa fa-rocket"></i>
+									</div>
+									<div class="description">
+										<h4>Spielspaß</h4>
+										<p>Da wir bei unseren eigenen Charakteren viel Wert auf schönes Spiel und Spaß legen, verlangen wir von anderen nichts anderes. Bei der Charaktererschaffungen nutzen wir zwar das Regelwerk DragonSys 2nd Edition als Richtlinie, halten aber nicht verbissen daran fest. Es ist uns wichtiger, dass das Drumherum stimmt, als dass auf jeden Erfahrungspunkt geschaut wird. Selbstverständlich setzen auch wir Grenzen: Eigenschaften, die uns zu übermächtig oder nicht darstellbar erscheinen, streichen wir. Auf "Powergamer" können wir sehr gut verzichten!
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4 feature-box-container">
+								<div class="feature-box wow fadeInDown" data-wow-delay="0.2s">
+									<div class="icon">
+										<i class="fa fa-cogs"></i> 
+									</div>
+									<div class="description">
+										<h4>Plot</h4>
+										<p>Unsere Plots bieten für jeden etwas: vom Kämpfer über Waldläufer, Schurken und Schamanen bis hin zu Magiern und Gelehrten ist für jeden Geschmack etwas dabei. Wir versuchen immer, auch unerfahrenen Charakteren eine Möglichkeit zu geben, sich an dem Spiel zu beteiligen. Stupide "Ich schlachte dich ab, du schlachtest mich ab"-Cons vermeiden wir, was aber nicht bedeutet, dass Charaktere nicht sterben können! Aus unserer Sicht hat ein gutes Con die richtige Mischung zwischen Ambiente und Plotjagd, zwischen Knobeleien und Kampf.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4 feature-box-container">
+								<div class="feature-box wow fadeInDown" data-wow-delay="0.4s">
+									<div class="icon">
+										<i class="fa fa-heart"></i>
+									</div>
+									<div class="description">
+										<h4>Herzblut</h4>
+										<p>Als Orga versuchen wir stets, allen Beteiligten ein faszinierendes Con zu bieten. Monatelang tüfteln wir am Plot, gestalten Kostüme, konzipieren Aufbauten und entwerfen NSC-Rollen. Doch am Ende kommt es auf euch an und darauf, was ihr aus der Geschichte macht, die wir für euch erdacht haben. Wir haben auf unseren Cons erlebt, wie viel Freude und Leidenschaft die Spieler, die NSCs und das Team aus Orga und Helfern einbringen. Aus unserer Sicht ist es dieses Herzblut, das uns alle zusammenbringt.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		
+		<!-- Team -->
+		<section id="team" class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<h3 class="section-title">Unser Team</h3>
+						<div class="section-title-border"></div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-container">
+				<div id="teamCarousel" class="owl-carousel text-center">
+					<div class="text-center team-member-container wow fadeInDown">
+						<div class="team-member">
+							<div class="team-member-img">
+								<img src="img/portraits/daniel.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="team-member-meta">
+								<h4>Daniel Beneš</h4>
+								<p>Plotbuch, Hauptplot und der Blick aufs Große Ganze sind Daniels Spezialität. Außerdem treibt er die Jetland Conreihe unermüdlich weiter.</p>
+								<div class="social">
+									<a href="https://www.facebook.com/daniel.benes.3990" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-center team-member-container wow fadeInDown" data-wow-delay="0.2s">
+						<div class="team-member">
+							<div class="team-member-img">
+								<img src="img/portraits/manuel.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="team-member-meta">
+								<h4>Manuel Hita Hochgesand</h4>
+								<p>Kreative Kraft für Bauten und Waffen. Auch für den ein oder anderen Spezialeffekt zu haben und gerne im Bereich Haupt- und Subplots unterwegs. Unsere Dungeons sind oft <i>sein</i> Baby.</p>
+								<div class="social">
+									<a href="https://www.facebook.com/hitahoch" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-center team-member-container wow fadeInDown" data-wow-delay="0.4s"> 
+						<div class="team-member">
+							<div class="team-member-img">
+								<img src="img/portraits/christian_d.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="team-member-meta">
+								<h4>Christian Domaschka</h4>
+								<p>Zusammen mit Nadine ein unschlagbares Duo im Bereich Kostüm- und Charakterdesign. Neben seiner Arbeit im Jeta Workshop arbeitet er zudem an stimmungsvollen Bildern, Visionen, Texten und Figuren.</p>
+								<div class="social">
+									<a href="https://www.facebook.com/konig.dermotten" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-center team-member-container wow fadeInDown" data-wow-delay="0.6s">
+						<div class="team-member">
+							<div class="team-member-img">
+								<img src="img/portraits/nadine.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="team-member-meta">
+								<h4>Nadine Domaschka</h4>						
+								<p>Die Dame im Hause des Jeta Workshop. Sie kleidet nicht nur NSC in feinste Tücher, sondern tüftelt gerne an Subplots und Charakterkonzepten. Außerdem sorgt sie ür ein spielbares Kräuter- und Alchemieregelwerk.</p>
+								<div class="social">
+									<a href="https://www.facebook.com/nadine.domaschka" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-center team-member-container wow fadeInDown">
+						<div class="team-member">
+							<div class="team-member-img">
+								<img src="img/portraits/bernd.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="team-member-meta">
+								<h4>Bernd Knobloch</h4>
+								<p>Allzweckorga und Spielleitung. Schreibt Charakterkonzepte. Tüftelt außerdem gerne an der Soundkulisse und kleinen Rafinessen wie sprechenden Steinen. Ab und an im Visionenraum anzutreffen.</p>
+								<div class="social">
+									<a href="https://www.facebook.com/bezau.bernd.9" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
+									<a href="https://twitter.com/FlightSuitUp" class="btn btn-theme"><i class="fa fa-twitter"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-center team-member-container wow fadeInDown" data-wow-delay="0.2s">
+						<div class="team-member">
+							<div class="team-member-img">
+								<img src="img/portraits/christian_m.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="team-member-meta">
+								<h4>Christian Metzger</h4>
+								<p>Erprobte Feld-SL und Organisationstalent auf der Con. Er ist unsere Feuerwehr, immer gerade da, wo es brennt. Außerdem jongliert er mit den Zahlen und sorgt dafür, dass das Budget stimmt.</p>
+								<div class="social">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-center team-member-container wow fadeInDown" data-wow-delay="0.4s">
+						<div class="team-member">
+							<div class="team-member-img">
+								<img src="img/portraits/lars.jpg" alt="" class="img-responsive">
+							</div>
+							<div class="team-member-meta">
+								<h4>Lars Kern</h4>
+								<p>Der Mann für Licht und Ton und alles was Kabel hat, oder über Funkwellen kommuniziert. Kennt das Plotbuch oft nur von außen, dafür Dungeons, Kriechgänge und Kabelschächte sehr gut von innen. Wohnt im Visionenraum.
+								</p>
+								<div class="social">
+									<a href="https://www.facebook.com/lars.kern.7" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div class="text-center team-member-container wow fadeInDown" data-wow-delay="0.4s">
+							<div class="team-member">
+								<div class="team-member-img">
+									<img src="img/portraits/christoph.jpg" alt="" class="img-responsive">
+								</div>
+								<div class="team-member-meta">
+									<h4>Christoph Platt</h4>
+									<p>Ansprechpartner für alle Fragen rund um Anmeldungen, Teilnahmebeiträge und Charakterbögen. Kümmert sich daneben um Intime-Schriften, Subplots und das ein oder andere Rätsel. Begutachtet magische Rituale und die Übersetzung von Runen.
+									</p>
+									<div class="social">
+										<a href="https://www.facebook.com/profile.php?id=1209247701" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</section>
+		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="xcms/views/js/jquery.min.js" type="text/javascript"></script>
-   	<script src="xcms/views/js/jquery.backstretch.min.js" type="text/javascript"></script>
-		<script src="xcms/system/libs/js/jquery.tablesorter.js" type="text/javascript"></script>
+		<script src="js/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="xcms/views/js/bootstrap.min.js" type="text/javascript"></script>
-		<!-- <script src="xcms/views/js/validator.min.js" type="text/javascript"></script> -->
-		<script src="xcms/views/js/app.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.backstretch.min.js"></script>
+		<script src="js/jquery.countdown.min.js"></script>
+		<script src="js/bootstrapValidator.min.js"></script>
+		<script src="js/validator/emailAddress.js"></script>
+		<script src="js/spin.min.js"></script>
+		<script src="js/ladda.min.js"></script>
+		<script src="js/retina.min.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/init.js"></script>
 	</body>
 </html>
