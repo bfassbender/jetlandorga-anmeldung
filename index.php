@@ -247,7 +247,7 @@
 								<img src="img/portraits/bernd.jpg" alt="" class="img-responsive">
 							</div>
 							<div class="team-member-meta">
-								<h4>Bernd Knobloch</h4>
+								<h4>Bernd Faßbender</h4>
 								<p>Allzweckorga und Spielleitung. Schreibt Charakterkonzepte. Tüftelt außerdem gerne an der Soundkulisse und kleinen Rafinessen wie sprechenden Steinen. Ab und an im Visionenraum anzutreffen.</p>
 								<div class="social">
 									<a href="https://www.facebook.com/bezau.bernd.9" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
