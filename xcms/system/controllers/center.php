@@ -415,7 +415,6 @@ class Center extends Controller {
 	/* add functions nsc*/	
 		if ($member['rang'] == 'nsc') {
 			$nsc['uid'] = $id;
-			$nsc['unterkunft'] = $tmp[1];
 			$nsc['festrolle_plot'] = ($nsc['festrolle_plot'] == '1') ? '1' : '0';
 			$nsc['festrolle_ambiente'] = ($nsc['festrolle_ambiente'] == '1') ? '1' : '0';
 			$nsc['springer'] = ($nsc['springer'] == '1') ? '1' : '0';
@@ -434,7 +433,7 @@ class Center extends Controller {
 		}	
 		$member['aufbau'] = ($member['aufbau'] == '1') ? '1' : '0';
 		$member['abbau'] = ($member['abbau'] == '1') ? '1' : '0';
-
+		$member['sichtbar'] = ($member['sichtbar'] == '1') ? '1' : '0';
 /*
 		$this->util->_debug($member);
 		$this->util->_debug($sc);
