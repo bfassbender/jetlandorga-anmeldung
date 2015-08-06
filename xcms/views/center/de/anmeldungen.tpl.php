@@ -194,10 +194,10 @@
 			<label class="col-md-2 control-label">Ich helfe beim:</label>
 			<div class="col-md-10">
 				<div class="checkbox">
-					<label><input type="checkbox">Aufbau</label>
+					<label><input type="checkbox" name="member[aufbau]" value="1">Aufbau</label>
 				</div>
 				<div class="checkbox">
-					<label><input type="checkbox">Abbau</label>
+					<label><input type="checkbox" name="member[abbau]" value="1">Abbau</label>
 				</div>
 			</div>
 		</div>							
@@ -315,10 +315,10 @@
 				<label class="col-md-2 control-label">Zauberkundig</label>
 				<div class="col-md-10">
 					<div class="radio">
-					   <label><input type='radio' name='sc[zauber][]' value="0" checked="checked">Nein</label>
+					   <label><input type='radio' name='sc[zauber]' value="0" checked="checked">Nein</label>
 					</div>
 					<div class="radio">
-						<label><input type='radio' name='sc[zauber][]' value="1">Ja</label>
+						<label><input type='radio' name='sc[zauber]' value="1">Ja</label>
 					</div>
 				</div>
 			</div>
