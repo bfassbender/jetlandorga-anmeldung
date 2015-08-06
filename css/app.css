@@ -1,5 +1,3 @@
-@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700,900');
-
 /* ---------------------------------------------------------
  *	General
  *  --------------------------------------------------------- */
@@ -108,7 +106,7 @@ a:after {
 .btn {
 	display: inline-block;
 	padding: 10px 20px;
-	margin-bottom: 0;
+	margin-bottom: 5px;
 	font-size: 14px;
 	font-weight: normal;
 	line-height: 1.428571429;
