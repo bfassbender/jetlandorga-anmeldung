@@ -88,6 +88,7 @@
 							<li><a target="_blank" href="/files/Flyer_Jetland_11.pdf">Jetland 11 Flyer</a></li>
 				      	<li><a target="_blank" href="/files/DragonSys_Charakterogen_3rd_Ed.pdf">Charakterbogen (Dragonsys 3rd Ed.)</a></li>
 				      	<li><a target="_blank" href="/files/Jetland_11_Regelerweiterungen.pdf">Regelerweiterungen</a></li>
+				      	<li><a target="_blank" href="/files/Jetland_11_Kraeuterregelwerk.pdf">Kräuterregelwerk</a></li>				
 				   	</ul>
 					</li>
 					<li><a target="_blank" href="http://forum.dreywassern.de">Forum</a></li>
