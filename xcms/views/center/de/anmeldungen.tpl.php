@@ -41,9 +41,12 @@
 			$('#boxnsc').show('fast');
 			$('#boxsc').hide('fast');
 			$('#bar_art').html(' NSC ');
+			$('#aufbau_checkbox').attr('disabled', false);
 		} else if($('#sc').is(':checked')){
 			$('#boxsc').show('fast');
 			$('#boxnsc').hide('fast');
+			$('#aufbau_checkbox').attr('disabled', true);
+			$('#aufbau_checkbox').attr("checked", false);
 	<?php if($scBan == true): ?>
 			$('#bar_art').html(' Spieler auf Warteliste ');
 	<?php else: ?>
@@ -193,8 +196,8 @@
 			</div>
 			<label class="col-md-2 control-label">Ich helfe beim:</label>
 			<div class="col-md-10">
-				<div class="checkbox-inline">
-					<label><input type="checkbox" name="member[aufbau]" value="1">Aufbau</label>
+				<div id="aufbauhelfer" class="checkbox-inline">
+					<label><input id="aufbau_checkbox" type="checkbox" name="member[aufbau]" value="1">Aufbau (nur NSC)</label>
 				</div>
 				<div class="checkbox-inline">
 					<label><input type="checkbox" name="member[abbau]" value="1">Abbau</label>
