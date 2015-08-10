@@ -112,8 +112,8 @@ $(document).ready(function(){
 							else 
 								$nsc++;
 
-							$status_wl  = ($datas['warteliste'] == '1') ? 'power_on' : 'power_off';
-							$status_bez  = ($datas['bezahlt'] == '1') ? 'power_on' : 'power_off';
+							$status_wl  = ($datas['warteliste'] == '1') ? 'glyphicon glyphicon-exclamation-sign text-warning' : '';
+							$status_bez  = ($datas['bezahlt'] == '1') ? 'glyphicon glyphicon-ok text-success' : 'glyphicon glyphicon-remove text-danger';
 
 							echo "<tr>";
 								if($config[0]['liste_nachname'] == '1') {
@@ -126,10 +126,10 @@ $(document).ready(function(){
 									echo "<td>".ucfirst($datas['rang'])."</td>";
 								}
 								if($config[0]['liste_warteliste'] == '1') {
-									echo "<td><img src='xcms/views/images/icons/".$status_wl.".png' title='Warteliste' alt='Warteliste' /></td>";
+									echo "<td><span class='".$status_wl."' aria-hidden='false'></span></td>";
 								}
 								if($config[0]['liste_bezahlt'] == '1') {
-									echo "<td><img src='xcms/views/images/icons/".$status_bez.".png' title='Bezahlstatus' alt='Bezahlstatus' /></td>";
+									echo "<td><span class='".$status_bez."' aria-hidden='false'></span></td>";
 								}
 							echo "</tr>";
 						}

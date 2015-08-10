@@ -31,8 +31,8 @@
 			<link href="xcms/views/css/jetland/bootstrap.min.css" rel="stylesheet" type="text/css">
 			<link href="xcms/views/css/jetland/font-awesome.min.css" rel="stylesheet" type="text/css">
 			<link href="xcms/views/css/jetland/font-lato.css" rel="stylesheet" type="text/css">
-			<link href="xcms/views/css/jetland/app.css" rel="stylesheet" type="text/css">
-			<link href="xcms/views/css/theme.bootstrap.css" rel="stylesheet" type="text/css">			
+			<link href="xcms/views/css/theme.bootstrap.css" rel="stylesheet" type="text/css">
+			<link href="xcms/views/css/jetland/app.css" rel="stylesheet" type="text/css">			
 
 			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 			<script src="xcms/views/js/jquery-2.1.4.min.js" type="text/javascript"></script>
