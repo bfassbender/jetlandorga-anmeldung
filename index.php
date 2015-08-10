@@ -78,10 +78,19 @@
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		    <div class="collapse navbar-collapse" style="z-index: 9999;" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li><a href="container.php?action=anmeldungen">Anmeldung</a></li>
-		        <li><a href="container.php?action=teilnehmer">Anmeldestatus</a></li>			
+		        	<li><a href="container.php?action=anmeldungen">Anmeldung</a></li>
+		        	<li><a href="container.php?action=teilnehmer">Anmeldestatus</a></li>			
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Downloads <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a target="_blank" href="/files/Flyer_Jetland_11.pdf">Jetland 11 Flyer</a></li>
+				      	<li><a target="_blank" href="/files/DragonSys_Charakterogen_3rd_Ed.pdf">Charakterbogen (Dragonsys 3rd Ed.)</a></li>
+				      	<li><a target="_blank" href="/files/Jetland_11_Regelerweiterungen.pdf">Regelerweiterungen</a></li>
+				   	</ul>
+					</li>
+					<li><a target="_blank" href="http://forum.dreywassern.de">Forum</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -100,7 +109,7 @@
 							<div id="countdown"></div>
 						</div>
 						<div class="row">
-							<a class="btn btn-default ladda-button" data-style="expand-left" href="/container.php?action=anmeldungen" role="button">Jetzt anmelden!</a>
+							<a class="btn btn-success ladda-button" data-style="expand-left" href="/container.php?action=anmeldungen" role="button">Jetzt anmelden!</a>
 							<a class="btn btn-theme ladda-button" data-style="expand-left" href="/container.php?action=teilnehmer" role="button">Anmeldestatus einsehen</a>
 							<a class="btn btn-theme ladda-button" data-style="expand-left" target="_blank" href="/files/Flyer_Jetland_11.pdf" role="button">Flyer laden</a>
 						</div>

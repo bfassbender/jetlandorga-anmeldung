@@ -88,6 +88,10 @@ a:after {
  *	Bootstrap override
  * --------------------------------------------------------- */
 
+.dropdown-menu {
+	z-index: 9999;
+}
+
 
 /*
  *	Container
