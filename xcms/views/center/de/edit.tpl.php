@@ -93,10 +93,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 		</div>			
 		<label class="col-md-2 control-label">Gelöscht</label>
 		<div class="col-md-10">
-			<div class="radio">
+			<div class="radio-inline">
 				<label><input type='radio' name='member[deleted]' value="0" <?php if($data['data'][0]['deleted'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
 			</div>
-			<div class="radio">
+			<div class="radio-inline">
 				<label><input type='radio' name='member[deleted]' value="1" <?php if($data['data'][0]['deleted'] != '0'):?> checked="checked" <?php endif; ?>>Ja<?php if ($data['data'][0]['deleted'] == '1'): ?>, am <?=date('d.m.Y', $data['data'][0]['deleted_date']);?><?php endif; ?></label>
 			</div>
 		</div>
@@ -159,10 +159,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			</div>
 			<label class="col-md-2 control-label">Ich helfe beim:</label>
 			<div class="col-md-10">
-				<div class="checkbox">
+				<div class="checkbox-inline">
 					<label><input type="checkbox" name='member[aufbau]' value='1' <?php if($data['data'][0]['aufbau'] == '1'):?> checked="checked" <?php endif; ?>>Aufbau</label>
 				</div>
-				<div class="checkbox">
+				<div class="checkbox-inline">
 					<label><input type="checkbox" name='member[abbau]'  value='1' <?php if($data['data'][0]['abbau'] == '1'):?> checked="checked" <?php endif; ?>>Abbau</label>
 				</div>
 			</div>
@@ -170,10 +170,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 		<div class="form-group">
 			<label class="col-md-2 control-label">Larperfahrung</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 			    	<label><input type='radio' name='member[erfahrung]' value='0' <?php if($data['data'][0]['erfahrung'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 			    	<label><input type='radio' name='member[erfahrung]' value='1' <?php if($data['data'][0]['erfahrung'] != '0'):?> checked="checked" <?php endif; ?>>Ja</label>
 				</div>
 				<input id='erfahrung_tage' class="form-control" type='text' name='member[erfahrung_tage]' placeholder="Con-Tage gesamt" maxlength="4" value='<?=$data['data'][0]['erfahrung_tage']?>' />
@@ -182,10 +182,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 		<div class="form-group">			
 			<label class="col-md-2 control-label">Sanitäter</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[sanitaeter]' value='0' <?php if($data['data'][0]['sanitaeter'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[sanitaeter]' value='1' <?php if($data['data'][0]['sanitaeter'] != '0'):?> checked="checked" <?php endif; ?>>Ja</label>
 				</div>										
 			</div>
@@ -193,10 +193,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 		<div class="form-group">			
 			<label class="col-md-2 control-label">Vegetarier</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[vegetarier]' value='0' <?php if($data['data'][0]['vegetarier'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[vegetarier]' value='1' <?php if($data['data'][0]['vegetarier'] != '0'):?> checked="checked" <?php endif; ?>>Ja</label>
 				</div>
 			</div>
@@ -204,10 +204,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 		<div class="form-group">			
 			<label class="col-md-2 control-label">Krankheiten / Allergien</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[krankheiten]' value='0' <?php if($data['data'][0]['krankheiten'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[krankheiten]' value='1' <?php if($data['data'][0]['krankheiten'] != '0'):?> checked="checked" <?php endif; ?>>Ja, und zwar</label><br />
 				</div>
 				<input id='krankheiten_welche' class="form-control" type='text' name='member[krankheiten_welche]' value='<?=$data['data'][0]['krankheiten_welche'];?>' placeholder='Krankheiten / Allergien' maxlength='100'>
@@ -216,10 +216,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 		<div class="form-group">			
 			<label class="col-md-2 control-label">Ich muss durchschlafen</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[durchschlafen]' value='0' <?php if($data['data'][0]['durchschlafen'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[durchschlafen]' value='1' <?php if($data['data'][0]['durchschlafen'] != '0'):?> checked="checked" <?php endif; ?>>Ja</label>
 				</div>
 			</div>
@@ -238,11 +238,11 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			</div>
 			<label class="col-md-2 control-label">Ich komme als:</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[rang]' value='sc' id="sc" onclick="toggle()" <?php if($data['data'][0]['rang'] == 'sc'):?> checked="checked" <?php endif; ?>>
 					<?php if($scBan == true): ?>Spieler auf Warteliste<?php else: ?>Spieler<?php endif; ?></label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[rang]' value='nsc' id="nsc" onclick="toggle()" <?php if($data['data'][0]['rang'] == 'nsc'):?> checked="checked" <?php endif; ?>> NSC</label>
 				</div>
 			</div>
@@ -279,10 +279,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div class="form-group">			
 				<label class="col-md-2 control-label">Zauberkundig</label>
 				<div class="col-md-10">
-					<div class="radio">
+					<div class="radio-inline">
 					   <label><input type='radio' name='sc[zauber]' value="0" <?php if($data['sc'][0]['zauber'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
 					</div>
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='sc[zauber]' value="1" <?php if($data['sc'][0]['zauber'] != '0'):?> checked="checked" <?php endif; ?>>Ja</label>
 					</div>
 				</div>
@@ -327,10 +327,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div class="form-group">			
 				<label class="col-md-2 control-label">Ich kann schminken:</label>
 				<div class="col-md-10">
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[schminken]' value="0" <?php if($data['nsc'][0]['schminken'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
 					</div>
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[schminken]' value="1" <?php if($data['nsc'][0]['schminken'] != '0'):?> checked="checked" <?php endif; ?>>Ja</label>
 					</div>
 				</div>
@@ -338,10 +338,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div class="form-group">			
 				<label class="col-md-2 control-label">Ich k&auml;mpfe:</label>
 				<div class="col-md-10">
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[kaempfen]' value="0" <?php if($data['nsc'][0]['kaempfen'] == '0'):?> checked="checked" <?php endif; ?>>Ungern</label>
 					</div>
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[kaempfen]' value="1" <?php if($data['nsc'][0]['kaempfen'] != '0'):?> checked="checked" <?php endif; ?>>Gerne</label>
 					</div>
 				</div>
@@ -349,10 +349,10 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			<div class="form-group">			
 				<label class="col-md-2 control-label">Ich zaubere:</label>
 				<div class="col-md-10">
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[zaubern]' value="0" <?php if($data['nsc'][0]['zaubern'] == '0'):?> checked="checked" <?php endif; ?>>Ungern</label>
 					</div>
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[zaubern]' value="1" <?php if($data['nsc'][0]['zaubern'] != '0'):?> checked="checked" <?php endif; ?>>Gerne</label>
 					</div>
 				</div>

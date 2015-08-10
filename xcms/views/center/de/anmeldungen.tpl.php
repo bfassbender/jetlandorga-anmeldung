@@ -193,10 +193,10 @@
 			</div>
 			<label class="col-md-2 control-label">Ich helfe beim:</label>
 			<div class="col-md-10">
-				<div class="checkbox">
+				<div class="checkbox-inline">
 					<label><input type="checkbox" name="member[aufbau]" value="1">Aufbau</label>
 				</div>
-				<div class="checkbox">
+				<div class="checkbox-inline">
 					<label><input type="checkbox" name="member[abbau]" value="1">Abbau</label>
 				</div>
 			</div>
@@ -204,10 +204,10 @@
 		<div class="form-group">
 			<label class="col-md-2 control-label">Larperfahrung</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 			    	<label><input type='radio' name='member[erfahrung]' checked="checked" value='0'>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 			    	<label><input type='radio' name='member[erfahrung]' value='1'>Ja</label>
 				</div>
 				<input id='erfahrung_tage' class="form-control" type='text' name='member[erfahrung_tage]' placeholder="Con-Tage gesamt" maxlength="4" value='' />
@@ -216,10 +216,10 @@
 		<div class="form-group">			
 			<label class="col-md-2 control-label">Sanitäter</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[sanitaeter]' checked="checked" value='0'>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[sanitaeter]' value='1'>Ja</label>
 				</div>										
 			</div>
@@ -227,10 +227,10 @@
 		<div class="form-group">			
 			<label class="col-md-2 control-label">Vegetarier</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[vegetarier]' checked="checked" value='0'>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[vegetarier]' value='1'>Ja</label>
 				</div>
 			</div>
@@ -238,10 +238,10 @@
 		<div class="form-group">			
 			<label class="col-md-2 control-label">Krankheiten / Allergien</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[krankheiten]' checked="checked" value='0'>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[krankheiten]' value='1'>Ja, und zwar</label><br />
 				</div>
 				<input id='krankheiten_welche' class="form-control" type='text' name='member[krankheiten_welche]' value='' placeholder='Krankheiten / Allergien' maxlength='100'>
@@ -250,10 +250,10 @@
 		<div class="form-group">			
 			<label class="col-md-2 control-label">Ich muss durchschlafen</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[durchschlafen]' checked="checked" value='0'>Nein</label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[durchschlafen]' value='1'>Ja</label>
 					<span class="small">(Bitte nur w&auml;hlen, wenn medizinische Gr&uuml;nde vorliegen)</span>
 				</div>
@@ -273,11 +273,11 @@
 			</div>
 			<label class="col-md-2 control-label">Ich komme als:</label>
 			<div class="col-md-10">
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[rang]' value='sc' id="sc" checked="checked" onclick="toggle()">
 					<?php if($scBan == true): ?>Spieler auf Warteliste<?php else: ?>Spieler<?php endif; ?></label>
 				</div>
-				<div class="radio">
+				<div class="radio-inline">
 					<label><input type='radio' name='member[rang]' value='nsc' id="nsc" onclick="toggle()">NSC</label>
 				</div>
 			</div>
@@ -314,10 +314,10 @@
 			<div class="form-group">			
 				<label class="col-md-2 control-label">Zauberkundig</label>
 				<div class="col-md-10">
-					<div class="radio">
+					<div class="radio-inline">
 					   <label><input type='radio' name='sc[zauber]' value="0" checked="checked">Nein</label>
 					</div>
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='sc[zauber]' value="1">Ja</label>
 					</div>
 				</div>
@@ -362,10 +362,10 @@
 			<div class="form-group">			
 				<label class="col-md-2 control-label">Ich kann schminken:</label>
 				<div class="col-md-10">
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[schminken]' value="0" checked="checked">Nein</label>
 					</div>
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[schminken]' value="1">Ja</label>
 					</div>
 				</div>
@@ -373,10 +373,10 @@
 			<div class="form-group">			
 				<label class="col-md-2 control-label">Ich k&auml;mpfe:</label>
 				<div class="col-md-10">
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[kaempfen]' value="0" checked="checked">Ungern</label>
 					</div>
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[kaempfen]' value="1">Gerne</label>
 					</div>
 				</div>
@@ -384,10 +384,10 @@
 			<div class="form-group">			
 				<label class="col-md-2 control-label">Ich zaubere:</label>
 				<div class="col-md-10">
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[zaubern]' value="0" checked="checked">Ungern</label>
 					</div>
-					<div class="radio">
+					<div class="radio-inline">
 						<label><input type='radio' name='nsc[zaubern]' value="1">Gerne</label>
 					</div>
 				</div>
