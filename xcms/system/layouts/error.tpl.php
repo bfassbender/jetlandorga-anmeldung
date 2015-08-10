@@ -96,7 +96,7 @@
 					</div>
 					<div class="row">
 						<form class="form-horizontal" role="form">
-							<button type='button' class="btn btn-danger" onClick="self.location = history.back(-1)">&#x2190; zur&uuml;ck</button>
+							<button type='button' class="btn btn-danger" onClick="window.history.back()">&#x2190; zurück</button>
 						</form>
 					</div>
 				</div>
