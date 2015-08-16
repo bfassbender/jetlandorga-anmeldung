@@ -1,7 +1,7 @@
 <?
-$scRest = ($config[0]['sc_anz']-$c['sc']);
+$scRest = ($config[0]['sc_anz']-$data['sc']);
 $scBan = ($scRest <= '0') ? true : false;
-$nscRest = ($config[0]['nsc_anz']-$c['nsc']);
+$nscRest = ($config[0]['nsc_anz']-$data['nsc']);
 $nscBan = ($nscRest <= '0') ? true : false;
 ?>
 
@@ -64,14 +64,15 @@ $(document).ready(function(){
 <div class='container'>
 	<h1>Anmeldestatus</h1>
 	<?php if($config[0]['stats'] == '1'): ?>
+	<div>
 		<ul>
 		<? if ($scBan == false): ?>
-			<li style='margin-left: 20px'>Es haben sich bisher <b><? echo $c['sc']; ?></b> von <b><?echo $config[0]['sc_anz']; ?></b> m&ouml;glichen <b>Spieler</b> angemeldet, es sind noch <b><?php echo ($config[0]['sc_anz']-$c['sc']);?></b> Pl&auml;tze verf&uuml;gbar.</li>
+			<li style='margin-left: 20px'>Es haben sich bisher <b><? echo $data['sc']; ?></b> von <b><?echo $config[0]['sc_anz']; ?></b> m&ouml;glichen <b>Spieler</b> angemeldet, es sind noch <b><?php echo ($config[0]['sc_anz']-$data['sc']);?></b> Pl&auml;tze verf&uuml;gbar.</li>
 		<? else: ?>
 			<li style='margin-left: 20px'>Es sind <b>keine</b> Spielerpl&auml;tze f&uuml;r das $config[0]['conname'] mehr verf&uuml;gbar.</li>
 		<? endif; ?>
 		<? if ($nscBan == false): ?>
-			<li style='margin-left: 20px'>Es haben sich bisher <b><? echo $c['nsc']; ?></b> von <b><?echo $config[0]['nsc_anz']; ?></b> m&ouml;glichen <b>NSCs</b> angemeldet, es sind noch <b><?php echo ($config[0]['nsc_anz']-$c['nsc']);?></b> Pl&auml;tze verf&uuml;gbar.</li>
+			<li style='margin-left: 20px'>Es haben sich bisher <b><? echo $data['nsc']; ?></b> von <b><?echo $config[0]['nsc_anz']; ?></b> m&ouml;glichen <b>NSCs</b> angemeldet, es sind noch <b><?php echo ($config[0]['nsc_anz']-$data['nsc']);?></b> Pl&auml;tze verf&uuml;gbar.</li>
 		<? else: ?>
 			<li style='margin-left: 20px'>Es sind <b>keine</b> NSCpl&auml;tze f&uuml;r das $config[0]['conname'] mehr verf&uuml;gbar.</li>
 		<? endif; ?>		
