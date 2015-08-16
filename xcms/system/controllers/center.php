@@ -73,8 +73,8 @@ class Center extends Controller {
 	function anmeldungen(){
 		$data = array();
 		$data['config'] = $this->conf;
-		$data['c']['sc'] = $this->db->dbCount('member', "rang = 'sc'");
-		$data['c']['nsc'] = $this->db->dbCount('member', "rang = 'nsc'");
+		$data['c']['sc'] = $this->db->dbCount('member', "rang = 'sc' and bezahlt = 1 and deleted != 1");
+		$data['c']['nsc'] = $this->db->dbCount('member', "rang = 'nsc' and bezahlt = 1 and deleted != 1");
 		return ($data);
 	
 	}
@@ -272,6 +272,8 @@ class Center extends Controller {
 	function teilnehmer(){
 		$data['data'] = $this->db->dbCatchAll('member', '*', "sichtbar = '1' AND deleted != '1'");
 		$data['config'] = $this->conf;
+		$data['c']['sc'] = $this->db->dbCount('member', "rang = 'sc' and bezahlt = 1 and deleted != 1");
+		$data['c']['nsc'] = $this->db->dbCount('member', "rang = 'nsc' and bezahlt = 1 and deleted != 1");
 		return($data);		
 	}
 
