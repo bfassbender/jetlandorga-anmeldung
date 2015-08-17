@@ -412,7 +412,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-10">
 				<div class="checkbox">
-					<label><input type='checkbox' name='member[sichtbar]' value='1'>Mein Name auf der HP&nbsp;</label><img src='xcms/views/images/icons/help.png' data-toggle="tooltip" data-placement="right" title="Dein Name wird im Anmeldestatus auf der Webseite angezeigt."/>
+					<label><input type='checkbox' name='member[sichtbar]' value='1'>Mein Name darf auf der Homepage veröffentlicht werden.&nbsp;</label><img src='xcms/views/images/icons/help.png' data-toggle="tooltip" data-placement="right" title="Dein Name wird im Anmeldestatus auf der Webseite angezeigt."/>
 				</div>
 			</div>
 			<div class="col-md-2"></div>
