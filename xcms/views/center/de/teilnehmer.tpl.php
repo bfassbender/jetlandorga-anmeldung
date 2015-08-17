@@ -69,12 +69,12 @@ $(document).ready(function(){
 	<div>
 		<ul>
 		<? if ($scBan == false): ?>
-			<li style='margin-left: 20px'>Es haben sich bisher <b><? echo $scAnm; ?></b> von <b><?echo $config[0]['sc_anz']; ?></b> m&ouml;glichen <b>Spieler</b> angemeldet, es sind noch <b><?php echo $scRest;?></b> Pl&auml;tze verf&uuml;gbar.</li>
+			<li style='margin-left: 20px'>Es sind <b><? echo $scAnm; ?></b> von <b><?echo $config[0]['sc_anz']; ?></b> Plätzen für SCs vergeben.</li>
 		<? else: ?>
 			<li style='margin-left: 20px'>Es sind <b>keine</b> Spielerpl&auml;tze f&uuml;r das $config[0]['conname'] mehr verf&uuml;gbar.</li>
 		<? endif; ?>
 		<? if ($nscBan == false): ?>
-			<li style='margin-left: 20px'>Es haben sich bisher <b><? echo $nscAnm ?></b> von <b><?echo $config[0]['nsc_anz']; ?></b> m&ouml;glichen <b>NSCs</b> angemeldet, es sind noch <b><?php echo $nscRest;?></b> Pl&auml;tze verf&uuml;gbar.</li>
+			<li style='margin-left: 20px'>Es sind <b><? echo $nscAnm ?></b> von <b><?echo $config[0]['nsc_anz']; ?></b> Plätzen für NSCs vergeben.</li>
 		<? else: ?>
 			<li style='margin-left: 20px'>Es sind <b>keine</b> NSCpl&auml;tze f&uuml;r das $config[0]['conname'] mehr verf&uuml;gbar.</li>
 		<? endif; ?>		
