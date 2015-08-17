@@ -281,16 +281,17 @@ class Center extends Controller {
 		$id = $_POST['id'];
 		$this->db->dbUpdate('member', "bezahlt = IF(bezahlt = '1', '0', '1')", "id = '".$id."'");
 			$ret = $this->db->dbCatchAll('member', 'bezahlt', "id = '".$id."'");
-			$status = ($ret[0]['bezahlt'] == '0') ? 'power_off' : 'power_on';
-			echo "<img src='xcms/views/images/icons/".$status.".png'  border=0 title='Status &auml;ndern'>";
+			$status_bez = ($ret[0]['bezahlt'] == '0') ?  'glyphicon glyphicon-remove text-danger' : 'glyphicon glyphicon-ok text-success';
+			echo "<span class='".$status_bez."' aria-hidden='false'>";
+
 		die();
 	}
 	function changeListe(){
 		$id = $_POST['id'];
 		$this->db->dbUpdate('member', "warteliste = IF(warteliste = '1', '0', '1')", "id = '".$id."'");
 			$ret = $this->db->dbCatchAll('member', 'warteliste', "id = '".$id."'");
-			$liste = ($ret[0]['warteliste'] == '0') ? 'power_off' : 'power_on';
-			echo "<img src='xcms/views/images/icons/".$liste.".png'  border=0 title='Warteliste &auml;ndern'>";
+			$status_wl = ($ret[0]['warteliste'] == '0') ?  'glyphicon glyphicon-remove text-danger' : 'glyphicon glyphicon-ok text-success';
+			echo "<span class='".$status_wl."' aria-hidden='false'>";
 		die();
 	}	
 

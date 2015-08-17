@@ -205,16 +205,16 @@ $(document).ready(function(){
 				<?php if(!empty($data['sc'])): ?>
 					<?php foreach ($data['sc'] as $datas): ?>
 						<?php
-							$status = ($datas['bezahlt'] == '0') ? 'power_off' : 'power_on';
-							$liste = ($datas['warteliste'] == '0') ? 'power_off' : 'power_on'; 
+							$status_wl  = ($datas['warteliste'] == '1') ? 'glyphicon glyphicon-ok text-success' : 'glyphicon glyphicon-remove text-danger';
+							$status_bez  = ($datas['bezahlt'] == '1') ? 'glyphicon glyphicon-ok text-success' : 'glyphicon glyphicon-remove text-danger';
 							$type = ($datas['rang'] == '1') ? 'SC' : 'NSC'; 
 						?>
 						<tr>
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['nachname'])?></div></a></td>							
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['vorname'])?></div></a></td>
 							<td class='cell' style='text-align: center'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=date('d.m.Y', $datas['datum'])?></div></a></td>
-							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer' onclick="changeStatus('<?=$datas['id']?>')" id="status_<?=$datas['id']?>"><img src='xcms/views/images/icons/<?=$status?>.png' border=0 title='Status &auml;ndern'></td>
-							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer' onclick="changeList('<?=$datas['id']?>')" id="liste_<?=$datas['id']?>"><img src='xcms/views/images/icons/<?=$liste?>.png' border=0 title='Warteliste &auml;ndern'></td>
+							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer' onclick="changeStatus('<?=$datas['id']?>')" id="status_<?=$datas['id']?>"><span class='<?php echo $status_bez; ?>' aria-hidden='false'></td>
+							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer' onclick="changeList('<?=$datas['id']?>')" id="liste_<?=$datas['id']?>"><span class='<?php echo $status_wl; ?>' aria-hidden='false'></td>
 							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer'><?=$datas['orga_message']?></td>							
 							<td class='cell' style='text-align:center'>										
 								<a href='javascript:void();' onClick="if (confirm('Diesen Teilnehmer wirklich l&ouml;schen?')) window.location='?action=delete&id=<?=$datas['id']?>'"><img src='xcms/views/images/icons/delete.png' border='0' title='L&ouml;schen'></a>
@@ -249,8 +249,8 @@ $(document).ready(function(){
 					<?php foreach ($data['nsc'] as $datas): ?>
 
 						<?php
-							$status = ($datas['bezahlt'] == '0') ? 'power_off' : 'power_on';
-							$liste = ($datas['warteliste'] == '0') ? 'power_off' : 'power_on'; 
+							$status_wl  = ($datas['warteliste'] == '1') ? 'glyphicon glyphicon-ok text-success' : 'glyphicon glyphicon-remove text-danger';
+							$status_bez  = ($datas['bezahlt'] == '1') ? 'glyphicon glyphicon-ok text-success' : 'glyphicon glyphicon-remove text-danger';
 							$type = ($datas['rang'] == '1') ? 'SC' : 'NSC'; 
 						?>
 
@@ -259,8 +259,8 @@ $(document).ready(function(){
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['nachname'])?></div></a></td>							
 							<td class='cell'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=ucfirst($datas['vorname'])?></div></a></td>
 							<td class='cell' style='text-align: center'><a href='?action=edit&id=<?=$datas['id']?>' title='Editieren'><div style='height:18px;padding-top:3px'><?=date('d.m.Y', $datas['datum'])?></div></a></td>
-							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer' onclick="changeStatus('<?=$datas['id']?>')" id="status_<?=$datas['id']?>"><img src='xcms/views/images/icons/<?=$status?>.png' border=0  title='Status &auml;ndern'></td>
-							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer' onclick="changeList('<?=$datas['id']?>')" id="liste_<?=$datas['id']?>"><img src='xcms/views/images/icons/<?=$liste?>.png' border=0  title='Warteliste &auml;ndern'></td>
+							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer' onclick="changeStatus('<?=$datas['id']?>')" id="status_<?=$datas['id']?>"><span class='<?php echo $status_bez; ?>' aria-hidden='false'></td>
+							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer' onclick="changeList('<?=$datas['id']?>')" id="liste_<?=$datas['id']?>"><span class='<?php echo $status_wl; ?>' aria-hidden='false'></td>
 							<td class='cell' style='text-align: center;margin-left: 0px;cursor:pointer'><?=$datas['orga_message']?></td>							
 							<td class='cell' style='text-align:center'>										
 								<a href='javascript:void();' onClick="if (confirm('Diesen Teilnehmer wirklich l&ouml;schen?')) window.location='?action=delete&id=<?=$datas['id']?>'"><img src='xcms/views/images/icons/delete.png' border='0' title='L&ouml;schen'></a>
