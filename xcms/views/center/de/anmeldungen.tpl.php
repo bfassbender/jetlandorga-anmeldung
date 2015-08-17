@@ -194,6 +194,17 @@
 			<div class="col-md-12">
 				<h2>Allgemeine Angaben</h2>
 			</div>
+			<label class="col-md-2 control-label">Ich komme als:</label>
+			<div class="col-md-10">
+				<div class="radio-inline">
+					<label><input type='radio' name='member[rang]' value='sc' id="sc" checked="checked" onclick="toggle()">
+					<?php if($scBan == true): ?>Spieler auf Warteliste<?php else: ?>Spieler<?php endif; ?></label>
+				</div>
+				<div class="radio-inline">
+					<label><input type='radio' name='member[rang]' value='nsc' id="nsc" onclick="toggle()">NSC</label>
+				</div>
+			</div>
+
 			<label class="col-md-2 control-label">Ich helfe beim:</label>
 			<div class="col-md-10">
 				<div id="aufbauhelfer" class="checkbox-inline">
@@ -270,21 +281,6 @@
 		</div>
 
 <!-- SC / NSC -->
-		<div class="form-group">
-			<div class="col-md-12">
-				<h2>Teilnehmerart</h2>
-			</div>
-			<label class="col-md-2 control-label">Ich komme als:</label>
-			<div class="col-md-10">
-				<div class="radio-inline">
-					<label><input type='radio' name='member[rang]' value='sc' id="sc" checked="checked" onclick="toggle()">
-					<?php if($scBan == true): ?>Spieler auf Warteliste<?php else: ?>Spieler<?php endif; ?></label>
-				</div>
-				<div class="radio-inline">
-					<label><input type='radio' name='member[rang]' value='nsc' id="nsc" onclick="toggle()">NSC</label>
-				</div>
-			</div>
-		</div>
 		<!-- SC Angaben -->
 		<div id="boxsc">
 			<div class="form-group">
