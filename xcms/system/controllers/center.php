@@ -543,11 +543,10 @@ class Center extends Controller {
 				if ($key != 'unterkunft') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
 				}
-				if ($key != 'unterkunft') {
+				if ($key == 'uid') {
 					continue;
 				}
 				$postdata .= ucfirst($key).": ".$value."<br>\n";				
-
 			}
 		}
 
