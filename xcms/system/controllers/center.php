@@ -474,8 +474,8 @@ class Center extends Controller {
 	}
 	
 	function userMail($data){
-		$text = "<html><head><style type='text/css'>body{font-family:Georgia,Verdana,arial,helvetica,sans-serif;font-size:11px;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
-		$text .= "<br />\nVielen Dank f&uuml;r deine Anmeldung zum ".strtoupper($this->conf[0]['conname']).". Wir freuen uns auf Dich! <br />\n<br />";
+		$text = "<html><head><style type='text/css'>body{font-family:Arial,Helvetica,sans-serif;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
+		$text .= "Hallo ".$data[vorname].",<br />\nVielen Dank f&uuml;r deine Anmeldung zum ".strtoupper($this->conf[0]['conname']).". Wir freuen uns auf Dich! <br />\n<br />";
 		$text .= "Bitte überweise nun Deinen Teilnahmebeitrag auf das folgende Konto.<br />\n<br />";
 		$text .= "<b>Inhaber:</b> Christoph Platt\n<br />";
 		$text .= "<b>Institut:</b> Sparkasse München\n<br />";
@@ -498,7 +498,7 @@ class Center extends Controller {
 			$data['mitfahr'] = "Ich ".$data['mitfahr1']." ".$data['mitfahr2']." Plaetze ab ".$data['mitfahr3'];
 		}
 		
-		$text = "<html><head><style type='text/css'>body{font-family:Georgia,Verdana,arial,helvetica,sans-serif;font-size:11px;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
+		$text = "<html><head><style type='text/css'>body{font-family:Arial,Helvetica,sans-serif;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
 		$text .= "<br />\n<br />\nEin Teilnehmer hat sich als ".ucfirst($data['rang'])." f&uuml;r das ".$this->conf[0]['conname']." angemeldet:<br />\n<br />\n";
 		foreach ($data as $key => $value) {
 
