@@ -53,8 +53,11 @@ $(document).ready(function(){
 			cancelSelection: true,
 			widthFixed: true,
 			headers: { 
-			            3: { sorter: false }, 
-			            4: { sorter: false } 
+			            0: { sorter: false },
+			            1: { sorter: false },
+			            2: { sorter: false },
+			            3: { sorter: false },
+			            4: { sorter: false }, 
 			        },
 		    textExtraction: getTextExtractor(),
 			
@@ -126,7 +129,7 @@ $(document).ready(function(){
 									echo "<td>".ucfirst($datas['vorname'])."</td>";
 								}
 								if($config[0]['liste_rang'] == '1') {
-									echo "<td>".ucfirst($datas['rang'])."</td>";
+									echo "<td>".strtoupper($datas['rang'])."</td>";
 								}
 								if($config[0]['liste_warteliste'] == '1') {
 									echo "<td><span class='".$status_wl."' aria-hidden='false'></span></td>";
