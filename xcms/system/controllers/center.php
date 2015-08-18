@@ -538,7 +538,7 @@ class Center extends Controller {
 
 			}			
 		} else {
-			$postdata = "NSC Informationen:<br />\n<br />\n";
+			$postdata = "NSC Informationen:<br />\n";
 			foreach ($nsc as $key => $value) {
 				if ($key != 'unterkunft') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
