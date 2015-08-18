@@ -177,7 +177,7 @@ $(document).ready(function(){
 </style>
 
 	<div style='margin: 0 0 20px 20px;'><a style='color: white; font-weight: bold' href='?action=admin'>&laquo; Zur&uuml;ck</a></div>
-	<div id="info" style="color: white; z-index: 99; position: absolute; background-color: green; border: black 1px solid; width: 300px; height: 30px; padding-top: 10px; margin-left: 250px; display: none; text-align:center"></div>
+	<div id="info" style="color: white; z-index: 99; position: absolute; background-color: green; border: black 1px solid; width: 300px;  padding: 10px; margin-left: 250px; display: none; text-align:center"></div>
 	<div id="tabs">
 		<ul>
 			<li><a href="#tabs-1">SCs (<?=$data['sc_count'];?>)</a></li>
