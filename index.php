@@ -85,11 +85,13 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Downloads <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a target="_blank" href="/files/Flyer_Jetland_11.pdf">Jetland 11 Flyer</a></li>
-				      	<li><a target="_blank" href="/files/DragonSys_Charakterogen_3rd_Ed.pdf">Charakterbogen (Dragonsys 3rd Ed.)</a></li>
-				      	<li><a target="_blank" href="/files/Jetland_11_Regelerweiterungen.pdf">Regelerweiterungen</a></li>
-				      	<li><a target="_blank" href="/files/Jetland_11_Kraeuterregelwerk.pdf">Kräuterregelwerk</a></li>				
-				   	</ul>
+					  	  	<li><a target="_blank" href="/files/Flyer_Jetland_11.pdf">Flyer</a></li>
+    				  		<li><a target="_blank" href="/files/AGB_Jetland_11.pdf">AGB</a></li>
+    				  		<li><a target="_blank" href="/files/Anmeldung_Jetland_11.pdf">Anmeldeformular</a></li>
+				      	  	<li><a target="_blank" href="/files/DragonSys_Charakterogen_3rd_Ed.pdf">Charakterbogen</a></li>
+				      	  	<li><a target="_blank" href="/files/Jetland_11_Regelerweiterungen.pdf">Regelerweiterungen</a></li>
+			      	  	  	<li><a target="_blank" href="/files/Jetland_11_Kraeuterregelwerk.pdf">Kräuterregelwerk</a></li>		
+				   		</ul>
 					</li>
 					<li><a target="_blank" href="http://forum.dreywassern.de">Forum</a></li>
 		      </ul>
