@@ -392,7 +392,7 @@ class Center extends Controller {
 		return($data);
 	}
 
-	function agb(){
+	function impressum() {
 		$data = array();
 		return($data);
 	}

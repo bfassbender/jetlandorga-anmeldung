@@ -414,7 +414,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-10">
 				<div class="checkbox">
-					<label><input type='checkbox' name='agb' value='true' id='agb' onclick='toggle()'>Ich habe die <a href='?action=agb' target='blank'>AGB</a> gelesen und akzeptiert.</label>
+					<label><input type='checkbox' name='agb' value='true' id='agb' onclick='toggle()'>Ich habe die <a href='/files/AGB_Jetland_11.pdf' target='blank'>AGB</a> gelesen und akzeptiert.</label>
 				</div>
 			</div>
 		</div>

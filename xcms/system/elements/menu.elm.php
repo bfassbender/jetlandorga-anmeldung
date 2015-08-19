@@ -28,6 +28,7 @@
 				   </ul>
 				</li>
 				<li><a target="_blank" href="http://forum.dreywassern.de">Forum</a></li>
+				<li <?php if (ACTION == 'disclaimer'):?>class="active"<?php endif;?>><a href="<? echo $_SERVER['PHP_SELF']?>?action=impressum">Impressum</a></li>
 	<?php if (($_SESSION['xcms']['login']['admin'] == true) || ACTION == 'logmein'): ?>
 			<li><a href="<?php echo $_SERVER['PHP_SELF']?>?action=admin">Admin</a></li>
 	<?php endif;?>

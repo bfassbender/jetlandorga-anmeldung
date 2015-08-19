@@ -81,7 +81,7 @@
 		    <div class="collapse navbar-collapse" style="z-index: 9999;" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
 		        	<li><a href="container.php?action=anmeldungen">Anmeldung</a></li>
-		        	<li><a href="container.php?action=teilnehmer">Anmeldestatus</a></li>			
+		        	<li><a href="container.php?action=teilnehmer">Anmeldestatus</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Downloads <span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -94,6 +94,7 @@
 				   		</ul>
 					</li>
 					<li><a target="_blank" href="http://forum.dreywassern.de">Forum</a></li>
+		        	<li><a href="container.php?action=impressum">Impressum</a></li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
