@@ -371,7 +371,6 @@ class Center extends Controller {
 
 				$this->adminmail($post, $sc, $nsc);
 				$this->usermail($post, $sc, $nsc);
-				// echo"<script>alert('Du hast dich erfolgreich fuer das Con angemeldet. Bitte überweise nun deinen Teilnahmebeitrag auf das unter jetland.dreywassern.de angegebene Konto. Bitte beachte, dass wir deine Anmeldung erst dann weiter bearbeiten, wenn dein Beitrag bei uns eingegangen ist.');self.location.href='".$_SERVER['PHP_SELF']."?action=teilnehmer'</script>";
 				echo "<script>self.location.href='".$_SERVER['PHP_SELF']."?action=confirmation'</script>";
 			} else {
 				$this->setLayout('error');
@@ -473,7 +472,7 @@ class Center extends Controller {
 		die();
 	}
 	
-	function userMail($data){
+	function userMail($data, $sc, $nsc){
 		$text = "<html><head><style type='text/css'>body{font-family:Arial,Helvetica,sans-serif;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
 		$text .= "Hallo ".$data[vorname].",<br />\nVielen Dank f&uuml;r deine Anmeldung zum ".strtoupper($this->conf[0]['conname']).". Wir freuen uns auf Dich! <br />\n<br />";
 		$text .= "Bitte überweise nun Deinen Teilnahmebeitrag auf das folgende Konto.<br />\n<br />";
