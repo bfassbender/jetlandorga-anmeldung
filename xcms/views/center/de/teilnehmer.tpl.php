@@ -72,12 +72,12 @@ $(document).ready(function(){
 	<div>
 		<ul>
 		<? if ($scBan == false): ?>
-			<li style='margin-left: 20px'>Es sind <b><? echo $scAnm; ?></b> von <b><?echo $config[0]['sc_anz']; ?></b> Plätzen für SCs vergeben.</li>
+			<li style='margin-left: 20px'>Es sind <b><? echo $scAnm; ?></b> von <b><?echo $config[0]['sc_anz']; ?></b> Plätzen für <b>SCs</b> vergeben.</li>
 		<? else: ?>
 			<li style='margin-left: 20px'>Es sind <b>keine</b> Spielerpl&auml;tze f&uuml;r das $config[0]['conname'] mehr verf&uuml;gbar.</li>
 		<? endif; ?>
 		<? if ($nscBan == false): ?>
-			<li style='margin-left: 20px'>Es sind <b><? echo $nscAnm ?></b> von <b><?echo $config[0]['nsc_anz']; ?></b> Plätzen für NSCs vergeben.</li>
+			<li style='margin-left: 20px'>Es sind <b><? echo $nscAnm ?></b> von <b><?echo $config[0]['nsc_anz']; ?></b> Plätzen für <b>NSCs</b> vergeben.</li>
 		<? else: ?>
 			<li style='margin-left: 20px'>Es sind <b>keine</b> NSCpl&auml;tze f&uuml;r das $config[0]['conname'] mehr verf&uuml;gbar.</li>
 		<? endif; ?>		

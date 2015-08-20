@@ -483,7 +483,62 @@ class Center extends Controller {
 		$text .= "<b>BIC:</b> SSKMDEMMXXX\n<br />";
 		$text .= "<b>Verwendungszweck:</b> &lt;SC oder NSC&gt;, J11, &lt;Realname&gt;\n<br />";
 		$text .= "<br />\n<br />Beachte bitte außerdem, dass wir Deine Anmeldung erst dann weiter bearbeiten, wenn Dein Beitrag bei uns eingegangen ist.<br />\n<br />";
-		$text .= "- Deine Jetland Orga\n<br />";
+		$text .= "- Deine Jetland Orga\n<br /><br />";
+
+		$text .= "<b>Hier sind Deine Angaben aus der Anmeldung als Referenz:</b><br />";		
+		foreach ($data as $key => $value) {
+
+			if ($key == 'sanitaeter' || $key == 'vegetarier' || $key == 'aufbau' || $key == 'abbau' || $key == 'durchschlafen')
+				$value = ($value == '1') ? 'Ja' : 'Nein';
+
+			if ($key == 'krankheiten') {
+				$value = ($value == '1') ? 'Ja' : 'Nein';
+			}
+
+			if ($key == 'datum') {
+				$value = date('d.m.Y H:i', $value); 
+			}
+			
+			if ($key == 'erfahrung') {
+				$value = ($value == '1') ? 'Ja' : 'Nein';
+			}
+
+			if ($key == 'erfahrung_tage') {
+				$value = $value." Tage";
+			}
+			
+			if ($key == 'sichtbar' || $key == 'mitfahr1' || $key == 'mitfahr2' || $key == 'mitfahr3' || $key == 'uid') {
+				continue;
+			}
+				
+			$text .= ucfirst($key).": ".$value."<br>\n";
+		}
+		$text .= "\n\n<br /><br />";
+
+		if ($data['rang'] == 'sc') {
+			$postdata = "<b>Charakterinformationen:<b><br />\n";
+			foreach ($sc as $key => $value) {
+				if ($key == 'zauber') {
+					$value = ($value == '1') ? 'Ja' : 'Nein';
+				}
+				if ($key == 'uid') {
+					continue;
+				}
+				$postdata .= ucfirst($key).": ".$value."<br>\n";				
+
+			}			
+		} else {
+			$postdata = "<b>NSC Informationen:</b><br />\n";
+			foreach ($nsc as $key => $value) {
+				if ($key != 'unterkunft') {
+					$value = ($value == '1') ? 'Ja' : 'Nein';
+				}
+				if ($key == 'uid') {
+					continue;
+				}
+				$postdata .= ucfirst($key).": ".$value."<br>\n";				
+			}
+		}
 		$text .= "</body></html>\n";
 		
 		$headers = "From: anmeldung@dreywassern.de\nReturn-Path: anmeldung@dreywassern.de\r\n";
