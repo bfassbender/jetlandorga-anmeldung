@@ -513,9 +513,6 @@ class Center extends Controller {
 				if ($key == 'zauber') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
 				}
-				if ($key == 'uid') {
-					continue;
-				}
 				$postdata .= ucfirst($key).": ".$value."<br>\n";
 			}			
 		} else {
@@ -523,9 +520,6 @@ class Center extends Controller {
 			foreach ($nsc as $key => $value) {
 				if ($key != 'unterkunft') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
-				}
-				if ($key == 'uid') {
-					continue;
 				}
 				$postdata .= ucfirst($key).": ".$value."<br>\n";				
 			}
