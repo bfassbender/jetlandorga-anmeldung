@@ -499,7 +499,7 @@ class Center extends Controller {
 				$value = strtoupper($value);
 			}
 			
-			if ($key = 'erfahrung' || $key == 'datum' || $key == 'sichtbar' || $key == 'mitfahr1' || $key == 'mitfahr2' || $key == 'mitfahr3' || $key == 'uid') {
+			if ($key == 'erfahrung' || $key == 'datum' || $key == 'sichtbar' || $key == 'mitfahr1' || $key == 'mitfahr2' || $key == 'mitfahr3' || $key == 'uid') {
 				continue;
 			}
 				
