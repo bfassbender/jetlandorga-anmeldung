@@ -120,10 +120,48 @@
 </script>
 
 <div class="container" id="inline_content">
-	<h1>Onlineanmeldung</h1>		
+	<h1>Onlineanmeldung</h1>
 <?php if($scBan == true): ?>
-	<div class='anmeldestatus'>Es stehen derzeit keine Spielerpl&auml;tze mehr zur Verf&uuml;gung, jegliche Spieleranmeldung landet erstmal auf einer <b>Warteliste</b>!</div>
+	<div class='anmeldestatus'>Es stehen derzeit keine Spielerplätze mehr zur Verfügung, jegliche Spieleranmeldung landet erstmal auf einer <b>Warteliste</b>!</div>
 <?php endif; ?>		
+	<div class="row">
+	<div class="col-md-12">
+		<h2>Kurzinfo und Preise</h2>
+	</div>
+	<div class="col-md-8">
+		<h3><b>Jetland 11 - Die Eherne Feste</b></h3>
+		<h3>Vom 13. - 16. Mai 2016<br/>
+		Jugendburg Neuerburg / Eifel</h3>
+	</div>
+	<div class="col-md-4 table-background">
+		<table id="teilnehmer" class="table table-striped">
+			<thead>
+				<tr>
+					<th>Datum</th>		
+					<th>SC</th>
+					<th>NSC</th>		
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>bis 01.11.2015</td>
+					<td>180 €</td>
+					<td>85 €</td>								
+				</tr>
+				<tr>
+					<td>bis 01.02.2016</td>
+					<td>190 €</td>
+					<td>85 €</td>								
+				</tr>
+				<tr>
+					<td>bis 08.05.2016</td>
+					<td>200 €</td>
+					<td>95 €</td>								
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</div>
 
 	<form class="form-horizontal" role="form" action='<? echo $_SERVER['PHP_SELF']?>?action=anmelden' method='POST' enctype='multipart/form-data' name="anmeldung"  onsubmit="return checkSubmitForm();">
 <?php if($scBan == true): ?>
@@ -132,10 +170,10 @@
 
 
 <!-- Angaben zur Person -->
-	<span>(Mit <b>*</b> gekennzeichnete Felder sind Pflichtfelder)</span>
 		<div class="form-group">
 			<div class="col-md-12">
 				<h2>Angaben zur Person</h2>
+				<span>(Mit <b>*</b> gekennzeichnete Felder sind Pflichtfelder)</span>
 			</div>
 			<label for="vorname" class="col-md-2 control-label">Vorname<span style='color: red'>*</span></label>
 			<div class="col-md-4">

@@ -37,6 +37,10 @@ table {
 	color: #fff;	
 }
 
+.tablewidth {
+	width: 300px;
+}
+
 .tablesorter-bootstrap thead th {
 	background: rgba(0, 0, 0, 0.5);
 }
