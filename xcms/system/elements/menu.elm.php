@@ -22,9 +22,7 @@
 					  <li><a target="_blank" href="/files/Flyer_Jetland_11.pdf">Flyer</a></li>
     				  <li><a target="_blank" href="/files/AGB_Jetland_11.pdf">AGB</a></li>
     				  <li><a target="_blank" href="/files/Anmeldung_Jetland_11.pdf">Anmeldeformular</a></li>
-				      <li><a target="_blank" href="/files/DragonSys_Charakterogen_3rd_Ed.pdf">Charakterbogen</a></li>
-				      <li><a target="_blank" href="/files/Jetland_11_Regelerweiterungen.pdf">Regelerweiterungen</a></li>
-			      	  <li><a target="_blank" href="/files/Jetland_11_Kraeuterregelwerk.pdf">Kräuterregelwerk</a></li>
+                 <li><a target="_blank" href="/files/DragonSys_Charakterogen_3rd_Ed.pdf">Charakterbogen</a></li>
 				   </ul>
 				</li>
 				<li><a target="_blank" href="http://forum.dreywassern.de">Forum</a></li>
