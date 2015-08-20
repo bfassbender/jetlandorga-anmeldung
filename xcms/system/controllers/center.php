@@ -508,7 +508,7 @@ class Center extends Controller {
 		$text .= "\n\n<br /><br />";
 
 		if ($data['rang'] == 'sc') {
-			$text .= "<b>Charakterinformationen:<b><br />\n";
+			$text .= "<b>Charakterinformationen:</b><br />\n";
 			foreach ($sc as $key => $value) {
 				if ($key == 'zauber') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
@@ -575,7 +575,7 @@ class Center extends Controller {
 		$text .= "\n\n<br /><br />";
 
 		if ($data['rang'] == 'sc') {
-			$postdata = "Charakterinformationen:<br />\n<br />\n";
+			$postdata = "<b>Charakterinformationen:</b><br />";
 			foreach ($sc as $key => $value) {
 				if ($key == 'zauber') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
@@ -584,7 +584,7 @@ class Center extends Controller {
 
 			}			
 		} else {
-			$postdata = "NSC Informationen:<br />\n";
+			$postdata = "<b>NSC Informationen:</b><br />\n";
 			foreach ($nsc as $key => $value) {
 				if ($key != 'unterkunft') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
