@@ -495,19 +495,11 @@ class Center extends Controller {
 				$value = ($value == '1') ? 'Ja' : 'Nein';
 			}
 
-			if ($key == 'datum') {
-				$value = date('d.m.Y H:i', $value); 
+			if ($key == 'rang') {
+				$value = strtoupper($value);
 			}
 			
-			if ($key == 'erfahrung') {
-				$value = ($value == '1') ? 'Ja' : 'Nein';
-			}
-
-			if ($key == 'erfahrung_tage') {
-				$value = $value." Tage";
-			}
-			
-			if ($key == 'sichtbar' || $key == 'mitfahr1' || $key == 'mitfahr2' || $key == 'mitfahr3' || $key == 'uid') {
+			if ($key = 'erfahrung' || $key == 'datum' || $key == 'sichtbar' || $key == 'mitfahr1' || $key == 'mitfahr2' || $key == 'mitfahr3' || $key == 'uid') {
 				continue;
 			}
 				
@@ -539,6 +531,7 @@ class Center extends Controller {
 				$postdata .= ucfirst($key).": ".$value."<br>\n";				
 			}
 		}
+		$text .= $postdata;
 		$text .= "</body></html>\n";
 		
 		$headers = "From: anmeldung@dreywassern.de\nReturn-Path: anmeldung@dreywassern.de\r\n";
