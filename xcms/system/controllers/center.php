@@ -508,7 +508,7 @@ class Center extends Controller {
 		$text .= "\n\n<br /><br />";
 
 		if ($data['rang'] == 'sc') {
-			$postdata = "<b>Charakterinformationen:<b><br />\n";
+			$text .= "<b>Charakterinformationen:<b><br />\n";
 			foreach ($sc as $key => $value) {
 				if ($key == 'zauber') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
@@ -516,11 +516,10 @@ class Center extends Controller {
 				if ($key == 'uid') {
 					continue;
 				}
-				$postdata .= ucfirst($key).": ".$value."<br>\n";				
-
+				$text .= ucfirst($key).": ".$value."<br>\n";				
 			}			
 		} else {
-			$postdata = "<b>NSC Informationen:</b><br />\n";
+			$text .= "<b>NSC Informationen:</b><br />\n";
 			foreach ($nsc as $key => $value) {
 				if ($key != 'unterkunft') {
 					$value = ($value == '1') ? 'Ja' : 'Nein';
@@ -528,10 +527,9 @@ class Center extends Controller {
 				if ($key == 'uid') {
 					continue;
 				}
-				$postdata .= ucfirst($key).": ".$value."<br>\n";				
+				$text .= ucfirst($key).": ".$value."<br>\n";				
 			}
 		}
-		$text .= $postdata;
 		$text .= "</body></html>\n";
 		
 		$headers = "From: anmeldung@dreywassern.de\nReturn-Path: anmeldung@dreywassern.de\r\n";
