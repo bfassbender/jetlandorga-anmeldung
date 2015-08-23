@@ -1,8 +1,9 @@
 <?php
-	$scRest = ($config[0]['sc_anz']-$c['sc']);
-	$scBan = ($scRest <= '0') ? true : false;
-	$nscRest = ($config[0]['nsc_anz']-$c['nsc']);
-	$nscBan = ($nscRest <= '0') ? true : false;
+	$scRest_reserviert = ($config[0]['sc_anz']-$c['sc_reserviert']); 
+	$scBan = ($scRest_reserviert <= '0') ? true : false;
+	
+	$nscRest_reserviert = ($config[0]['nsc_anz']-$c['nsc_reserviert']);
+	$nscBan = ($nscRest_reserviert <= '0') ? true : false;
 ?>
 				
 <script type="text/javascript">		
@@ -121,9 +122,6 @@
 
 <div class="container" id="inline_content">
 	<h1>Onlineanmeldung</h1>
-<?php if($scBan == true): ?>
-	<div class='anmeldestatus'>Es stehen derzeit keine Spielerplätze mehr zur Verfügung, jegliche Spieleranmeldung landet erstmal auf einer <b>Warteliste</b>!</div>
-<?php endif; ?>		
 	<div class="row">
 	<div class="col-md-12">
 		<h2>Kurzinfo und Preise</h2>
@@ -162,7 +160,9 @@
 		</table>
 	</div>
 	</div>
-
+	<?php if($scBan == true): ?>
+		<h3 class="text-danger table-background"><b>Achtung: Warteliste</b><br />Es sind derzeit keine SC-Plätze mehr reservierbar. Deine Anmeldung landet zunächst auf einer Warteliste.</h3>
+	<?php endif; ?>
 	<form class="form-horizontal" role="form" action='<? echo $_SERVER['PHP_SELF']?>?action=anmelden' method='POST' enctype='multipart/form-data' name="anmeldung"  onsubmit="return checkSubmitForm();">
 <?php if($scBan == true): ?>
 		<input type='hidden' name='member[warteliste]' value='1' />

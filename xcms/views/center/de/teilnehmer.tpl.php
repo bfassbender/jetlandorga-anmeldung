@@ -1,10 +1,23 @@
 <?
 $scAnm = $c['sc'];
-$scRest = ($config[0]['sc_anz']-$scAnm);
-$scBan = ($scRest <= '0') ? true : false;
 $nscAnm = $c['nsc'];
+
+$scRest = ($config[0]['sc_anz']-$scAnm);
+$scRest_reserviert = ($config[0]['sc_anz']-$c['sc_reserviert']); 
+$scBan = ($scRest_reserviert <= '0') ? true : false;
+
 $nscRest = ($config[0]['nsc_anz']-$nscAnm);
-$nscBan = ($nscRest <= '0') ? true : false;
+$nscRest_reserviert = ($config[0]['sc_anz']-$c['nsc_reserviert']); 
+$nscBan = ($nscRest_reserviert <= '0') ? true : false;
+?>
+
+
+<?php
+	$scRest = ($config[0]['sc_anz']-$c['sc']);
+
+	$scBan = ($scRest_reserviert <= '0') ? true : false;
+	$nscRest = ($config[0]['nsc_anz']-$c['nsc_reserviert']);
+	$nscBan = ($nscRest_reserviert <= '0') ? true : false;
 ?>
 
 <script>
@@ -84,6 +97,9 @@ $(document).ready(function(){
 			<li style='margin-left: 20px'>Aufgrund von Privatsph&auml;re Einstellungen wird hier eventuell nicht jeder Teilnehmer gelistet</li>
 		</ul>
 	</div>
+	<?php if($scBan == true): ?>
+		<h3 class="text-danger table-background"><b>Achtung: Warteliste</b><br />Es sind derzeit keine SC-Plätze mehr reservierbar.</h3>
+	<?php endif; ?>
 	<?php endif; ?>
 	<div class="table-background table-responsive">
 		<table id="teilnehmer" class="table table-striped table-hover">

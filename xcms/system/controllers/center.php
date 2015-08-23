@@ -75,6 +75,8 @@ class Center extends Controller {
 		$data['config'] = $this->conf;
 		$data['c']['sc'] = $this->db->dbCount('member', "rang = 'sc' and bezahlt = 1 and deleted != 1");
 		$data['c']['nsc'] = $this->db->dbCount('member', "rang = 'nsc' and bezahlt = 1 and deleted != 1");
+		$data['c']['sc_reserviert'] = $this->db->dbCount('member', "rang = 'sc' and deleted != 1");
+		$data['c']['nsc_reserviert'] = $this->db->dbCount('member', "rang = 'nsc' and deleted != 1");
 		return ($data);
 	
 	}
@@ -274,6 +276,8 @@ class Center extends Controller {
 		$data['config'] = $this->conf;
 		$data['c']['sc'] = $this->db->dbCount('member', "rang = 'sc' and bezahlt = 1 and deleted != 1");
 		$data['c']['nsc'] = $this->db->dbCount('member', "rang = 'nsc' and bezahlt = 1 and deleted != 1");
+		$data['c']['sc_reserviert'] = $this->db->dbCount('member', "rang = 'sc' and deleted != 1");
+		$data['c']['nsc_reserviert'] = $this->db->dbCount('member', "rang = 'nsc' and deleted != 1");
 		return($data);		
 	}
 
