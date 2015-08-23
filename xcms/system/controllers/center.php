@@ -474,7 +474,7 @@ class Center extends Controller {
 	
 	function userMail($data, $sc, $nsc){
 		$text = "<html><head><style type='text/css'>body{font-family:Arial,Helvetica,sans-serif;}a{color:#124481;font-weight:bold;text-decoration:underline;}</style></head><body>";
-		$text .= "Hallo ".$data[vorname].",<br />\nVielen Dank f&uuml;r deine Anmeldung zum ".strtoupper($this->conf[0]['conname']).". Wir freuen uns auf Dich! <br />\n<br />";
+		$text .= "Hallo ".$data[vorname].",<br />\n<br />\nvielen Dank f&uuml;r deine Anmeldung zum ".strtoupper($this->conf[0]['conname']).". Wir freuen uns auf Dich! <br />\n<br />";
 		$text .= "Bitte überweise nun Deinen Teilnahmebeitrag auf das folgende Konto.<br />\n<br />";
 		$text .= "<b>Inhaber:</b> Christoph Platt\n<br />";
 		$text .= "<b>Institut:</b> Sparkasse München\n<br />";
@@ -482,7 +482,7 @@ class Center extends Controller {
 		$text .= "<b>BIC:</b> SSKMDEMMXXX\n<br />";
 		$text .= "<b>Verwendungszweck:</b> &lt;SC oder NSC&gt;, J11, &lt;Realname&gt;\n<br />";
 		$text .= "<br />\n<br />Beachte bitte außerdem, dass wir Deine Anmeldung erst dann weiter bearbeiten, wenn Dein Beitrag bei uns eingegangen ist.<br />\n<br />";
-		$text .= "- Deine Jetland Orga\n<br /><br />";
+		$text .= "- Deine Jetland Orga\n<br />\n<br />\n<br />";
 
 		$text .= "<b>Hier sind Deine Angaben aus der Anmeldung als Referenz:</b><br />";		
 		foreach ($data as $key => $value) {
