@@ -1,23 +1,10 @@
 <?
 $scAnm = $c['sc'];
-$nscAnm = $c['nsc'];
-
 $scRest = ($config[0]['sc_anz']-$scAnm);
-$scRest_reserviert = ($config[0]['sc_anz']-$c['sc_reserviert']); 
-$scBan = ($scRest_reserviert <= '0') ? true : false;
-
+$scBan = ($scRest <= '0') ? true : false;
+$nscAnm = $c['nsc'];
 $nscRest = ($config[0]['nsc_anz']-$nscAnm);
-$nscRest_reserviert = ($config[0]['sc_anz']-$c['nsc_reserviert']); 
-$nscBan = ($nscRest_reserviert <= '0') ? true : false;
-?>
-
-
-<?php
-	$scRest = ($config[0]['sc_anz']-$c['sc']);
-
-	$scBan = ($scRest_reserviert <= '0') ? true : false;
-	$nscRest = ($config[0]['nsc_anz']-$c['nsc_reserviert']);
-	$nscBan = ($nscRest_reserviert <= '0') ? true : false;
+$nscBan = ($nscRest <= '0') ? true : false;
 ?>
 
 <script>
@@ -84,23 +71,13 @@ $(document).ready(function(){
 	<?php if($config[0]['stats'] == '1'): ?>
 	<div>
 		<ul>
-		<? if ($scBan == false): ?>
 			<li style='margin-left: 20px'>Es sind <b><? echo $scAnm; ?></b> von <b><?echo $config[0]['sc_anz']; ?></b> Plätzen für <b>SCs</b> vergeben.</li>
-		<? else: ?>
-			<li style='margin-left: 20px'>Es sind <b>keine</b> Spielerpl&auml;tze f&uuml;r das $config[0]['conname'] mehr verf&uuml;gbar.</li>
-		<? endif; ?>
-		<? if ($nscBan == false): ?>
 			<li style='margin-left: 20px'>Es sind <b><? echo $nscAnm ?></b> von <b><?echo $config[0]['nsc_anz']; ?></b> Plätzen für <b>NSCs</b> vergeben.</li>
-		<? else: ?>
-			<li style='margin-left: 20px'>Es sind <b>keine</b> NSCpl&auml;tze f&uuml;r das $config[0]['conname'] mehr verf&uuml;gbar.</li>
-		<? endif; ?>		
 			<li style='margin-left: 20px'>Aufgrund von Privatsph&auml;re Einstellungen wird hier eventuell nicht jeder Teilnehmer gelistet</li>
 		</ul>
 	</div>
-	<?php if($scBan == true): ?>
-		<h3 class="text-danger table-background"><b>Achtung: Warteliste</b><br />Es sind derzeit keine SC-Plätze mehr reservierbar.</h3>
 	<?php endif; ?>
-	<?php endif; ?>
+	<h3 class="text-warning table-background"><b>Achtung: Es sind aktuell mehr SC-Anmeldungen eingegangen, als wir Plätze zu vergeben haben.</h3>
 	<div class="table-background table-responsive">
 		<table id="teilnehmer" class="table table-striped table-hover">
 			<thead>
