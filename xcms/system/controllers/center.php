@@ -176,22 +176,22 @@ class Center extends Controller {
 			}
 		} else {	
 			if ($_REQUEST['cat'] == 'all'){
-				$sc_sql = "SELECT *, DATE_FORMAT(FROM_UNIXTIME(datum), '%d.%m.%Y') as datum, 
-					IF (deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(deleted_date), '%d.%m.%Y'), '') as deleted_date
+				$sc_sql = "SELECT *, DATE_FORMAT(FROM_UNIXTIME(datum), '%d.%m.%Y %T') as datum, 
+					IF (deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(deleted_date), '%d.%m.%Y %T'), '') as deleted_date
 					FROM j11_member order by nachname ASC";
 				$res = $this->db->query($sc_sql);
 				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message";
 				$filename = "jetland_11_export_all_".date('d-m-Y_His', time()).".xlsx";
 			} else if ($_REQUEST['cat'] == 'sc'){
-				$sc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%d.%m.%Y') as datum, 
-					IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%d.%m.%Y'), '') as deleted_date, 
+				$sc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%d.%m.%Y %T') as datum, 
+					IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%d.%m.%Y %T'), '') as deleted_date, 
 					sc.* FROM j11_member member left join j11_sc sc on (sc.uid = member.id) WHERE member.rang = 'sc' order by member.nachname ASC";
 				$res = $this->db->query($sc_sql);
 				$filename = "jetland_11_export_sc_".date('d-m-Y_His', time()).".xlsx";
 				$file ="Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Charname|Rasse|Klasse|Herkunft|Zauber|Contage";				
 			} else if ($_REQUEST['cat'] == 'nsc'){
-				$nsc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%d.%m.%Y') as datum, 
-							IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%d.%m.%Y'), '') as deleted_date, 
+				$nsc_sql = "SELECT member.*, DATE_FORMAT(FROM_UNIXTIME(member.datum), '%d.%m.%Y %T') as datum, 
+							IF (member.deleted_date != '', DATE_FORMAT(FROM_UNIXTIME(member.deleted_date), '%d.%m.%Y %T'), '') as deleted_date, 
 							nsc.* FROM j11_member member left join j11_nsc nsc on (nsc.uid = member.id) WHERE member.rang = 'nsc' order by member.nachname ASC";
 				$res = $this->db->query($nsc_sql);
 				$file = "Id|Vorname|Nachname|Strasse|Plz|Ort|Land|Telefon|Email|Geb_datum|Vegetarier|Aufbau|Abbau|Erfahrung|Erfahrung_Tage|Sanitaeter|Krankheiten|Krankheiten_welche|Durchschlafen|Zimmer|Bemerkung|Datum|Bezahlt|Sichtbar|Warteliste|Rang|Deleted|Deleted_date|Orga_message|Festrolle_plot|Festrolle_ambiente|Springer|Traeume|Schminken|Kaempfen|Zaubern";
