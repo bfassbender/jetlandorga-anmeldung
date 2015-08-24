@@ -162,7 +162,7 @@
 		</table>
 	</div>
 	</div>
-	<h3 class="text-warning table-background"><b>Achtung: Es sind aktuell mehr SC-Anmeldungen eingegangen, als wir Plätze zu vergeben haben.</h3>
+	<h3 class="text-danger table-background"><b>Achtung: SC-Anmeldungen sind bis auf weiteres deaktiviert. Es sind aktuell mehr SC-Anmeldungen eingegangen, als wir Plätze zu vergeben haben.</h3>
 	<form class="form-horizontal" role="form" action='<? echo $_SERVER['PHP_SELF']?>?action=anmelden' method='POST' enctype='multipart/form-data' name="anmeldung"  onsubmit="return checkSubmitForm();">
 <?php if($scBan == true): ?>
 		<input type='hidden' name='member[warteliste]' value='1' />
@@ -235,11 +235,11 @@
 			<label class="col-md-2 control-label">Ich komme als:</label>
 			<div class="col-md-10">
 				<div class="radio-inline">
-					<label><input type='radio' name='member[rang]' value='sc' id="sc" checked="checked" onclick="toggle()">
+					<label><input type='radio' name='member[rang]' value='sc' id="sc" disabled onclick="toggle()">
 					<?php if($scBan == true): ?>Spieler auf Warteliste<?php else: ?>Spieler<?php endif; ?></label>
 				</div>
 				<div class="radio-inline">
-					<label><input type='radio' name='member[rang]' value='nsc' id="nsc" onclick="toggle()">NSC</label>
+					<label><input type='radio' name='member[rang]' value='nsc' id="nsc" checked="checked" onclick="toggle()">NSC</label>
 				</div>
 			</div>
 
