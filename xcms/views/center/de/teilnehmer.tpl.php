@@ -77,7 +77,9 @@ $(document).ready(function(){
 		</ul>
 	</div>
 	<?php endif; ?>
-	<h3 class="text-warning table-background"><b>Achtung: Es sind aktuell mehr SC-Anmeldungen eingegangen, als wir Plätze zu vergeben haben.</h3>
+	<div class="row">
+		<h3 class="text-warning table-background" style="padding: 15px;"><b>Leider können wir momentan keine Anmeldungen mehr annehmen, weil mehr Anmeldungen bei uns eingegangen sind, als wir Plätze haben.</h3>
+	</div>
 	<div class="table-background table-responsive">
 		<table id="teilnehmer" class="table table-striped table-hover">
 			<thead>
