@@ -30,6 +30,7 @@
 			<a href='?action=config'><div class='tmp' style='position: absolute; margin: 95px 0 0 0; text-align:center' onMouseOver="textIn('Config')"; onMouseOut="textOut()";><li><img src='xcms/views/images/own.png' border=0></li></div></a>
 			<a href='?action=mailing'><div class='tmp' style='position: absolute; margin-left: 310px; text-align:center' onMouseOver="textIn('Mailing')"; onMouseOut="textOut()";><li><img src='xcms/views/images/mailing.png' border=0></li></div></a>
 			<a href='?action=export'><div class='tmp' style='position: absolute;  margin: 95px 0 0 310px; text-align:center' onMouseOver="textIn('Excel Export')"; onMouseOut="textOut()";><li><img src='xcms/views/images/export.png' border=0></li></div></a>
+			<a href='?action=anmeldungen&backendmode=true'><div class='tmp' style='position: absolute;  margin-left: 465px; text-align:center' onMouseOver="textIn('Anmeldung erfassen')"; onMouseOut="textOut()";><li>Anmeldung erfassen</li></div></a>
 			<div id='text' style='width: 140px; position: absolute; margin: 95px 0 0 175px; text-align: center; color: white; font-size: 14px; padding-top: 30px'></div>		
 	</div>
 	<br />

@@ -72,6 +72,7 @@ class Center extends Controller {
 	
 	function anmeldungen(){
 		$data = array();
+		$data['controls']['backendmode'] = ('true' == $_REQUEST['backendmode']);
 		$data['config'] = $this->conf;
 		$data['c']['sc'] = $this->db->dbCount('member', "rang = 'sc' and bezahlt = 1 and deleted != 1");
 		$data['c']['nsc'] = $this->db->dbCount('member', "rang = 'nsc' and bezahlt = 1 and deleted != 1");
@@ -346,7 +347,7 @@ class Center extends Controller {
 			rang 2 = nsc
 		*/
 		
-
+		$backendmode = $_POST['backendmode'];
 		$post = $this->util->_toData($_POST['member']);
 		$sc = $this->util->_toData($_POST['sc']);
 		$nsc = $this->util->_toData($_POST['nsc']);
@@ -360,7 +361,7 @@ class Center extends Controller {
 		if ($post['erfahrung'] == '0') {
 			unset($post['erfahrung_tage']);
 		}	
-
+		
 		$preCheck = $this->db->dbCatchAll('member', "id", "vorname = '".$post['vorname']."' AND nachname = '".$post['nachname']."'");	
 
 		if (count($preCheck) == '0'){
@@ -373,9 +374,15 @@ class Center extends Controller {
 					$this->db->dbInsert('nsc', $nsc);					
 				}
 
-				$this->adminmail($post, $sc, $nsc);
-				$this->usermail($post, $sc, $nsc);
-				echo "<script>self.location.href='".$_SERVER['PHP_SELF']."?action=confirmation'</script>";
+				if(!$backendmode) {
+					$this->adminmail($post, $sc, $nsc);
+					$this->usermail($post, $sc, $nsc);
+					echo "<script>self.location.href='".$_SERVER['PHP_SELF']."?action=confirmation'</script>";
+				}
+				else {
+					echo "<script>self.location.href='".$_SERVER['PHP_SELF']."?action=backend_confirmation'</script>";
+				}
+				
 			} else {
 				$this->setLayout('error');
 				$_SESSION['msg'] = "Ein Fehler ist aufgetreten: ".mysql_error();
