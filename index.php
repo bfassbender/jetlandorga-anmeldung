@@ -148,7 +148,7 @@
 									</div>
 									<div class="description">
 										<h4>Spielspaß</h4>
-										<p>Da wir bei unseren eigenen Charakteren viel Wert auf schönes Spiel und Spaß legen, verlangen wir von anderen nichts anderes. Bei der Charaktererschaffungen nutzen wir zwar das Regelwerk DragonSys 2nd Edition als Richtlinie, halten aber nicht verbissen daran fest. Es ist uns wichtiger, dass das Drumherum stimmt, als dass auf jeden Erfahrungspunkt geschaut wird. Selbstverständlich setzen auch wir Grenzen: Eigenschaften, die uns zu übermächtig oder nicht darstellbar erscheinen, streichen wir. Auf "Powergamer" können wir sehr gut verzichten!
+										<p>Da wir bei unseren eigenen Charakteren viel Wert auf schönes Spiel und Spaß legen, verlangen wir von anderen nichts anderes. Bei der Charaktererschaffungen nutzen wir zwar das Regelwerk DragonSys 3rd Edition als Richtlinie, halten aber nicht verbissen daran fest. Es ist uns wichtiger, dass das Drumherum stimmt, als dass auf jeden Erfahrungspunkt geschaut wird. Selbstverständlich setzen auch wir Grenzen: Eigenschaften, die uns zu übermächtig oder nicht darstellbar erscheinen, streichen wir. Auf "Powergamer" können wir sehr gut verzichten!
 										</p>
 									</div>
 								</div>
@@ -245,7 +245,7 @@
 							</div>
 							<div class="team-member-meta">
 								<h4>Nadine Domaschka</h4>						
-								<p>Die Dame im Hause des Jeta Workshop. Sie kleidet nicht nur NSC in feinste Tücher, sondern tüftelt gerne an Subplots und Charakterkonzepten. Außerdem sorgt sie ür ein spielbares Kräuter- und Alchemieregelwerk.</p>
+								<p>Die Dame im Hause des Jeta Workshop. Sie kleidet nicht nur NSC in feinste Tücher, sondern tüftelt gerne an Subplots und Charakterkonzepten. Außerdem sorgt sie für ein spielbares Kräuter- und Alchemieregelwerk.</p>
 								<div class="social">
 									<a href="https://www.facebook.com/nadine.domaschka" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
 								</div>
@@ -274,7 +274,7 @@
 							</div>
 							<div class="team-member-meta">
 								<h4>Christian Metzger</h4>
-								<p>Erprobte Feld-SL und Organisationstalent auf der Con. Er ist unsere Feuerwehr, immer gerade da, wo es brennt. Außerdem jongliert er mit den Zahlen und sorgt dafür, dass das Budget stimmt.</p>
+								<p>Erprobte Feld-SL und Organisationstalent auf dem Con. Er ist unsere Feuerwehr, immer gerade da, wo es brennt. Außerdem jongliert er mit den Zahlen und sorgt dafür, dass das Budget stimmt.</p>
 								<div class="social">
 								</div>
 							</div>
@@ -287,7 +287,7 @@
 							</div>
 							<div class="team-member-meta">
 								<h4>Lars Kern</h4>
-								<p>Der Mann für Licht und Ton und alles was Kabel hat, oder über Funkwellen kommuniziert. Kennt das Plotbuch oft nur von außen, dafür Dungeons, Kriechgänge und Kabelschächte sehr gut von innen. Wohnt im Visionenraum.
+								<p>Der Mann für Licht und Ton und alles, was Kabel hat oder über Funkwellen kommuniziert. Kennt das Plotbuch oft nur von außen, dafür Dungeons, Kriechgänge und Kabelschächte sehr gut von innen. Wohnt im Visionenraum.
 								</p>
 								<div class="social">
 									<a href="https://www.facebook.com/lars.kern.7" class="btn btn-theme"><i class="fa fa-facebook"></i></a>
