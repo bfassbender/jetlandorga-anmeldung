@@ -101,6 +101,25 @@ $nscBan = ($nscRest <= '0') ? true : false;
 			</div>
 		</div>
 	</div>
+	
+	<div class="form-group">
+		<div class="col-md-12">
+			<h2>Warteliste</h2>
+		</div>			
+		<label class="col-md-2 control-label">Warteliste</label>
+		<div class="col-md-10">
+			<div class="radio-inline">
+				<label><input type='radio' name='member[warteliste]' value="0" <?php if($data['data'][0]['warteliste'] == '0'):?> checked="checked" <?php endif; ?>>Nein</label>
+			</div>
+			<div class="radio-inline">
+				<label><input type='radio' name='member[warteliste]' value="1" <?php if($data['data'][0]['warteliste'] != '0'):?> checked="checked" <?php endif; ?>>Ja<?php if ($data['data'][0]['deleted'] == '1'): ?>, am <?=date('d.m.Y', $data['data'][0]['deleted_date']);?><?php endif; ?></label>
+			</div>
+		</div>
+		<label for="warteliste_rang" class="col-md-2 control-label">Wartelisten-Rang</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" id="warteliste_rang" placeholder="Rang" name='member[warteliste_rang]' value='<?=$data['data'][0]['warteliste_rang']?>' maxlength='4'>
+		</div>
+	</div>
 
 <!-- Angaben zur Person -->
 		<div class="form-group">

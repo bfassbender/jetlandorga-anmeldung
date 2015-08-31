@@ -293,10 +293,10 @@ class Center extends Controller {
 	}
 	function changeListe(){
 		$id = $_POST['id'];
-		$this->db->dbUpdate('member', "warteliste = IF(warteliste = '1', '0', '1')", "id = '".$id."'");
-			$ret = $this->db->dbCatchAll('member', 'warteliste', "id = '".$id."'");
-			$status_wl = ($ret[0]['warteliste'] == '0') ?  'glyphicon glyphicon-remove text-danger' : 'glyphicon glyphicon-ok text-success';
-			echo "<span class='".$status_wl."' aria-hidden='false'>";
+		$this->db->dbUpdate('member', "warteliste = IF(warteliste = '1', '0', '1'), warteliste_rang = IF(warteliste = '1', warteliste_rang, NULL)", "id = '".$id."'");
+		$ret = $this->db->dbCatchAll('member', 'warteliste', "id = '".$id."'");
+		$status_wl = ($ret[0]['warteliste'] == '0') ?  'glyphicon glyphicon-remove text-danger' : 'glyphicon glyphicon-ok text-success';
+		echo "<span class='".$status_wl."' aria-hidden='false'>";
 		die();
 	}	
 
