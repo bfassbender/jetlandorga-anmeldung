@@ -77,9 +77,11 @@ $(document).ready(function(){
 		</ul>
 	</div>
 	<?php endif; ?>
+	<?php if(strlen($config[0]['anmeldung_infotext']) > 0):?>
 	<div class="row">
-		<h3 class="text-warning table-background" style="padding: 15px;"><b>Leider können wir momentan keine Anmeldungen mehr annehmen, weil mehr Anmeldungen bei uns eingegangen sind, als wir Plätze haben.</h3>
+		<h3 class="text-warning table-background" style="margin-top: 10px; padding: 15px;"><b><?php echo $config[0]['anmeldung_infotext']?></b></h3>
 	</div>
+	<?php endif; ?>
 	<div class="table-background table-responsive">
 		<table id="teilnehmer" class="table table-striped table-hover">
 			<thead>

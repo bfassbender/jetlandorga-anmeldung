@@ -79,7 +79,12 @@
 			</div>
 
 		</div>
-
+		<div class="form-group">
+			<label for="conname" class="col-md-2 control-label">Anmeldung Infotext (wird auf der Anmeldeseite und der Teilnehmerliste angezeigt)</span></label>
+			<div class="col-md-4">
+				<input id="anmeldung_infotext" type="text" class="form-control" placeholder="Infotext" name='anmeldung_infotext' value='<?php echo $c[0]['anmeldung_infotext'];?>' maxlength='1000' />
+			</div>
+		</div>
 		<div class="form-group">
 			<div class="col-md-2"></div>
 			<div class="col-md-10">
