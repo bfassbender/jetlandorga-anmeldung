@@ -24,6 +24,7 @@
     				  <li><a target="_blank" href="/files/Anmeldung_Jetland_11.pdf">Anmeldeformular</a></li>
 					  <li><a target="_blank" href="/files/DragonSys_Charakterogen_3rd_Ed.pdf">Charakterbogen</a></li>
                       <li><a target="_blank" href="/files/Regelerweiterung_Jetland_11.pdf">Regelerweiterungen</a></li>
+					  <li><a target="_blank" href="/files/Kraeuterregelwerk_Jetland_11.pdf">Kräuterregelwerk</a></li>
 				   </ul>
 				</li>
 				<li><a target="_blank" href="http://forum.dreywassern.de">Forum</a></li>
