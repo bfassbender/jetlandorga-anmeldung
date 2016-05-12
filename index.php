@@ -112,11 +112,7 @@
 						<div class="row">
 							<div id="countdown"></div>
 						</div>
-						<div class="row">
-							<a class="btn btn-success ladda-button" data-style="expand-left" href="/container.php?action=anmeldungen" role="button">Jetzt anmelden!</a>
-							<a class="btn btn-theme ladda-button" data-style="expand-left" href="/container.php?action=teilnehmer" role="button">Anmeldestatus einsehen</a>
-							<a class="btn btn-theme ladda-button" data-style="expand-left" target="_blank" href="/files/Flyer_Jetland_11.pdf" role="button">Flyer laden</a>
-						</div>
+						<div class="row"><a class="btn btn-success ladda-button" data-style="expand-left" href="https://goo.gl/maps/CUk1qjtRuNT2" target="_blank" role="button">Hier geht es zur Location!</a></div>
 						<footer class="text-center">
 							Ihr wollt Euch mit anderen Interessenten austauschen? Dann besucht das <a href="http://forum.dreywassern.de"><strong>Dreywassern Forum</strong></a>.
 						</footer>
